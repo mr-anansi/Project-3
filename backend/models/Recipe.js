@@ -11,13 +11,13 @@ const recipeSchema = new mongoose.Schema({
   ingredients: { type: [String], required: true },
   method: { type: [String], required: true },
   image: { type: [String], required: true },
-  category: { type: String, required: true },
-  cuisine: { type: String, required: true },
+  category: { type: [String], required: true },
+  cuisine: { type: String },
   type: { type: [String], required: true },
   dietary: { type: [String] },
-  complexity: { type: String, required: true },
+  complexity: { type: [String], required: true },
   time: { type: String, required: true },
-  user: { type: mongoose.schema.ObjectId, required: true },
+  user: { type: mongoose.Schema.ObjectId, required: true },
   comments: [ commentSchema ] 
 }, {
   timestamps: true

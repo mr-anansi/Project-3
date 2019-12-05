@@ -1,7 +1,10 @@
 const mongoose = require('mongoose')
 const { dbURI } = require('../config/environment')
 const Restaurant = require('../models/Restaurant')
+const Recipe = require('../models/Recipe')
 const User = require('../models/User')
+const restaurantSeed = require('./allseeds/restaurantSeeds')
+const recipeSeed = require('./allseeds/recipeSeeds')
 
 mongoose.connect(
   dbURI,
@@ -11,44 +14,30 @@ mongoose.connect(
     db.dropDatabase()
       .then(() => {
         return User.create([{
-          username: 'Marissa',
-          email: 'marissa@email',
-          password: 'mar100',
-          passwordConfirmation: 'mar100'
+          username: 'Nick',
+          email: 'nick@email',
+          password: 'nick',
+          passwordConfirmation: 'nick'
         }])
       })
       .then(users => {
         // Insert data
-        console.log(`${'🙍‍♀️'.repeat(users.length)} users created`)
-        return Restaurant.create([
-          {
-            name: 'Padella',
-            location: 'South',
-            image: 'https://www.google.com/maps/uv?hl=en&pb=!1s0x4876035768a99e75%3A0xaf7a08783e07f5a4!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPm4QNhBQbd-xdv5-1bqHkbtJ5YNalexyAbzlHf%3Dw426-h320-k-no!5spadella%20shoreditch%20-%20Google%20Search!15sCAQ&imagekey=!1e10!2sAF1QipPm4QNhBQbd-xdv5-1bqHkbtJ5YNalexyAbzlHf&sa=X&ved=2ahUKEwiRg9uvx5zmAhWsTBUIHdEdA_4QoiowCnoECAwQBg#',
-            category: ['Vegetarian', 'Italian', 'Pasta'], 
-            type: ['Lunch', 'Dinner'],
-            dietary: ['Vegetarian'],
-            postcode: 'SE1 1TQ',
-            priceRange: '£10-30', 
-            link: 'https://www.padella.co/', 
-            user: users[0]
-          }, 
-          {
-            name: 'Hoppers',
-            location: 'West',
-            image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2017/09/06/17/taste-of-hoppers.jpg?w968',
-            category: ['Vegetarian', 'Sri Lankan', ''], 
-            type: ['Lunch', 'Dinner'],
-            dietary: ['Vegetarian'],
-            postcode: 'W1D 4SG',
-            priceRange: '£10-30', 
-            link: 'https://www.hopperslondon.com/locations/soho', 
-            user: users[0]
-          }
-        ])
+        console.log(`${'🍷'.repeat(users.length)} users created`)
+        // Restaurant.create(restaurantSeed(users))
+        return Recipe.create(recipeSeed(users))
       })
-      .then(restaurants => console.log(`${restaurants.length} Restaurants created`))
+      .then(recipes => console.log(`${recipes.length} recipes created`))
       .catch(err => console.log(err))
+      .then(() => {
+        return User.find({
+          username: 'Nick'
+        })
+      })
+      .then(user => {
+        console.log(`${user} found`)
+        return Restaurant.create(restaurantSeed(user))
+      })
+      .then(restaurant => console.log(`${restaurant.length} restaurant created`))
       .finally(() => mongoose.connection.close())
   }
 )

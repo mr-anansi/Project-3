@@ -1,7 +1,10 @@
+// const Restaurant = require('../../models/Restaurant')
+// const seededUser = require('../allseeds/userSeed')
+// const User = require('../../models/User')
 
 
-[
-  {
+const recipeSeed = (user) => {
+  return [{
     name: 'Pappardelle with nduja, mascarpone and lemon',
     ingredients: ['Tagliatelle', 'Nduja', 'Mascarpone', 'Lemons (zest and juice)', 'Parsley', 'Parmesan', 'Olive oil'],
     method: ['Fry the nduja in the olive oil.', 'When the nduja has melted, add the lemon zest and juice, allow to infuse for a couple of minutes.', 'Add the mascarpone, reduce heat and stir', 'Once the sauce has thickened, add the cooked pasta and a tablespoon of its cooking water.', 'Serve topped with chopped parsley and parmesan'],
@@ -11,7 +14,7 @@
     dietary: ['Spicy'],
     complexity: 'Easy',
     time: '30mins or less!',
-    user: ''
+    user: user[0]
   },
   {
     name: 'Sourdough Bread',
@@ -23,7 +26,7 @@
     dietary: [''],
     complexity: 'Bit more effort',
     time: '3 days',
-    user: ''
+    user: user[0]
   },
   {
     name: 'Ramen Noodles',
@@ -35,7 +38,10 @@
     dietary: ['Vegetarian'],
     complexity: 'Medium's,
     time: 'One Hour',
-    user: ''
+    user: user[0]
+  }]
+}
 
-  }
-]
+
+
+module.exports = recipeSeed
