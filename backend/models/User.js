@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
-const bcrypt = require('brcrypt')
-
+const bcrypt = require('bcrypt')
 
 
 const userSchema = new mongoose.Schema({
@@ -49,10 +48,4 @@ userSchema
 userSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password) 
 }
-
-
-
-
-
-
 module.exports = mongoose.model('User', userSchema) 
