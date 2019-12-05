@@ -13,7 +13,7 @@ const restaurantSeed = (user) => {
     type: ['lunch', 'dinner'],
     postcode: 'SE1 1TQ',
     priceRange: '£-££',
-    user: user[0]
+    user: user
   },
   {
     name: 'Hoppers',
@@ -26,7 +26,7 @@ const restaurantSeed = (user) => {
     postcode: 'W1D 4SG',
     priceRange: '£10-30', 
     link: 'https://www.hopperslondon.com/locations/soho', 
-    user: user[0]
+    user: user
   }]
 }
 

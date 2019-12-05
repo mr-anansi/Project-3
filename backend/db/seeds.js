@@ -21,10 +21,8 @@ mongoose.connect(
         }])
       })
       .then(users => {
-        // Insert data
         console.log(`${'🍷'.repeat(users.length)} users created`)
-        // Restaurant.create(restaurantSeed(users))
-        return Recipe.create(recipeSeed(users))
+        return Recipe.create(recipeSeed(users[0]))
       })
       .then(recipes => console.log(`${recipes.length} recipes created`))
       .catch(err => console.log(err))
@@ -34,10 +32,10 @@ mongoose.connect(
         })
       })
       .then(user => {
-        console.log(`${user} found`)
-        return Restaurant.create(restaurantSeed(user))
+        console.log(`${user[0].username} found`)
+        return Restaurant.create(restaurantSeed(user[0]))
       })
-      .then(restaurant => console.log(`${restaurant.length} restaurant created`))
+      .then(restaurant => console.log(`${restaurant.length} restaurants created`))
       .finally(() => mongoose.connection.close())
   }
 )

@@ -1,7 +1,6 @@
-// Global environment variables we need in our server
 const port = 8000
 const dbURIPrefix = 'mongodb://localhost/'
-const dbName = 'animal-kingdom'
+const dbName = 'just-eat'
 const dbURI = `${dbURIPrefix}${dbName}`
 
 

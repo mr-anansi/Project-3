@@ -14,7 +14,7 @@ const recipeSeed = (user) => {
     dietary: ['Spicy'],
     complexity: ['Easy'],
     time: '30mins or less!',
-    user: user[0]
+    user: user
   },
   {
     name: 'Sourdough Bread',
@@ -26,7 +26,7 @@ const recipeSeed = (user) => {
     dietary: [''],
     complexity: ['Bit more effort'],
     time: '3 days',
-    user: user[0]
+    user: user
   },
   {
     name: 'Ramen Noodles',
@@ -38,7 +38,7 @@ const recipeSeed = (user) => {
     dietary: ['Vegetarian'],
     complexity: ['Medium'],
     time: 'One Hour',
-    user: user[0]
+    user: user
   }]
 }
 
