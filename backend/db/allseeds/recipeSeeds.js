@@ -9,7 +9,7 @@
     category: ['Pasta'],
     type: ['Dinner'],
     dietary: ['Spicy'],
-    complexity: ['Easy'],
+    complexity: 'Easy',
     time: '30mins or less!',
     user: ''
   },
@@ -21,7 +21,7 @@
     category: ['Baking'],
     type: ['Breakfast', 'Lunch', 'Dinner'],
     dietary: [''],
-    complexity: ['Bit more effort'],
+    complexity: 'Bit more effort',
     time: '3 days',
     user: ''
   },
@@ -33,7 +33,7 @@
     category: ['Asian'],
     type: ['Lunch', 'Dinner'],
     dietary: ['Vegetarian'],
-    complexity: ['Medium'],
+    complexity: 'Medium's,
     time: 'One Hour',
     user: ''
 
