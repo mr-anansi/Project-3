@@ -1,7 +1,8 @@
 const router = require('express').Router()
 const recipes = require('./controllers/recipes')
 const restaurants = require('./controllers/restaurants')
-// const users = require('./controllers/users')
+const users = require('./controllers/users')
+const secureRoute = require('./lib/secureRoute')
 
 // const secureRoute = require('./lib/secureRoute')
 
@@ -17,11 +18,17 @@ router.route('/restaurants')
 router.route('/restaurants/:id')
   .get(restaurants.show)
 
-// router.route('/register')
-//   .post(users.register)
+// Reggie: I've put a secure route on the profile to enable it to verify, pull data and then show. It does this through following the secure
+//process, extracting the id and then following the controller logic.
 
-// router.route('/login')
-//   .post(users.login)
+router.route('/profile')
+  .get(secureRoute, users.show)
+
+router.route('/register')
+  .post(users.register)
+
+router.route('/login')
+  .post(users.login)
 
 module.exports = router
 
