@@ -1,25 +1,30 @@
-const User = require('../models/User') // to look up a user once the token is decoded
-const { secret }  = require('../config/environment') // to help us decode the token, this is the same string it was encoded with
+const User = require('../models/User') 
+const { secret }  = require('../config/environment') 
 const jwt = require('jsonwebtoken') // the actual jwt library, we need a method from this to read a token
 
 
+//Reggie: Once i've included this secure route there's an evaluation on the basis of the header token that's provided. It runs through the steps
+//we're more familiar with and then extracts the user id from the token and sets it to the current user. I've used this logic to then find the user
+//details on the route.
+
+
 function secureRoute(req, res, next) {
-  if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer')) { // checks if our request has a header of authorization or if it does, does the value of authorizaion begin with the string 'Bearer'. If not we send back 401 error and end the process.
+  if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer')) { 
     return res.status(401).json({ message: 'Unauthorized' })
   }
 	
-  const token = req.headers.authorization.replace('Bearer ', '') //Removing the word Bearer from the string to leave us just the token. Don't forget the space after bearer, not inclusing it will make the token invalid
+  const token = req.headers.authorization.replace('Bearer ', '') 
 	
-  jwt.verify(token, secret, (err, payload) => { // using jwt verify method to decode a token, needs the token, the secret used to encode it in the first place, and a call back function to handle error/success of decoding
-    if (err) return res.status(401).json({ message: 'Unauthorized' }) // if the error object is defined. send back 401 and end the process
-    User // otherwise try and find the user in the DB. We do this using the payload object from the succesfully decoded token. The 'payload.sub' key hold the user id that the token was issued too. To see where this was set check out '/controllers/user login route'.
+  jwt.verify(token, secret, (err, payload) => { 
+    if (err) return res.status(401).json({ message: 'Unauthorized' }) 
+    User 
       .findById(payload.sub) // finding that user
       .then(user => {
-        if (!user) return res.status(401).json({ message: 'Unauthorized' }) // if that user returns as null, send 401 kick the user out
+        if (!user) return res.status(401).json({ message: 'Unauthorized' }) 
         req.currentUser = user
-        next() // if everything was good and we found a user, call next to allow the request to pass on through to the controller
+        next() // Reggie: if all is well and the user is found here, the next feature pushes to the route controller
       })
-      .catch(() => res.status(401).json({ message: 'Unauthorized' })) // any other error kick the suer out
+      .catch(() => res.status(401).json({ message: 'Unauthorized' }))
   })
 }
 

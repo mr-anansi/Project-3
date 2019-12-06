@@ -22,7 +22,7 @@ const recipeSeed = (user) => {
     author: 'Michael',
     ingredients: ['400g Strong White Bread Flour', '145g Rye Starter', '50g Rye Flour', '50g Wholemeal Flour', '12g Sea Salt', 'Olive Oil', 'Semolina (for dusting)' ],
     method: ['Mix the flours and the starter.', 'Knead until the gluten develops.', 'Fold, then rest for 12 hours. Bake.'],
-    image: 'https://imgur.com/PQaorBZ',
+    image: 'https://imgur.com/PQaorBZ.jpg', 
     category: ['Baking'],
     type: ['Breakfast', 'Lunch', 'Dinner'],
     dietary: [''],
