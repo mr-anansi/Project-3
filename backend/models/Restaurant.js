@@ -17,7 +17,7 @@ const restaurantSchema = new mongoose.Schema({
   postcode: { type: [String], required: true },
   priceRange: { type: String, required: true },
   link: { type: String },
-  user: { type: mongoose.Schema.ObjectId, required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [commentSchema]
 }, {
   timestamps: true

@@ -17,7 +17,7 @@ const recipeSchema = new mongoose.Schema({
   dietary: { type: [String] },
   complexity: { type: [String], required: true },
   time: { type: String, required: true },
-  user: { type: mongoose.Schema.ObjectId, required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [ commentSchema ] 
 }, {
   timestamps: true

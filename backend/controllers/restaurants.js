@@ -1,3 +1,4 @@
+const User = require('../models/User')
 const Restaurant = require('../models/Restaurant')
 
 function index(req, res) {
