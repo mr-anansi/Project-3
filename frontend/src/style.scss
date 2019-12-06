@@ -1,0 +1,23 @@
+
+body, html {
+	font-family: 'Anton', sans-serif;
+	background-image: url('../src/images/proj31.png');
+	-webkit-background-size: 130vh;
+  -moz-background-size: 130vh;
+  -o-background-size: 130vh;
+	background-size: 130vh;
+	background-repeat: no-repeat;
+}
+
+.Links {
+	text-decoration: none;
+	color: black;
+}
+
+.title, .subtitle {
+	color: rgb(207, 144, 7);
+}
+
+.container {
+	margin-left: 300px;
+}
