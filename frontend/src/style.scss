@@ -1,12 +1,9 @@
 
 body, html {
 	font-family: 'Anton', sans-serif;
-	background-image: url('../src/images/proj31.png');
-	-webkit-background-size: 130vh;
-  -moz-background-size: 130vh;
-  -o-background-size: 130vh;
-	background-size: 130vh;
-	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	text-transform: lowercase;
 }
 
 .Links {
@@ -21,3 +18,20 @@ body, html {
 .container {
 	margin-left: 300px;
 }
+
+
+.restaurants {
+	background-image: url('../src/images/proj32.png');
+	min-width: 100%;
+	min-height: 100%;
+	background-repeat: no-repeat;
+}
+
+// #user {
+// 	color: white;
+// }
+
+// #user:hover {
+// 	background-color: black;
+// 	height: 100%;
+// }

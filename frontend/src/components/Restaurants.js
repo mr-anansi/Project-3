@@ -11,14 +11,16 @@ const Restaurants = () => {
       .catch(err => console.log(err))
   }, [])
 
-  return <div className="section has-text-centered">
-    <div className="container is-center">
-      {/* <div className="title">london restaurants</div>
+  return <div className="restaurants">
+    <div className="section has-text-centered">
+      <div className="container is-center">
+        {/* <div className="title">london restaurants</div>
       <div className="subtitle">our top picks</div> */}
-      <div className="column is-centered">
-        <div>{data.map((restaurant, index) => {
-          return <RestaurantCard key={index} restaurant={restaurant} />
-        })}</div>
+        <div className="column is-centered">
+          <div>{data.map((restaurant, index) => {
+            return <RestaurantCard key={index} restaurant={restaurant} />
+          })}</div>
+        </div>
       </div>
     </div>
   </div>

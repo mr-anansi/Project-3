@@ -7,7 +7,7 @@ const restaurantSeed = (user) => {
   return [{
     name: 'Padella',
     location: 'South',
-    image: 'https://media-cdn.tripadvisor.com/media/photo-s/12/ea/ca/d6/early-morning-pasta-rolling.jpg',
+    image: 'https://media.timeout.com/images/104828760/630/472/image.jpg',
     category: ['vegetarian', 'italian', 'pasta'],
     cuisine: 'italian',
     type: ['lunch', 'dinner'],
