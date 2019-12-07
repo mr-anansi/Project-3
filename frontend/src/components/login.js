@@ -5,9 +5,6 @@ import Auth from '../lib/auth'
 //Reggie: This page had some slight changes to make with regards to the syntax for state on the page. The initial state had to be initialised to
 // specific values so that the code would stay intact. Errors at the foot of the form reference the message for incorrect details
 
-
-
-
 const Login = (props) => {
   const [data, setData] = useState({})
   const [errors, setErrors] = useState('')
@@ -70,8 +67,5 @@ const Login = (props) => {
       </form>
     </div>
   </section>
-
-
 }
-
 export default Login

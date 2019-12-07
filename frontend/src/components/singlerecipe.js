@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import EmailRecipes from './EmailRecipes'
-
 import emailjs from 'emailjs-com'
 
 
@@ -16,10 +14,10 @@ const SingleRecipe = (props) => {
       .then(console.log(data))
   }, [])
 
+
   const shoppingList = data.ingredients.map(function (ingredient) {
     return '<li>' + ingredient + '</li>'
-  })
-
+  }).join('')
 
   const handleSubmit = () => {
     const templateParams = {
@@ -35,8 +33,6 @@ const SingleRecipe = (props) => {
       }, function (error) {
         console.log('FAILED...', error)
       })
-
-
   }
 
   console.log(data.ingredients)
