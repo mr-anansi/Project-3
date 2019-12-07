@@ -10,6 +10,9 @@ import SingleRecipe from './components/singlerecipe'
 import Login from './components/login'
 
 
+import Mailjet from './components/EmailRecipes'
+
+
 
 const App = () => (
   <BrowserRouter>
@@ -23,6 +26,7 @@ const App = () => (
       {/* <Route exact path="/restaurants/:id" component={SingleRestaurant} /> */}
       {/* <Route path="/register" component={Register} /> */}
       <Route path="/login" component={Login} />
+      <Route path="/Mailjet" component={Mailjet} />
       {/* <SecureRoute path="/recipes/new" component={NewRecipe} /> */}
       {/* <SecureRoute path="/recipes/edit/:id" component={EditRecipe} /> */}
       {/* <SecureRoute path="/user/:id" component={UserProfile} /> */}
