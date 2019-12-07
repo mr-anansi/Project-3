@@ -267,39 +267,39 @@ const recipeSeed = (user) => {
     complexity: 'Easy',
     time: '1 hour and 50 minutes',
     user: user
+  },
+
+  {
+    name: 'Cauliflower Shawarma',
+    author: 'Berber & Q',
+    about: 'Rich and exotic spices elevate the humble cauliflower to something exceptional. Swap the butter for olive oil to make this vegan.',
+    ingredients: ['1 whole cauliflower, outer leaves trimmed', '40g unsalted butter, softened to room temperature', 'Juice of 1 lemon', '1 garlic clove, minced', '1½ tbsp coriander, finely chopped', '1 tbsp ground cinnamon', '1 tbsp ground sumac', '1½ tsp ground cumin', '½ tsp ground allspice', '1 pinch ground nutmeg', '1 pinch ground cardamom', '100g tahini', '1 tbsp lemon juice (optional)', '1 garlic clove, minced (optional)', '100ml iced water', '1 tbsp pomegranate molasses', '1½ tbsp pine nuts, toasted', '1 small green chilli, finely chopped', '2 tbsp pomegranate seeds', '1 tsp dried rose petals', '1 tbsp flat-leaf parsley, roughly chopped', 'Extra-virgin olive oil (optional)'],
+    method: ['Whisk all the butter ingredients well until slightly stiff with no streaks. Set aside until needed – just bring to to room temperature before use.', 'Trim the cauliflower, leaving some leafy remnants behind – they taste delicious and look great when burnt and crisped. Parboil in salted water for seven minutes or so, until tender to a knife, but al dente. Set aside to dry, then brush liberally with the spiced butter – retain some of the butter for brushing later – and season well.', 'Heat the oven to 240C/465F/gas 9) and roast for up to seven minutes, until lightly charred all over, then finish on the barbecue for a few minutes for a final hit of smokiness, basting it periodically with any leftover butter.', 'Mix the tahini with the lemon juice and garlic (if using).in a bowl, gradually whisk in the iced water to a thick sauce with the consistency of honey, then season to taste. Alternatively, you can blitz the tahini in a food processor or whisk together using a stand mixer, adding the water gradually to combine.', 'To serve, transfer the whole cauliflower to a serving plate, spoon over the tahini sauce and pomegranate molasses, then finish by sprinkling with the pine nuts, green chilli, pomegranate seeds, rose petals, parsley and oil.'],
+    image: 'https://i.imgur.com/JVqx3mb.jpg',
+    category: ['Middle-Eastern'],
+    type: ['Dinner'],
+    dietary: ['Vegetarian', 'Vegan'],
+    serves: '2-4',
+    complexity: 'Medium',
+    time: '45 minutes',
+    user: user
+  },
+
+  {
+    name: 'Tomato Soup',
+    author: 'Felicity Cloake',
+    about: 'It is portable, filling, and equally good hot or cold',
+    ingredients: ['1kg ripe tomatoes', '4 tbsp olive oil', 'Pinch of sugar', '1 onion, chopped', '1 carrot, peeled and diced', '2 garlic cloves, finely chopped', 'Small bunch of basil, separated into leaves and stalks', '600ml chicken stock', '1 tbsp balsamic vinegar', '2 tbsp creme fraiche', 'Extra virgin olive oil, to serve'],
+    method: ['Preheat the oven to 190C and cut the tomatoes in half horizontally. Arrange, cut-side up, in a baking dish, drizzle with half the oil and season with salt, pepper and a pinch of sugar. Bake for about an hour, until softened and beginning to char around the edges.', 'Heat the remaining oil in a large, heavy-based pan over a medium heat and add the onion, carrot and garlic. Cook, stirring regularly, for about 7 minutes until softened. Meanwhile, chop the basil stalks, and then add to the pan and cook for another minute.', ' Add the tomatoes, plus any juices from the dish, to the pan along with the stock. Stir and bring to the boil, then turn the heat down, cover and leave to simmer for 25 minutes, until all the vegetables are soft. Leave to cool slightly.', 'Use a blender to purée the soup, then stir in the vinegar and creme fraiche, and season to taste. Reheat gently, while you tear the basil leaves into pieces, then serve with these and a drizzle of olive oil on top.'],
+    image: 'https://i.imgur.com/P7ipxWc.png',
+    category: ['Comfort food', 'Soup'],
+    type: ['Lunch', 'Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '4',
+    complexity: 'Easy',
+    time: '90 minutes',
+    user: user
   }
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
 
     // {
     //   name: '',
