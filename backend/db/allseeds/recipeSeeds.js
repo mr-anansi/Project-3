@@ -205,53 +205,53 @@ const recipeSeed = (user) => {
     user: user
   },
 
-    {
-      name: '',
-      author: '',
-      about: '',
-      ingredients: [''],
-      method: [''],
-      image: '',
-      category: [''],
-      type: [''],
-      dietary: [''],
-      serves: '',
-      complexity: '',
-      time: '',
-      user: user
-    },
+  {
+    name: 'Pasta Puttanesca',
+    author: 'Felicity Cloake',
+    about: 'A classic store cupboard pasta staple',
+    ingredients: ['160g spaghetti', '3 tbsp good olive oil', '2 garlic cloves, very thinly sliced', '4 anchovies, rinsed if packed in salt, roughly chopped', '½ tsp chilli flakes', '50g good-quality black olives, stoned and roughly chopped', '1 tbsp brined capers, rinsed if packed in salt, roughly chopped', '100ml passata', '2 tbsp tomato puree', 'Small bunch of flat-leaf parsley, roughly chopped'],
+    method: ['Put a large pan of well-salted water on to boil. When bubbling, add the pasta, stir, and cook for 8-10 minutes according to packet instructions, until very slightly underdone.', 'Heat the oil in a frying pan over a medium-low heat. Cook the garlic very gently until just beginning to colour, then add the anchovies and stir to dissolve. Stir in the chilli flakes, then the olives and capers, and turn up the heat slightly until you can hear them sizzling.', 'Add the passata and puree and stir well, then simmer vigorously for about five minutes, or until the pasta is done. Check the seasoning.', 'Drain the pasta well, then tip into the frying pan and toss well to combine. Divide between bowls and top with the parsley.'],
+    image: 'https://i.imgur.com/Nayu4W2.jpg',
+    category: ['Pasta', 'Italian'],
+    type: ['Dinner'],
+    dietary: [''],
+    serves: '2',
+    complexity: 'Easy',
+    time: '30 minutes',
+    user: user
+  },
 
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
+  {
+    name: 'Salmon, Fennel & Pea Risotto',
+    author: 'Mary Berry',
+    about: 'Risotto is such a quick and easy dish: the creamy rice is complemented here by the salmon and peas. Be careful not to overcook it, though, or it will be stodgy.',
+    ingredients: ['750ml/1 pint 6fl oz hot fish or vegetable stock', '2 tbsp sunflower oil', '½ fennel bulb (or 1 small bulb), trimmed and finely chopped', '2 garlic cloves, crushed', '225g/8oz arborio or risotto rice', '300ml/10fl oz dry white wine', '150g/5½oz frozen petits pois', '½ lemon, juice only', '2 x 150g/5½oz salmon fillets, skinned and thinly sliced', '3 tbsp full-fat crème fraîche', '3 sprigs fresh tarragon, coarsely chopped', '30g/1oz Parmesan, grated, plus extra for sprinkling', 'salt and freshly ground black pepper', '50g/2oz pea shoots, to ganish'],
+    method: ['Pour the stock into a saucepan and keep warm over a low heat.', 'Pour the oil into a large frying pan over a medium-high heat. Add the fennel and fry for about 4 minutes, or until softened, but not browned, stirring often. Add the garlic and rice and fry for a minute, stirring constantly, until the grains of rice are coated in the oil.', 'Pour the wine into the stock, stir and bring to a gentle simmer. Add a ladleful of the hot stock mixture to the rice and simmer, stirring continuously. Wait until the stock is almost fully absorbed before adding the next ladleful. Continue to add the stock, a ladleful at a time, and cook the risotto for 15–20 minutes, or until you are left with about 250ml/9fl oz stock in the saucepan and the rice is nearly cooked.', 'Add the petits pois and lemon juice. Ladle in some of the remaining stock and keep stirring for a couple of minutes. Add the salmon slices, crème fraîche, tarragon and Parmesan. Stir and continue to cook until the salmon is done to your liking.', 'Season to taste with salt and pepper and serve immediately, sprinkled with extra parmesan and garnished with pea shoots.'],
+    image: 'https://i.imgur.com/JJGqXhI.jpg',
+    category: ['Rice', 'Italian', 'Seafood'],
+    type: ['Dinner'],
+    dietary: [''],
+    serves: '6',
+    complexity: 'Easy',
+    time: '1 hour',
+    user: user
+  },
 
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
+  {
+    name: 'Mushroom & Herb Tagliatelle',
+    author: 'Rachel Roddy',
+    about: 'Earthy, mushroomy, herby comfort. Omit the butter and Parmesan and this dish can be vegan',
+    ingredients: ['25g dried porcini', '800g mushrooms, mixed varieties, wild or cultivated', '4 tbsp olive oil', '120g butter', '2 garlic cloves, peeled and finely chopped', 'Salt and black pepper', 'Parsley, oregano and thyme, finely chopped', '450g dried long pasta (ideally pappardelle or tagliatelle)', 'Parmesan, grated'],
+    method: ['Soak the porcini in warm water for 30 minutes, then drain, reserving the liquid. Clean the other mushrooms by brushing away any mud and then wiping the cap and stem with a damp cloth. Cut all the cleaned mushrooms into slices; not too thin. Put a large pan of well-salted water on to boil in preparation for cooking the pasta.', 'In a large frying pan, heat the oil and butter. Once the butter is foaming gently, add the garlic and fry for a few minutes. Add the porcini and cook for another minute to combine the flavours. Add the fresh mushrooms. Sprinkle with salt and pepper and cook, stirring occasionally, for 5–6 minutes, or until the mushrooms have released their water and are tender and glistening. Add a little of the porcini liquid and let it all bubble for another minute to reduce, then sprinkle with the herbs.', 'Meanwhile, cook the pasta until al dente. Drain and toss with the mushrooms. Divide between bowls and serve, passing around grated cheese for those who want it.'],
+    image: 'https://i.imgur.com/BTDsfqb.jpg',
+    category: ['Pasta', 'Italian'],
+    type: ['Dinner'],
+    dietary: ['Vegetarian', 'Vegan'],
+    serves: '4',
+    complexity: 'Easy',
+    time: '45 minutes',
+    user: user
+  }
 
     // {
     //   name: '',
