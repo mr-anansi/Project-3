@@ -9,13 +9,12 @@ const Recipes = () => {
   useEffect(() => {
     axios.get('/api/recipes')
       .then(response => setData(response.data))
-      .then(console.log(data))
       .catch(error => console.log(error))
   }, [])
 
 
-  return <div className="section has-background-black">
-    <div className="container had-background-black">
+  return <div className="section">
+    <div className="container">
       <div className="columns is-mobile is-multiline">
         {data.map((results, i) => {
           return <RecipeCard key={i} results={results} />

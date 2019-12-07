@@ -7,7 +7,7 @@ const restaurantSeed = (user) => {
   return [{
     name: 'Padella',
     location: 'South',
-    image: 'https://www.google.com/maps/uv?hl=en&pb=!1s0x4876035768a99e75%3A0xaf7a08783e07f5a4!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPm4QNhBQbd-xdv5-1bqHkbtJ5YNalexyAbzlHf%3Dw426-h320-k-no!5spadella%20shoreditch%20-%20Google%20Search!15sCAQ&imagekey=!1e10!2sAF1QipPm4QNhBQbd-xdv5-1bqHkbtJ5YNalexyAbzlHf&sa=X&ved=2ahUKEwiRg9uvx5zmAhWsTBUIHdEdA_4QoiowCnoECAwQBg#',
+    image: 'https://media.timeout.com/images/104828760/630/472/image.jpg',
     category: ['vegetarian', 'italian', 'pasta'],
     cuisine: 'italian',
     type: ['lunch', 'dinner'],
