@@ -5,29 +5,29 @@ import axios from 'axios'
 const Register = (props) => {
   const [data, setData] = useState({})
   const [errors, setErrors] = useState('')
-  const [formReady, setFormReady] = useState(false)
+  // const [formReady, setFormReady] = useState(false)
 
   //Reggie: I've used use effect over here, however it's not entirely necessary. At the moment though it runs on the basis of the 
   //form boolean state. This state changes on the form submit and once it changes useEffect hears the change and runs the function with the
   //api request in it.
 
-  useEffect(() => {
-    postIt()
-    console.log('running')
-  }, [formReady])
+  // useEffect(() => {
+  //   postIt()
+  //   console.log('running')
+  // }, [formReady])
 
   //Reggie: This is the function that calls to the api. It has a condition that blocks the code run on the basis of the form boolean state.
 
   const postIt = () => {
-    if (formReady) {
-      setFormReady(false)
-      axios.post('/api/register', data)
-        .then(() => props.history.push('/login'))
-        .catch(err => {
-          setErrors(err.response.data.errors)
-          console.log(err.response.data.errors)
-        })
-    } else return
+    // if (formReady) {
+    // setFormReady(false)
+    axios.post('/api/register', data)
+      .then(() => props.history.push('/login'))
+      .catch(err => {
+        setErrors(err.response.data.errors)
+        console.log(err.response.data.errors)
+      })
+    // } else return
   }
 
   //Reggie: This adds the data to the state. It also clears the errors to an empty string thereby rendering it false
@@ -42,7 +42,8 @@ const Register = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setFormReady(true)
+    postIt()
+    // setFormReady(true)
   }
 
   return (
@@ -57,7 +58,7 @@ const Register = (props) => {
             </label>
           </div>
           {errors.username && <small className="help is-danger">
-            {errors.username.message}
+            {errors.username}
           </small>}
         </div>
         <div className='field'>
@@ -68,7 +69,7 @@ const Register = (props) => {
             </label>
           </div>
           {errors.email && <small className="help is-danger">
-            {errors.email.message}
+            {errors.email}
           </small>}
         </div>
         <div className='field'>
@@ -79,7 +80,7 @@ const Register = (props) => {
             </label>
           </div>
           {errors.password && <small className="help is-danger">
-            {errors.password.message}
+            {errors.password}
           </small>}
         </div>
         <div className='field'>
@@ -90,7 +91,7 @@ const Register = (props) => {
             </label>
           </div>
           {errors.passwordConfirmation && <small className="help is-danger">
-            {errors.passwordConfirmation.message}
+            {errors.passwordConfirmation}
           </small>}
         </div>
         <button className="button is-info">
