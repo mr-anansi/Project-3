@@ -251,23 +251,23 @@ const recipeSeed = (user) => {
     complexity: 'Easy',
     time: '45 minutes',
     user: user
-  }
+  },
 
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
+  {
+    name: 'Potato al forno',
+    author: 'Jamie Oliver',
+    about: 'Comforting creamy fennel, onions, garlic and Parmesan. Omit the anchovy and swap the Parmesan for a veggie alternative for vegetarians',
+    ingredients: ['1 kg Maris Piper potatoes', '2 onions', '2 bulbs of fennel', '600 ml whole milk', '400 ml double cream', '6 anchovy fillets , in oil', '8 cloves of garlic', '½ a bunch of fresh rosemary , (15g)', '6 fresh bay leaves', '1 whole nutmeg , for grating', '50 g Parmesan cheese'],
+    method: ['Peel the potatoes and onions and trim the fennel bulbs, reserving any herby fennel tops for later.', 'Finely slice the potatoes, onions and fennel just under ½cm thick, with patient knife skills or, ideally, on a mandolin (use the guard!).', 'Preheat the oven to 180ºC/350ºF/gas 4', 'Pour the milk and cream into a pan. Tear in the anchovies, crush in the unpeeled garlic through a garlic crusher, add the rosemary sprigs and bay leaves and finely grate in half the nutmeg.', 'Bring to a light boil on a medium heat, then immediately turn the heat off and leave to infuse for a few minutes. Fish out and discard the herbs, finely grate and whisk in most of the Parmesan, then taste and season to perfection.', 'In a 25cm x 30cm baking dish, layer up the slices of potato, onion and fennel. Pour over the cream mixture and finely grate over the remaining Parmesan.', 'Cover with tin foil and bake for 30 minutes, then remove the foil and bake for another 45 minutes, or until tender and nicely golden.', 'Remove from the oven, tear and scatter over any reserved fennel tops, and serve.'],
+    image: 'https://i.imgur.com/t3SulYB.jpg',
+    category: ['Side', 'Comfort food'],
+    type: ['Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '8-10',
+    complexity: 'Easy',
+    time: '1 hour and 50 minutes',
+    user: user
+  }
 
     // {
     //   name: '',
