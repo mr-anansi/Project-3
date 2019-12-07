@@ -43,7 +43,7 @@ const Navbar = () => {
       </div>
       {/* {Auth.isAuthorized() &&  */}
       <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link is-arrowless" to="/recipes">
+        <a className="navbar-link is-arrowless" href="/recipes">
 					Recipes
         </a>
       </div>
@@ -52,10 +52,10 @@ const Navbar = () => {
 					User
         </a>
         <div className="navbar-dropdown is-boxed">
-          <a className="navbar-item" id="user" to="/register">
+          <a className="navbar-item" id="user" href="/register">
 						Register
           </a>
-          <a className="navbar-item" id="user" to="/login">
+          <a className="navbar-item" id="user" href="/login">
 						Login
           </a>
           {/* {Auth.isAuthorized() &&  */}
