@@ -13,16 +13,10 @@ import Navbar from './components/Navbar'
 import Login from './components/login'
 import Recipes from './components/recipes'
 import SingleRecipe from './components/singlerecipe'
-<<<<<<< HEAD
-import Login from './components/login'
 
 
-import Mailjet from './components/EmailRecipes'
-
-
-=======
 import Register from './components/Register'
->>>>>>> development
+
 
 const App = () => (
   <BrowserRouter>
@@ -36,16 +30,9 @@ const App = () => (
       <Route exact path="/restaurants/:id" component={SingleRestaurant} />
       <Route path="/register" component={Register} />
       <Route path="/login" component={Login} />
-<<<<<<< HEAD
-      <Route path="/Mailjet" component={Mailjet} />
       {/* <SecureRoute path="/recipes/new" component={NewRecipe} /> */}
       {/* <SecureRoute path="/recipes/edit/:id" component={EditRecipe} /> */}
       {/* <SecureRoute path="/user/:id" component={UserProfile} /> */}
-=======
-      {/* <SecureRoute path="/recipes/new" component={NewRecipe} />
-      <SecureRoute path="/recipes/edit/:id" component={EditRecipe} />
-      <SecureRoute path="/user/:id" component={UserProfile} /> */}
->>>>>>> development
     </Switch>
   </BrowserRouter>
 )
