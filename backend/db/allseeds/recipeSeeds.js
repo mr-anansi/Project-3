@@ -859,87 +859,87 @@ const recipeSeed = (user) => {
     complexity: 'Bit more effort',
     time: '3 hours',
     user: user
+  },
+
+  {
+    name: 'Grand Vegetable Biriyani',
+    author: 'Meera Sodha',
+    about: 'A meal for special occasions, whether that be Diwali, Christmas or a bar mitzvah. It’s not a difficult recipe, far from it, but it’s one to take your time over. You will need a blender, and also a medium casserole or biryani dish – around 24cm in diameter is perfect.',
+    ingredients: ['basmati rice 400g', 'sweet potatoes 400g', 'raw beetroot 400g', 'ripe tomatoes 500g', 'chickpeas 1 x 400g tin, drained', 'hard paneer 225g, cut into 2cm cubes', 'rapeseed oil', 'salt', 'chilli powder 1¼ tsp', 'ground cumin 1¼ tsp', 'garam masala 2 tsp', 'lemon juice 2 tbsp', 'onions 2 large , finely sliced', 'egg 1', 'ready-rolled puff pastry 300g', 'sesame seeds 1 tbsp', 'nigella seeds 1 tbsp', 'coconut milk 1 x 400ml tin', 'fresh coriander 100g, roughly chopped', 'garlic 6 cloves', 'green finger chilli 1', 'ginger 3cm, peeled', 'salt ¾ tsp', 'lemon juice 2 tbsp '],
+    method: ['Preheat the oven to 200C/gas mark 6 and line 3 baking trays with foil. Wash the rice in a few changes of cold water, then leave to soak.', 'Next, wash the sweet potatoes and beetroot well (no need to peel them) and cut into wedges around 6cm x 2cm. Put them on separate trays. Cut the tomatoes into quarters, then eighths. Place them on the final baking tray and add the chickpeas and cubes of paneer.', 'Put 6 tablespoons of oil into a small bowl with 1⅓ teaspoons of salt, the chilli powder, cumin, garam masala and lemon juice. Mix well, then spoon over the vegetables, adding more to the tomato and paneer tray than the other two. Make sure everything is evenly coated, then put the trays in the oven – with the paneer on the top shelf – and bake for 40 minutes, checking and stirring after 20 minutes.', 'In the meantime, put 3 tablespoons of oil into your casserole or biryani dish over a medium heat. When hot, add the onions and fry for 15-20 minutes, till really soft, brown and caramelised, stirring regularly. Remove to a bowl and keep the dish to one side.', 'While the onions are cooking, place all the ingredients for the coconut and coriander sauce into a blender and whizz to a fine consistency. Pour it into a frying pan (scrape down the sides of the blender) over a medium heat and cook for 10 minutes, stirring every now and then. Check the salt and take off the heat.', 'Next, drain the the rice and place in a deep saucepan. Cover with plenty of cold water and bring to the boil. Lower the heat to a fast simmer and cook for 10 minutes or until the rice is just tender. Drain well, cover with a clean tea towel and leave to one side. Break the egg into a small cup, add a generous pinch of salt and whisk with a fork.', 'Now you are ready to layer your biryani. The aim is to end with a rice layer topped with caramelised onions. First, put half of the paneer, tomato and chickpea mixture into the bottom of the pot. Follow with a quarter of the rice and a quarter of the onion mix. Then add half of the coconut and coriander sauce and half of the beetroot and sweet potatoes, then a further quarter of the rice and onions. Repeat, finishing with a final layer of rice and onions.', 'Cut a square of puff pastry to fit over the top of your pot. Working quickly (as you need to keep the pastry as cold as possible), press it down tightly around the edges of the pot. Brush the top liberally with the beaten egg, and sprinkle with the seeds. Place in the oven for 25 minutes.', 'Gingerly take out of the oven and place on the table. Cut the pastry away and discard to reveal the steamy biryani. Serve big spoonfuls so that everyone gets good colourful layers, alongside raitas and a salad'],
+    image: 'https://i.imgur.com/ZYivDuk.jpg',
+    category: ['Indian', 'Asian'],
+    type: ['Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '6',
+    complexity: 'Bit more effort',
+    time: '2-3 hours',
+    user: user
+  },
+
+  {
+    name: 'Potato Pizza with Goats Cheese, basil and onion',
+    author: 'Sally Clarke',
+    about: 'A fun twist on the ubiquitous pizza',
+    ingredients: ['fresh yeast 15g (or 7g dry yeast or 3.5g easy-blend yeast)', 'milk 200ml', 'olive oil 60ml', 'strong white flour or ‘00’ flour, or half and half 150g', 'salt 1 tsp', 'potatoes 500g, very small', 'olive oil', 'salt and pepper', 'summer savory or thyme 2 tsp', 'fine polenta 1 tbsp', 'red onion 1 medium, peeled, halved and sliced paper-thin', 'fresh vegetarian goat’s cheese 150g', 'basil, rocket leaves, landcress or parsley'],
+    method: ['If using fresh yeast, whisk into the milk and oil and leave in a warm place until it starts to froth a little. If using dry or easy-blend yeast, simply whisk the milk and oil together. Mix the flours together in a large bowl with the salt (and the dry or easy-blend yeast if using) and either by hand or with the dough hook attachment of a machine, mix in the liquids until well amalgamated. Continue to knead until a smooth elastic dough is formed. Cover the bowl with clingfilm and leave in a warm place until the dough has almost doubled in size.', 'Preheat the oven to 180C/gas mark 4.', 'While the dough is proving, wash and slice the potatoes finely, jumble with a drizzle of olive oil, salt and pepper and spread out over an oiled baking sheet. Sprinkle with half the summer savory or thyme and roast until golden, approximately 15-20 minutes.', 'With a dusting of flour roll the dough into two evenly sized balls, then roll with a rolling pin until thin and approximately round in shape. Lift the discs up one by one and rotate them around in your fingers, allowing the dough to be pulled downwards by gravity. This will make the pizza thinner and more crisp when cooked.', 'Sprinkle two baking sheets with fine polenta and lay each disc on top carefully. Brush with olive oil then scatter with the sliced raw red onion, the cooked potatoes, the remaining chopped herbs, salt and pepper. Bake for 10-15 minutes or until pale golden. Remove from the oven and place the fresh goat’s cheese over the top, return to the oven for a minute or two, or until it starts to melt.', 'Scatter over a few leaves of basil, rocket, landcress or parsley and serve immediately.'],
+    image: 'https://i.imgur.com/G5CRCoI.jpg',
+    category: ['Italian'],
+    type: ['Lunch', 'Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '4',
+    complexity: 'Medium',
+    time: '3 hours',
+    user: user
+  },
+
+  {
+    name: 'Lentil Curry with Eggs',
+    author: 'Blanche Vaughan',
+    about: 'Eggs seem to have a natural affinity with the aromatic flavours of spices and chilli heat. It’s no wonder they are often found in recipes with curried sauces. This meat-free dish provides all the protein you need. Not only is it spicy and filling, it can also be put together in no time.',
+    ingredients: ['brown lentils 400g', 'fresh ginger 30g, peeled', 'garlic 4 cloves', 'red chillies 2, stalks removed', 'onion 1, roughly chopped', 'sea salt 1 tsp', 'vegetable oil 2 tbsp', 'tomatoes 4, skinned, deseeded and chopped (you could also use tinned peeled plum tomatoes, drained, deseeded and chopped)', 'hard-boiled eggs 4, peeled', 'fresh coriander 20g, roughly chopped', 'natural yogurt 4 tbsp', 'cardamom pods 1 tsp', 'cloves 6', 'cumin seeds 3 tsp', 'ground turmeric 2 tsp', 'bay leaves 2', 'cinnamon stick 1'],
+    method: ['Put the lentils into a large pan, cover with cold water and bring to the boil. Reduce the heat to a simmer and leave to cook for 15-20 minutes, or until tender, topping up the water if needed.', 'Meanwhile, make the spice mix. Place a large frying pan, without any oil, over a medium heat and add the cardamom pods, cloves and cumin seeds. After about 30 seconds they should start to give off a toasted, fragrant aroma. Shake the pan gently and cook for another 30 seconds then immediately remove from the heat and grind in a pestle and mortar or spice grinder. Once partially ground, you can remove and discard the papery husks of the cardamom, releasing the black seeds inside. Continue grinding until you have a coarse powder. Add the turmeric, bay leaves and cinnamon stick and set aside.', 'Put the ginger, garlic, whole chillies, onion and salt into a food processor and blitz to a paste.', 'Return the frying pan to the heat and add the oil. When it is hot, add the paste and fry over a medium heat for a few minutes. Then add the spice mix and the tomatoes and cook on a low heat for another 5 minutes or so.', 'When the lentils are tender, strain them to remove any excess liquid (reserving the liquid) and return the lentils to the pan. Add all the aromatic spice mixture and the boiled eggs to the pan and stir well. If the mixture looks too dry add some of the reserved liquid to make a loose sauce.', 'Cook the lentils for another 5 minutes so they become infused with the spice flavours. (Up to this point, everything can be done in advance and reheated when needed.)', 'When you’re ready to serve, sprinkle with the chopped coriander and stir in the yogurt to make a creamy sauce surrounding the lentils and eggs. This is delicious on its own although you could serve with some sautéed spinach and steamed basmati rice.'],
+    image: 'https://i.imgur.com/pFNayEt.jpg',
+    category: ['Indian', 'Asian'],
+    type: ['Lunch', 'Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '4-6',
+    complexity: 'Easy',
+    time: '1 hour',
+    user: user
+  },
+
+  {
+    name: 'Wild Fig and Watermelon Sorbet',
+    author: 'Kitty Travers',
+    about: 'The figs give body and sap to the watery pink watermelon juice, dulling its colour a deep blue-red. It’s a wonderfully refreshing, but easy-to-scoop sorbet. If you can’t pick wild figs just use the ripest, blackest ones you can find.',
+    ingredients: ['ripe black or Turkish figs 225g (about 6)', 'watermelon flesh 700g (red part only)', 'sugar 110g ', 'lemon juice of 1'],
+    method: ['To prepare the sorbet: rinse the figs then slice in half and place them in a bowl, sprinkled with a tablespoon of water. Cover the bowl with clingfilm and cook in a microwave on high for 3-4 minutes. Otherwise, simmer them gently in a non-reactive pan just until they’re tender, juicy and piping hot (do not boil). Set aside to cool; once cold, cover and chill in the fridge along with the cubed watermelon flesh (in a separate container) for 2-3 hours, or until completely cold.', 'Once the figs are thoroughly chilled, liquidise them with the watermelon, sugar and lemon juice for 2-3 minutes, long enough for the sugar granules to dissolve. Use a small ladle to push the puree through a fine-mesh sieve or chinois. Save a couple of teaspoons of the pips if you like and add these back to the puree for texture.', 'To make the sorbet: pour the dark red puree into an ice cream machine and churn according to the machine’s instructions, usually about 20-25 minutes, or until frozen and thick and creamy-looking. If you insist on making ice cream without a machine you can freeze the mixture in a big bowl. After 45 minutes, take it out from the freezer and whisk vigorously. Do this twice, and then consecutively with a big metal spoon or spatula every 30 minutes until smooth, frozen and uniform.', 'Transfer the sorbet to a suitable lidded container and top with a piece of waxed paper to limit exposure to air. Cover and freeze until ready to serve. Best eaten within 2 weeks.'],
+    image: 'https://i.imgur.com/tGzt8Zk.jpg',
+    category: ['Dessert'],
+    type: ['Dessert'],
+    dietary: ['Vegan'],
+    serves: '4',
+    complexity: 'Medium',
+    time: '3-4 hours',
+    user: user
+  },
+
+  {
+    name: 'Coconut and Palm Sugar Panna Cotta with Grilled Pineapple',
+    author: 'Wichet Khongphoon',
+    about: 'A delicious, refreshing, vegan-friendly dessert',
+    ingredients: ['almond milk 500ml', 'coconut milk 400ml (full fat', 'palm sugar 75g', 'agar agar 3g', 'sugar 200g', 'pineapple 1, peeled and cut into small piece', 'passion fruit 4', 'small mint sprig 7, for decoration'],
+    method: ['Fill a large bowl half full with cold water.', 'Put all ingredients for the panna cotta in a heavy-based pot on medium heat, slowly stirring till the agar agar has dissolved. When the mixture starts to bubble up, remove from the heat and place it in the prepared bowl of cold water. Leave the warmed milk to cool for 5 minutes then pour it in to 7 x 150ml tumblers. Allow to cool for 40 minutes before transferring to the fridge to chill for about 2 hours.', 'Meanwhile, for the topping, sprinkle sugar on the pineapple, and place on a tray under a medium grill. Stir the pineapple every few minutes until it becomes translucent, a darker colour and the liquid is reduced by half. Don’t worry about the burnt bits. Leave it to cool completely.', 'To serve, spoon grilled pineapple on each chilled, set panna cotta, then squeeze over half a passion fruit and add a sprig of mint.'],
+    image: 'https://i.imgur.com/1wqOE0W.jpg',
+    category: ['Dessert'],
+    type: ['Dessert'],
+    dietary: ['Vegan'],
+    serves: '7',
+    complexity: 'Easy',
+    time: '3 hours',
+    user: user
   }
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
 
     // {
     //   name: '',
