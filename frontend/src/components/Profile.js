@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Auth from '../lib/auth'
 
+//Reggie: Weekend Work
 /* Reggie: I created this page over the weekend for the project. Obviously Marissa will have something to say about styling, 
 however I had to get my hands on some logic behind it. In this form, there is no need for an id in the path and the user's specific data is
 only accessible by the logged in user. It's up to us to decide what to display.*/

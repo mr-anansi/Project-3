@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 
@@ -7,7 +7,9 @@ const Register = (props) => {
   const [errors, setErrors] = useState('')
   // const [formReady, setFormReady] = useState(false)
 
-  //Reggie: I've used use effect over here, however it's not entirely necessary. At the moment though it runs on the basis of the 
+  //Reggie: This commented out code is on queue to be removed as a code reduction has been managed.
+
+  //I've used use effect over here, however it's not entirely necessary. At the moment though it runs on the basis of the 
   //form boolean state. This state changes on the form submit and once it changes useEffect hears the change and runs the function with the
   //api request in it.
 
@@ -16,7 +18,7 @@ const Register = (props) => {
   //   console.log('running')
   // }, [formReady])
 
-  //Reggie: This is the function that calls to the api. It has a condition that blocks the code run on the basis of the form boolean state.
+  //This is the function that calls to the api. It has a condition that blocks the code run on the basis of the form boolean state.
 
   const postIt = () => {
     // if (formReady) {

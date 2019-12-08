@@ -12,7 +12,8 @@ function show(req, res) {
   Recipe
     .findById(req.params.id)
     .then(recipe => {
-      console.log('My recipe is', recipe)
+      // Reggie: console logged the name as opposed to the whole object
+      console.log('My recipe is', recipe.name)
       if (!recipe) res.status(404).json({ message: '404 Not found' })
       else res.status(200).json(recipe)
     })

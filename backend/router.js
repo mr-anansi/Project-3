@@ -4,7 +4,7 @@ const restaurants = require('./controllers/restaurants')
 const users = require('./controllers/users')
 const secureRoute = require('./lib/secureRoute')
 
-// const secureRoute = require('./lib/secureRoute')
+// Reggie: Weekend Work
 
 router.route('/recipes')
   .get(recipes.index)
