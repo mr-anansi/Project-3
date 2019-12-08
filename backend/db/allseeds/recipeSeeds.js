@@ -699,87 +699,87 @@ const recipeSeed = (user) => {
     complexity: 'Easy',
     time: '30 minutes',
     user: user
+  },
+
+  {
+    name: 'Mushroom Rice Bowl',
+    author: 'Zijun Meng',
+    about: 'A delicious veggie staple',
+    ingredients: ['vegetable oil 300g (or any frying oil that you prefer)', 'garlic 1 large head, peeled', 'sea salt', 'garlic oil 40g (see recipe above)', 'water 80g', 'light soy sauce 10ml', 'sherry vinegar 10ml', 'dijon mustard 10g', 'natto 10g (store bought)', 'high quality Japanese sushi rice 200g', 'water 200ml, approximately, for boiling', 'vegetable oil for frying', 'chestnut mushroom 200g, cleaned and stalk removed, quartered ', 'shiitake mushroom 100g, cleaned and stalk removed, quartered', 'egg yolks 2 raw, or 2 fried eggs', 'coriander 6 sprigs'],
+    method: ['To make the garlic oil and crumb, puree the garlic with 100ml oil in a food processor. In a saucepan heat the remaining 200ml oil to 160C, then add the garlic puree. This will lower the heat. Fry the garlic at 140C till lightly golden and crispy. It is best if you occasionally stir the oil with a whisk. Strain the oil, reserving it, and spread out the garlic crumb over kitchen roll to remove any excess fat and sprinkle some sea salt over it. Reserve both the oil and garlic crumbs separately in airtight containers. The extra garlic oil will keep for months in an airtight container in the fridge. Keep the extra garlic crumb in the airtight container in your pantry for up to 2 weeks.', 'Mix all the ingredients for the mushroom cooking liquid in a bowl and reserve.', 'Put the rice in a bowl. Fill up the bowl with cold water and gently rub to wash off the starch. Tip out the water and refill it with fresh water. Repeat this process several times until the water comes out clear. As the rice begins to absorb some water it becomes fragile, so you need to be gentle with it. Put the pot you are going to cook the rice in on to the kitchen scale, then set it to zero. Put the washed rice in the pot and top it with water until it comes up to 400g in total. Once you have the measurement right, cover the pot with lid and cook it on minimum heat until all the water has evaporated. Try the top layer of rice at this stage, it should be completely soft; if it’s not, put the lid back on and cook a few minutes further. Once the rice is cooked, turn off the heat, stir the rice gently with a spoon to get rid of some of the steam and put the lid back on for it to rest a bit further, about 15 minutes.', 'Meanwhile, make the mushrooms. Place a non-stick pan over high heat for a minute, then add 1 dessertspoon of frying oil. The oil should start smoking straight away. Add all the mushrooms to the pan and cook over high heat for about 2 minutes (the mushrooms might seem dry in the beginning but will start to release moisture as they are being cooked). Add the mushroom cooking liquid and boil until the liquid has almost evaporated and the oil separates from the cooking liquid. You need to stir the mushrooms from time to time while the liquid is reducing. Keep an eye on it to prevent the mushrooms from burning.', 'To serve, put some rice in 2 bowls and cover the rice with the cooked mushrooms. Place an egg yolk in the middle of the mushrooms, add finely chopped coriander and sprinkle with garlic crumb around the egg yolk. Finally, add a pinch of salt on top of the yolk and serve.'],
+    image: 'https://i.imgur.com/3bqtDlq.jpg',
+    category: ['Asian', 'Rice'],
+    type: ['Lunch', 'Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '2',
+    complexity: 'Bit more effort',
+    time: '1 hour',
+    user: user
+  },
+
+  {
+    name: 'Red Red Stew and Simple Fried Plantain',
+    author: 'Zoe Adjonyoh',
+    about: 'This dish is so called, I’m told, because it’s coloured red twice – once from the red of the palm oil and a second time from the tomatoes. It’s a great vegan dish eaten all day long in Ghana – an alternative to baked beans for breakfast or as a bean casserole for lunch or dinner, that’s usually eaten with fried plantain',
+    ingredients: ['dried black-eye beans 200g, or 400g tin organic black-eye beans', 'sustainable palm oil 75ml', 'red onion 1, finely diced', 'fresh root ginger 2.5cm piece, finely grated (unpeeled if organic)', 'dried chilli flakes ½ tbsp', 'red scotch bonnet chilli ½, deseeded and diced', 'curry powder ½ tsp', 'chilli powder ½ tbsp', 'chopped or whole tinned plum tomatoes 400g (see note)', 'plum tomatoes 200g, roughly chopped', 'tomato puree 1 tbsp', 'sea salt 1 tsp', 'freshly ground black pepper ½ tsp', 'gari (fermented, dried and ground cassava) for sprinkling', 'ripe plantains 4', 'sustainable palm oil or groundnut oil to shallow-fry', 'red chilli 1, deseeded and diced, to garnish (optional)'],
+    method: ['If using dried beans, rinse and place in a large saucepan, cover with a good depth of water and bring to the boil, then simmer for at least 1 hour or until the beans are tender enough to be squeezed easily between thumb and forefinger. Drain and set aside. If using a tin of beans, just drain, rinse and drain again.', 'Heat the oil in a large, heavy-based saucepan over a low–medium heat until it melts (palm oil has a low smoke point, so be careful not to let it burn), add the onion, ginger, chilli flakes and scotch bonnet and sauté gently for a few minutes until the onion is translucent. Add the curry and chilli powders and stir well.', 'Add all the tomatoes, tomato puree, sea salt and black pepper and stir through. Leave to cook over a medium heat for 45-60 minutes or until the tomatoes start to break down. If you want a smooth sauce, blend with a stick blender at this point.', 'Add the cooked or drained tinned beans, reduce the heat to medium-low and cook for a further 30 minutes, stirring occasionally so that the beans don’t stick to the pan, until the beans are tender and the tartness of tomatoes has dissipated.', 'For the simple fried plantain, using a sharp knife, peel the plantains by cutting the tips off each end and slicing through the skin lengthways (avoid cutting into the flesh), then use your hands to remove the skin. Remove any stringy fibres you may find.', 'I like to cut the plantains in half lengthways and then into several pieces on the diagonal – skinny (1cm) pieces or chunky (2-3cm) pieces work equally well, but simply adjust the quantity of oil and frying time according to the thickness.', 'Pour enough oil into a large frying pan to cover the base by 5mm–1cm – you don’t need to submerge the plantain in oil – and heat over a medium-high heat.', 'Fry the pieces of plantain, in batches, by gently lowering each piece into the hot oil with tongs – be careful not to overcrowd the pan so that you can turn them easily and avoid the oil splattering. They should start to turn golden pretty quickly, and when you can see a golden brown crust forming at the edges of the plantain pieces, gently turn them over and cook until well browned on the other side. Remove from the pan and drain on kitchen paper, keeping the cooked plantain warm while you fry the rest.', 'Check the seasoning of the stew before serving in a bowl with some gari sprinkled on top, along with a side of the plantain.'],
+    image: 'https://i.imgur.com/YBJDYs3.jpg',
+    category: ['Ghanaian'],
+    type: ['Dinner'],
+    dietary: ['Vegan'],
+    serves: '4',
+    complexity: 'Medium',
+    time: '3-4 hours',
+    user: user
+  },
+
+  {
+    name: 'Laab Aubergine',
+    author: 'Wichet Khonpoon',
+    about: 'You can make most of the elements of this dish ahead of time and reheat them as needed.',
+    ingredients: ['aubergines 5', 'mint leaves 20', 'red shallots 2, thinly sliced', 'cooked sticky or jasmine rice to serve', 'palm sugar 40g', 'soy sauce 75ml (preferably gluten-free)', 'water 50ml', 'tamarind water 100ml (see note)', 'lime juice 15ml', 'sticky rice 25g, uncooked', 'jasmine rice 25g, uncooked', 'galangal 1 tsp finely sliced', 'kaffir lime leaves 2', 'lemongrass 1 tsp, finely sliced', 'vegetable oil 500g', 'shallots 100g, thinly sliced', 'dried bird’s eye chillies, 10'],
+    method: ['Run the tip of a sharp knife all the way from top to bottom of the aubergines. Grill the aubergines till they are soft – do not worry if the skins are burnt, this will add smoky flavour. Once they are ready, remove the aubergines from the grill and place them in a deep bowl and cover with clingfilm for 10 minutes. When the skin has softened and they’re cool enough to handle, peel off the skin.', 'For the sauce, heat the palm sugar, soy sauce, water and tamarind water on medium heat. Bring the mixture to boil, then remove it from the heat to cool a little and add the lime juice. The sauce should taste sour, salty and a little sweet.', 'For the roasted ground rice, dry fry the sticky rice and jasmine rice on a very low heat for 10 minutes then add the galangal, kaffir lime leaves and lemongrass. Keep stirring till all the herbs and rice turn golden. Leave to cool then grind to fine powder.', 'For the crispy shallots and chillies, heat the oil to a medium heat. To test if the oil is ready, drop a small piece of shallot into the oil. If it floats and does not burn immediately, that means it’s ready. Gently sprinkle the sliced shallots into the heated oil, add a pinch of salt, and keep stirring until it all becomes golden. Use a slotted spoon to remove the shallots from the oil and spread them on kitchen roll to drain. In the same oil, add the bird’s eye chillies and keep stirring. It will take just 30 seconds to crisp the chillies, then remove them to the kitchen roll.', 'To serve, if you prepared the aubergines and sauce in advance, reheat the aubergines under the grill and reheat the sauce. Cut each aubergine into 6 chunks, place them on a shallow plate and dress with all the tamarind sauce. Crush half of the crispy chillies, then sprinkle on top of aubergines. Tear the mint and sprinkle over aubergines. Sprinkle with the raw sliced red shallot. Sprinkle over all the ground rice powder, then top with the crispy fried shallots and remaining fried chilli. Serve with sticky rice or jasmine rice.', 'Note To make tamarind water, combine 100g tamarind pods with 500ml water and boil for 5 minutes. Leave to cool, then squeeze the tamarind for 5 minutes to extract the flavour. Strain the water, discard the tamarind seed and fibre, and freeze any juice you don’t use.'],
+    image: 'https://i.imgur.com/sAAYpNE.jpg',
+    category: ['Asian'],
+    type: ['Dinner'],
+    dietary: ['Vegan'],
+    serves: '5',
+    complexity: 'Medium',
+    time: '1 hour',
+    user: user
+  },
+
+  {
+    name: 'Mapo Tofu',
+    author: 'Fuchsia Dunlop',
+    about: 'Mapo tofu is one of the best-loved dishes of the Sichuanese capital Chengdu. Vegetarians find this version addictive: one friend of mine has been cooking it every week since I first taught her the recipe some 10 years ago. In Sichuan, they use garlic leaves (suan miao) rather than baby leeks, but as they are hard to find, tender young leeks make a good substitute, as do spring onion greens. This dish is best made with the tenderest tofu that will hold its shape when cut into cubes.',
+    ingredients: ['plain white tofu, 500-600g', 'salt', 'baby leeks or spring onions 4, green parts only', 'cooking oil 4 tbsp', 'Sichuan chilli bean paste 2½ tbsp', 'fermented black beans 1 tbsp, rinsed and drained', 'ground red chillies 2 tsp (optional)', 'ginger 1 tbsp, finely chopped', 'garlic 1 tbsp, finely chopped', 'stock or water 100ml', 'ground white pepper ¼ tsp', 'potato flour 2 tsp, mixed with 2 tbsp cold water', 'roasted Sichuan pepper ¼-½ tsp, ground'],
+    method: ['Cut the tofu into 2cm cubes and leave to steep in very hot, lightly salted water while you prepare the other ingredients (do not allow the water to boil or the tofu will become porous and less tender).', 'Slice the baby leeks or spring onion greens at a steep angle into thin “horse ears”.', 'Heat a wok over a high flame. Pour in the cooking oil and swirl it around. Reduce the heat to medium, add the chilli bean paste and stir-fry until the oil is a rich red colour and smells delicious. Next add the black beans and ground chillies (if using) and stir-fry for a few seconds more until you can smell them too. Then do the same with the ginger and garlic. Take care not to overheat the seasonings; you want a thick, fragrant sauce and the secret of this is to let them sizzle gently, allowing the oil to coax out their flavours and aromas.', 'Remove the tofu from the hot water with a perforated spoon, shaking off excess water, and lay it gently in the wok. Push the tofu tenderly with the back of your ladle or wok scoop to mix it into the sauce without breaking it up.', 'Add the stock or water, white pepper and salt to taste and mix gently, again using the back of the scoop so you don’t damage the tofu.', 'Bring to a boil, then simmer for a few minutes to allow the tofu to absorb the flavours of the seasonings. Add the leek slices (if using) and nudge them into the sauce. When they are just tender, add a little of the flour and water mixture and stir gently as the liquid thickens. Repeat once or twice more, until the sauce clings to the seasonings and tofu (don’t add more than you need). If you are using spring onions rather than leeks, add them now and nudge them gently into the sauce.', 'Pour the tofu into a deep bowl. Sprinkle with the ground roasted Sichuan pepper and serve.'],
+    image: 'https://i.imgur.com/dfooOR4.jpg',
+    category: ['Asian'],
+    type: ['Dinner'],
+    dietary: ['Vegan'],
+    serves: '2-3',
+    complexity: 'Easy',
+    time: '1 hour',
+    user: user
+  },
+
+  {
+    name: 'Vegetarian Shawarma',
+    author: 'Anna Jones',
+    about: 'This dish is one I love in late spring and summer, but you can change the vegetables as they come into and out of season. Just be clever when you chop the veg – cut the veg that will cook slowly quite small and the quicker-cooking veg a bit bigger.',
+    ingredients: ['cumin seeds 1 tbsp', 'coriander seeds 1 tbsp', 'baby carrots 400g bunch, scrubbed well', 'olive oil', 'new potatoes 250g', 'cucumber ½', 'lemon 1', 'asparagus 200g, woody ends snapped off', 'flatbreads or round pittas, 4', 'Greek yogurt 100g, or coconut yogurt to keep it dairy-free', 'maple syrup 1 tsp', 'coriander a few sprigs, roughly chopped (stalks and all)', 'unwaxed lemon zest of 1', 'shelled pistachios 50g, roughly chopped'],
+    method: ['Preheat your oven to 220C/gas mark 7. Bash the cumin and coriander in a pestle and mortar until roughly ground. Toss the carrots with a good drizzle of oil, a pinch of salt and pepper and half the cumin and coriander seeds. Transfer to a large roasting tray, cover with foil and roast in the centre of the oven for 10 minutes. Meanwhile, make the yogurt by mixing all the ingredients together with a pinch of salt.', 'After the carrots have had their time, push them to one side of the roasting tray, quarter or halve the potatoes and add to the other side. Drizzle over a bit more oil, and the other half of the cumin and coriander. Toss to mix the potatoes with the spices, put the foil back on and return the tray to the oven for 20 minutes.', 'While the potatoes are roasting, thinly slice the cucumber (I scoop the seeds out), mix it with the juice from half the lemon, a good pinch of salt and pepper and a splash of olive oil, then put to one side.', 'Once the potatoes have had their 20 minutes, remove the tray from the oven, taken off the foil and scatter over the asparagus. Squeeze over the remaining juice of the lemon, drizzle with a little oil and put back into the oven for 10 minutes until the asparagus are beginning to brown.', 'Toast or warm the flatbreads. When you’re ready to eat, take the tray out of the oven and roughly crush the carrots with the back of a fork.', 'Spread some of pistachio yogurt over half of each flatbread and add the carrots, then the potatoes and asparagus. Add a generous pinch of cucumber and fold the warm flatbreads over to envelop everything. Eat straight away.'],
+    image: 'https://i.imgur.com/c5fQ1Zp.jpg',
+    category: ['Middle-Eastern'],
+    type: ['Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '4',
+    complexity: 'Easy',
+    time: '1 hour',
+    user: user
   }
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
 
     // {
     //   name: '',
