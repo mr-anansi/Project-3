@@ -779,87 +779,87 @@ const recipeSeed = (user) => {
     complexity: 'Easy',
     time: '1 hour',
     user: user
+  },
+
+  {
+    name: 'Family Tortilla Bowls',
+    author: 'David Frenkiel and Luise Vindahl',
+    about: 'Great family food that lets kids eat with their hands',
+    ingredients: ['virgin coconut oil or olive oil 1 tbsp ', 'ground cumin 1 tsp', 'ground smoked paprika 1 tsp', 'ground coriander 1 tsp ', 'chilli flakes ½ tsp (optional)', 'red pepper 1, seeds removed and finely chopped', 'tinned tomatoes 800g', 'tomato puree 3 tbsp', 'walnuts 150g, coarsely chopped', 'ripe mango, 1', 'fresh corn cob 1', 'fresh red chilli ½, deseeded', 'fresh coriander 1 large handful (30g), leaves picked', 'extra-virgin olive oil 1 tbsp', 'lime juice of 1, to taste', 'sea salt to taste', 'virgin coconut oil 2 tsp', 'ground cayenne pepper ½ tsp', 'ground cumin ½ tsp', 'sea salt, 1 tsp', 'cashew nuts 125g', 'pure maple syrup 1 tbsp', 'tortilla chips 1 large bag (we prefer organic, GMO-free)', 'ripe avocados 2, stones removed, flesh scooped out', 'red pepper 1, stalk, core and seeds removed', 'limes, 2', 'black beans 1 × 400g tin (or kidney beans), drained and rinsed thoroughly', 'plain thick yogurt 250ml', 'paprika to sprinkle', 'mixed leafy green lettuce 1 bag', 'fresh coriander'],
+    method: ['To make the tomato and walnut sauce, heat the oil in a saucepan and add the cumin, paprika, coriander and chilli (if using). Fry, stirring, until the spices are fragrant, then add the red pepper and cook for a couple of minutes. Add the tinned tomatoes and tomato puree and cook for a further 20 minutes, adjusting the seasoning to taste, then stir in the walnuts. Remove from the heat and set aside.', 'For the mango and corn salsa, cut the mango in half along the stone. Scoop out and dice the flesh. Cut the corn kernels off the cob, finely chop the chilli and roughly chop the coriander. Place all of the ingredients in a bowl and drizzle over the olive oil and lime juice. Season with salt and toss to combine.', 'For the sweet and spicy cashew nuts, heat the coconut oil and spices in a frying pan on medium-high heat. When fragrant, add the nuts and let them toast for a couple of minutes, stirring frequently. Drizzle over the maple syrup, stir and toast for a further 30 seconds, then remove from the heat and set aside.', 'When you’re ready to serve, preheat the oven to 200C/gas mark 6. Scatter tortilla chips on a baking tray and bake for 5 minutes until warm and slightly toasted. Check on them often to make sure they do not burn.', 'Mash the avocado, dice the red pepper, and cut the limes into wedges. Place all the serving elements in bowls on the dinner table and let everyone build their own tortilla bowl.'],
+    image: 'https://i.imgur.com/T53plxm.jpg',
+    category: ['Mexican'],
+    type: ['Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '4',
+    complexity: 'Medium',
+    time: '1-2 hours',
+    user: user
+  },
+
+  {
+    name: 'Caponata',
+    author: 'Simon Hopkinson',
+    about: 'A healthy, hearty meal',
+    ingredients: ['aubergines 2 large (the fat, purple and white Sicilian ones if possible)', 'salt', 'olive oil, 5-6tbsp', 'red onion 1 large, peeled, halved and thickly slice', 'celery sticks 4, peeled, halved lengthways and sliced into small lengths', 'yellow pepper 1 small, halved, deseeded and thickly sliced', 'red pepper 1 small, halved, deseeded and thickly sliced', 'water 100ml', 'red wine vinegar 3 tbsp', 'sugar 1 rounded tbsp', 'tomato puree 2 tsp', 'raisins 1 heaped tbsp', 'green olives about 12, pitted and halved', 'capers 1 heaped tbsp, drained and lightly squeezed dry', 'freshly ground white pepper', 'pine nuts 1 heaped tbsp'],
+    method: ['Peel the aubergines and thickly slice into half rounds. Spread them out on a kitchen surface and sprinkle with enough salt to season generously. Gather them up in your hands, mingle together in a colander, place upon a plate and leave to exude their juices for at least 40 minutes.', 'Meanwhile, using a frying pan, and in four separate stages, quietly stew the onion, celery, yellow and red peppers separately, each in 1 tbsp of the oil, until softened and only just coloured. For the fifth stage, wash and dry the aubergines and similarly soften in olive oil. Place all five vegetables in a bowl and mingle together.', 'Now add the water, vinegar, sugar, tomato puree and raisins to the frying pan. Bring to the boil and simmer for several minutes until lightly thickened and the raisins have plumped somewhat. Stir in the olives and capers and tip the entire contents of the pan into the bowl of vegetables. Gently heat the pine nuts in a dry frying pan until golden brown. Add them to the caponata, season with pepper to taste and check for salt. Lubricate with a little more olive oil if you think it warrants it and serve at room temperature.'],
+    image: 'https://i.imgur.com/3zuIG7k.jpg',
+    category: ['Healthy', 'Italian'],
+    type: ['Lunch, Dinner'],
+    dietary: ['Vegan'],
+    serves: '4',
+    complexity: 'Easy',
+    time: '1 hour',
+    user: user
+  },
+
+  {
+    name: 'Salad of Beans, Peas and Cheese',
+    author: 'Nigel Slater',
+    about: 'Among the charcoal and garlic of midsummer’s more robust cooking, a quiet salad of palest green can come as a breath of calm. Last June, as thousands joined hands around Stonehenge in celebration of the summer solstice, I put together a salad of cool notes – a bowl of appropriate gentility and quiet harmony.',
+    ingredients: ['shelled broad beans, 250g', 'shelled peas 400g', 'ciabatta 4 small slices', 'olive oil a little', 'salad leaves 4 generous handfuls', 'mint leaves a good handful', 'vegetarian hard cheese 8og, in thin shavings', 'lemon, 1', 'olive oil, 4tbsp', 'balsamic vinegar, 1tsp'],
+    method: ['Put a pan of water on to boil, then salt it lightly. Cook the beans in this, drain them, then rinse in cold water. Put more water on and cook the peas. Drain them and mix with the beans. Both peas and beans will need barely more than a couple of minutes if they are small and sweet.', 'Make the dressing by dissolving a good pinch of salt in the juice of the lemon, then using a fork to beat in the olive oil, balsamic vinegar and a grinding of black pepper (alternatively put all the ingredients in a screw-top jar and shake).', 'Toast the slices of bread on both sides and tear them into short pieces. Drizzle a little olive oil on to each one, then shake over a light dusting of sea salt.', 'Toss the salad leaves and mint in the dressing, then add the peas, beans and cheese shavings. Tuck in the toasted ciabatta and serve.'],
+    image: 'https://i.imgur.com/ac16Z0r.jpg',
+    category: ['Salad'],
+    type: ['Lunch', 'Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '4',
+    complexity: 'Easy',
+    time: '30 minutes',
+    user: user
+  },
+
+  {
+    name: 'Bucatini with Spinach and Courgette',
+    author: 'Nigel Slater',
+    about: '',
+    ingredients: ['125g sugar snap peas', '200g bucatini (or other thin pasta)', '1 large courgette', '30g butter', '2bsp Olive oil', 'Small bunch, parsley', '25ml double cream', 'lemon', 'Vegetarian hard cheese'],
+    method: ['Rinse 200g spinach, removing any tough stems. While the leaves are still wet, cook them for a minute or two in a pan with a tight lid, so they soften in their own steam. If you are worried about them sticking, add a tablespoon or two of water. As soon as the spinach has wilted, plunge it into a bowl of iced water to stop it cooking, squeeze it dry with your hands, then roughly chop it. Bring a pan of water to the boil then add 125g sugar snap peas, let them cook for 2 minutes then remove and drain them.', 'Bring a large pan of water to the boil, salt it, then cook 200g bucatini or other thin pasta for about 9 minutes till just tender, and drain.', 'Cut 1 large courgette into thick slices and then into quarters. Melt 30g butter in a shallow pan then add 2 tbsp olive oil. Fry the courgette for 3 or 4 minutes until it starts to colour, then add the spinach leaves and the cooked sugar snaps. Roughly chop a small bunch of parsley and add it to the vegetables.', 'Pour 25ml double cream into the vegetables and combine it gently. Let it simmer for a minute then pour it over the drained pasta and toss together gently. Garnish with lemon and pass round a bowl of grated vegetarian Italian hard cheese.'],
+    image: 'https://i.imgur.com/j48p1m3.jpg',
+    category: ['Pasta'],
+    type: ['Lunch', 'Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '2',
+    complexity: 'Easy',
+    time: '30 minutes',
+    user: user
+  },
+
+  {
+    name: 'Root Vegetable Pies',
+    author: 'Yotam Ottolenghi',
+    about: 'The filling is also delicious on its own, as a vegetarian rice topping. These are also great reheated and eaten the next day, so don’t be afraid to make the whole batch if there aren’t six of you to eat them first time around.',
+    ingredients: ['plain flour 240g, plus extra for dusting', 'unsalted butter 190g, fridge-cold, diced', 'soured cream 60g', 'olive oil 3 tbsp', 'curry powder 1 tsp', 'caraway seeds 2 tsp', 'black mustard seeds 2 tsp', 'ground cardamom ½ tsp', 'onion 1 large (180g), roughly chopped', 'green chilli 1, deseeded and finely chopped', 'thyme leaves 1 tbsp, chopped', 'garlic 2 cloves, crushed', 'baking potato 1 small (160g), peeled and cut into 2cm dice', 'carrot 1 medium (100g), peeled and cut into 2cm dice', 'parsnip 1 medium (100g), peeled and cut into 2cm dice ', 'vegetable stock 250ml', 'butternut squash ½ small (250g), peeled and cut into 2cm dice', 'caster sugar ¼ tsp', 'mature cheddar 120g (vegetarian cheddar is readily available), coarsely grated', 'coriander 15g, chopped', 'egg 1, beaten', 'salt and black pepper'],
+    method: ['Place the flour, butter and soured cream in a food processor, with 1 teaspoon of salt, and work until the mixture comes together. Transfer to a lightly floured work surface and gently knead for 1 minute, adding a little flour if needed, until soft and malleable. Wrap in clingfilm and leave to rest in the fridge for 30 minutes.', 'Place a large lidded sauté pan on medium–high heat. Add 2 tablespoons of oil and, once hot, add the curry powder, caraway seeds, mustard seeds and cardamom. Cook for just a few seconds, stirring and making sure the spices don’t burn, before adding the onion, chilli and thyme. Cook for another 4 minutes, add the garlic and cook for another minute, stirring. Add the potato, carrot and parsnip, stir and then pour in the stock. Reduce the heat to medium, cover and cook for 5 minutes. Add the squash, sugar, ¾ teaspoon of salt and a generous grind of black pepper, and continue to simmer, covered, for 10 minutes, stirring from time to time, until the vegetables are cooked through and most of the liquid has evaporated: you should have about 3 tablespoons of liquid left; add a little water if needed. Uncover, remove from the heat and set aside to cool totally before stirring in the cheese and coriander.', 'Preheat the oven to 200C/gas mark 6.', 'Use the remaining oil to brush the sides and bases of an extra-large 6-hole muffin tin (each hole should be 6cm wide and 4cm deep). Line the bases with circles of baking parchment and place the tin in the fridge. Roll out the pastry 2–3mm thick, cut out 6 circles, 14cm in diameter, and press down into the tin. Trim the edges, reusing the spare pastry to roll out for a second time. Cut out 6 more circles, 8cm in diameter – these will form lids.', 'Fill each pie with about 120g of filling, brush the rims with egg and place the lids on top. Pinch the edges together securely, brush the lids with the remaining egg and prick each pie with a fork in a few places. Allow to rest in the fridge for 10 minutes. Place in the oven and bake for 30–35 minutes, until golden-brown. Remove from the oven and set aside for 5 minutes before serving warm or at room temperature.'],
+    image: 'https://i.imgur.com/q3v3R3Y.jpg',
+    category: ['Baking', 'Middle-Eastern'],
+    type: ['Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '6',
+    complexity: 'Bit more effort',
+    time: '3 hours',
+    user: user
   }
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
 
     // {
     //   name: '',
