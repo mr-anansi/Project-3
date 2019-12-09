@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import emailjs from 'emailjs-com'
+import { UserContext } from './UserContext'
 
 
 const SingleRecipe = (props) => {
   const [data, setData] = useState({ ingredients: [], method: [] })
+
+  const { userInfo } = useContext(UserContext)
 
   useEffect(() => {
     const id = props.match.params.id
@@ -19,10 +22,11 @@ const SingleRecipe = (props) => {
     return '<li>' + ingredient + '</li>'
   }).join('')
 
+
   const handleSubmit = () => {
     const templateParams = {
-      email_to: 'riada125@hotmail.com',
-      to_name: 'Michael',
+      email_to: userInfo.email,
+      to_name: userInfo.username,
       author_name: data.author,
       recipe_name: data.name,
       message_html: shoppingList
@@ -35,6 +39,9 @@ const SingleRecipe = (props) => {
       })
   }
 
+
+
+  
   console.log(data.ingredients)
   return (
     <div className="section">
@@ -70,7 +77,5 @@ const SingleRecipe = (props) => {
     </div>
   )
 }
-
-
 
 export default SingleRecipe
