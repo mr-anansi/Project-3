@@ -1099,71 +1099,87 @@ const recipeSeed = (user) => {
     complexity: 'Easy',
     time: '2 hours',
     user: user
+  },
+
+  {
+    name: 'Pork Chops with Apple and Fennel',
+    author: 'Blanche Vaughan',
+    about: 'A very French style dish, rich with butter and cream but sharp with tangy apple and mustard. Try to find good quality pork loin chops with plenty of fat, which keeps the meat succulent.',
+    ingredients: ['butter 10g', 'oil 1 tbsp', 'pork chops 400g', 'sea salt and pepper', 'fennel 200g, sliced thinly', 'apple 200g, peeled, cored and cut into eighths', 'thyme a few sprigs, leaves picked from the stalk', 'cream 2 tbsp', 'dijon mustard 1 tbsp'],
+    method: ['In a large, heavy bottomed frying pan on a fairly high heat, melt the butter and oil until it starts to foam. Put in the chops, season well with salt and pepper and cook for a few minutes on each side, including the skin side, until they are nicely brown and the flesh feels firm when you press it.', 'Remove to a plate and cover with foil to keep warm.', 'Turn the heat down to medium. Add the fennel, apple and thyme leaves to the pan and another pinch of salt and stir well to coat with the remaining butter. Allow this to cook for about 5 minutes so it begins to soften and lightly colour. Add the cream and mustard and about 100ml of water and continue to cook for another few minutes. The fennel and apple should have become soft and slightly brown and saucy. Return the chops to the pan and pour over any liquid from their resting plate.', 'Serve straight from the pan with the fennel, apple and juices spooned over and mustard on the table.'],
+    image: 'https://i.imgur.com/hmRfNCM.jpg',
+    category: ['One-pot', 'Comfort food'],
+    type: ['Dinner'],
+    dietary: [''],
+    serves: '2',
+    complexity: 'Easy',
+    time: '30 minutes',
+    user: user
+  },
+
+  {
+    name: 'Lentils, Sausages and Pecorino',
+    author: 'Nigel Slater',
+    about: 'A comforting midweek staple',
+    ingredients: ['6 herby sausages', '2 cloves of garlic', '1 litre of chicken or vegetable stock', '400g small brown or green lentils', '50g Rocket leaves', '75g Pecorino'],
+    method: ['Warm a couple of glugs of olive oil in a deepish casserole, then add six fat, herby sausages and brown them evenly on all sides. Peel and finely slice two cloves of garlic, add to the pan and cook for a minute or two until they turn pale gold. Pour in a litre of stock, vegetable or chicken, and bring to the boil. Tip in 400g of small brown or green lentils (I used le puy), let the stock return to the boil, then lower the heat and leave to simmer, partially covered with a lid, for about 35-40 minutes until the lentils are tender but just short of soft. Correct the seasoning with salt and black pepper.', 'Blitz 50g of rocket leaves and 75g of pecorino together in a food processor until you have coarse, green and white crumbs. Spoon the lentils and sausages on to deep plates, then scatter the rocket and pecorino over the top, letting the cheese soften slightly with the heat of the lentils.', 'The trick: I suggest checking the lentils every five minutes throughout their cooking time. Lentils vary in size, variety and, it has to be said, age, and take vastly different times to approach tenderness.', 'I prefer to salt them towards the end of the cooking time, as occasionally an early salting seems to toughen them, as it can other dried pulses.', 'The twist: This recipe can be adapted to include thin strips of belly pork instead of sausages.', 'Cut the pork into pencil-thick strips, cook briefly to crisp the fat, then continue as above.'],
+    image: 'https://i.imgur.com/yM8jcP3.jpg',
+    category: ['Weeknight', 'One-pot'],
+    type: ['Dinner'],
+    dietary: [''],
+    serves: '2',
+    complexity: 'Easy',
+    time: '1 hour',
+    user: user
+  },
+
+  {
+    name: 'Squid and Potato Stew',
+    author: 'Margot Henderson',
+    about: 'I discovered this dish in Marcella Hazan’s brilliant book Classic Italian Cooking – she is an inspiration to all cooks. Buy fresh squid of medium size, and ask the fishmonger to clean them if you don’t want the messy job. Cleaning squid can be a bore, with the eyes popping out at you and the ink sacs spurting all over the place. But once you start your attack, it can be satisfying.',
+    ingredients: ['squid 1kg', 'waxy new potatoes 1kg', 'olive oil 125ml', 'garlic 8 cloves, chopped', 'dried red chilli flakes 1 tsp', 'fresh flat-leaf parsley a handful, chopped', 'white wine 175ml', 'tinned chopped tomatoes 100g (¼ of a tin)', 'water 100ml'],
+    method: ['Clean the squid. Cut the bodies into 1½cm wide strips and leave the tentacles whole, unless they are very large. Peel the potatoes and cut into 3-4cm chunks.', 'Heat the olive oil in a wide, heavy-bottomed pan and add the garlic, chilli and parsley. Cook for a couple of minutes, then turn up the heat and add the squid. Once it is sizzling away, add the white wine and let it bubble for a minute to reduce.', 'Add the tomatoes and potatoes and pour in the water. Turn the heat down and simmer gently with the lid on for about 40 minutes, stirring occasionally, until the potatoes are cooked through.'],
+    image: 'https://i.imgur.com/sCuwqhb.jpg',
+    category: ['Seafood', 'One-pot'],
+    type: ['Dinner'],
+    dietary: [''],
+    serves: '4',
+    complexity: 'Medium',
+    time: '1 hour',
+    user: user
+  },
+
+  {
+    name: 'Red Orzo Risotto with Goats Cheese',
+    author: 'Lindsey Bareham',
+    about: 'Orzo is perfect for minestrone-type soups. It’s great, too, for faux risotto, saving time and effort, yet behaving beautifully and giving a silky mouthful with a creamy finish. It takes about 10 minutes to cook in boiling, salted water, almost the amount of time you need to make a chunky red pepper, red onion and tomato sofrito. It is cooked in olive oil and flavoured with saffron, garlic and flat-leaf parsley. It could be made with freshly roasted peppers, preferably the long, pointed Romano variety, or you could cheat, as I did, and use roasted piquillo peppers in a jar.',
+    ingredients: ['orzo pasta 250g', 'salt', 'olive oil 2 tbsp', 'red onion 1', 'garlic 1 clove, large', 'roasted or chargrilled Romano or piquillo peppers 150g', 'saffron stamens a pinch', 'vine tomatoes 4 (200g)', 'olives 70g, pitted dry black (a Crespo sachet)', 'flat-leaf parsley leaves 10g', 'soft goat’s cheese (Coeur de Lion, Chavroux) 100g'],
+    method: ['Cook the orzo in plenty of boiling salted water in a spacious, lidded sauté or frying pan, stirring once to prevent sticking, for about 10 minutes until just tender. Drain, but reserve a mugful of the cooking water. Tip the pasta into a warmed bowl, toss with 1 tablespoon of the olive oil and 2 tablespoons of the cooking water, then cover with a stretch of clingfilm.', 'Trim, halve and slice the onion. Heat the other tablespoon of olive oil in the pan and add in the onion. Cook, stirring often, for 6 or 7 minutes. Peel the garlic and crush it to a paste with a pinch of salt. Peel the roasted Romano peppers, if using. Slice them or the piquillos into ribbons and chop a few times.', 'Stir the garlic into the onion, add 2 tablespoons of the orzo cooking water, cover, reduce the heat and cook for 10 minutes.', 'Add the saffron and mix it in, followed by the peppers. Quarter the tomatoes and blitz them into passata. Pour it into the pan. Simmer for a few minutes until juicy but not too wet. Mix in the drained pasta and turn off the heat. Halve the olives round their middles and chop the parsley leaves. Stir both into the pasta. Serve with a few teaspoons of goat’s cheese.'],
+    image: 'https://i.imgur.com/hbketrD.jpg',
+    category: ['Pasta', 'One-pot'],
+    type: ['Dinner'],
+    dietary: ['Vegetarian'],
+    serves: '3-4',
+    complexity: 'Easy',
+    time: '1 hour',
+    user: user
+  },
+
+  {
+    name: 'Steamed Shellfish',
+    author: 'J Sheekey',
+    about: '',
+    ingredients: ['live cockles 200g', 'live mussels 400g', 'live clams 200g', 'extra virgin olive oil 30ml', 'onion 1 small, peeled and finely chopped', 'garlic 1 clove, peeled and crushed', 'thyme 1 sprig', 'white wine 125ml', 'double cream 100ml', 'white crabmeat 100g', 'brown crabmeat 50g', 'flat-leaf parsley ½ small bunch, chopped', 'tarragon 4 sprigs, leaves removed, chopped', 'dill 4 sprigs, chopped', 'salt and freshly ground black pepper'],
+    method: ['Wash the cockles, mussels and clams in cold water. Scrub with a brush if necessary and remove the beards from the mussels. If any of the shells are open, pinch them a few times. If they do not close, discard them.', 'In a large heavy-bottomed saucepan (you may need to do this in 2 batches), add olive oil and gently cook the onion, garlic and thyme until soft. Add the cockles, mussels, clams and white wine. Cover with a lid and cook on a high heat, stirring occasionally until the shells have opened. Discard any that are not open. Add cream, crab and chopped herbs and stir. Bring to the boil. Season. Serve immediately from the pan.'],
+    image: 'https://i.imgur.com/33ag35U.jpg',
+    category: ['Seafood', 'One-pot'],
+    type: ['Dinner', 'Lunch'],
+    dietary: [''],
+    serves: '4',
+    complexity: 'Easy',
+    time: '30 minutes',
+    user: user
   }
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    // },
-
-    // {
-    //   name: '',
-    //   author: '',
-    //   about: '',
-    //   ingredients: [''],
-    //   method: [''],
-    //   image: '',
-    //   category: [''],
-    //   type: [''],
-    //   dietary: [''],
-    //   serves: '',
-    //   complexity: '',
-    //   time: '',
-    //   user: user
-    //}
   ]
 }
 
