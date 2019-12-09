@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import emailjs from 'emailjs-com'
+
 
 const SingleRecipe = (props) => {
   const [data, setData] = useState({ ingredients: [], method: [] })
@@ -13,6 +15,25 @@ const SingleRecipe = (props) => {
   }, [])
 
 
+  const shoppingList = data.ingredients.map(function (ingredient) {
+    return '<li>' + ingredient + '</li>'
+  }).join('')
+
+  const handleSubmit = () => {
+    const templateParams = {
+      email_to: 'riada125@hotmail.com',
+      to_name: 'Michael',
+      author_name: data.author,
+      recipe_name: data.name,
+      message_html: shoppingList
+    }
+    emailjs.send('gmail', 'template_WaFbUNl4', templateParams, 'user_phelnwXOqjMmZRbyROmsu')
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text)
+      }, function (error) {
+        console.log('FAILED...', error)
+      })
+  }
 
   console.log(data.ingredients)
   return (
@@ -31,7 +52,10 @@ const SingleRecipe = (props) => {
                 <li key={id}>{ingredient}</li>
               )}
             </ul>
-            <br/>
+            <button className="button is-success" onClick={(e) => handleSubmit(e)}>
+              Email me this Recipe!
+            </button>
+            <br />
             <ol>
               {data.method.map((ingredient, id) =>
                 <li key={id}>{ingredient}</li>

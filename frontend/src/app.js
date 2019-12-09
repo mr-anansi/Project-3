@@ -14,6 +14,8 @@ import Navbar from './components/Navbar'
 import Login from './components/login'
 import Recipes from './components/recipes'
 import SingleRecipe from './components/singlerecipe'
+
+
 import Register from './components/Register'
 import Profile from './components/Profile'
 import Logout from './components/LogOut'

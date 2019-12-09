@@ -82,8 +82,5 @@ const Login = (props) => {
       </form>
     </div>
   </section>
-
-
 }
-
 export default Login
