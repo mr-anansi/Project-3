@@ -11,7 +11,7 @@ const restaurantSchema = new mongoose.Schema({
   location: { type: String, required: true },
   image: { type: [String], required: true },
   category: { type: [String], required: true },
-  cuisine: { type: String, required: true },
+  cuisine: { type: String },
   type: { type: [String], required: true },
   dietary: { type: [String] },
   postcode: { type: [String], required: true },
