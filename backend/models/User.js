@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
 userSchema.plugin(require('mongoose-unique-validator'))
 
 //This is the virtual method to check that the password confirmation field has been provided. It sets a virutal schema field, then runs a function.
-//In the function created it checks to see that the confirmatino field has been filled.
+//In the function created it checks to see that the confirmation field has been filled.
 
 userSchema
   .virtual('passwordConfirmation')

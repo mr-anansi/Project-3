@@ -16,13 +16,7 @@ const EditProfile = (props) => {
     if (userInfo) {
       setData(userInfo)
     } return
-    // getUserDetails()
-    // console.log('running')
   }, [userInfo])
-
-  // const getUserDetails = () => {
-
-  // }
 
   const sendUpdates = () => {
     axios.put('/api/profile/edit', data)
@@ -34,10 +28,9 @@ const EditProfile = (props) => {
   }
 
   const handleChange = (e) => {
-    e.value = e.target.value
+    // e.value = e.target.value
     setData({ ...data, [e.target.name]: e.target.value })
     setErrors({})
-    console.log(e.target.value)
   }
 
   const handleSubmit = (e) => {
