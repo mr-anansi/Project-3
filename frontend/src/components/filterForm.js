@@ -4,19 +4,17 @@ import Restaurants from './Restaurants'
 import axios from 'axios'
 import { filter } from 'minimatch'
 
-const initialData = {
-  tags: [], 
-  selectedTags: [],
-  filteredRestaurants: [], 
-  e: []
-}
+// const initialData = {
+//   tags: [], 
+//   selectedTags: [],
+//   filteredRestaurants: [], 
+//   e: []
+// }
 
-const FilteredForm = ({ Restaurants }) => {
-
-  const [form, updateForm] = useState(initialData)
+const FilteredForm = ({ Restaurants, updateRestaurants }) => {
 
   const filterOptions = Restaurants.map((restaurant) => {
-    return restaurant.category 	
+    return restaurant.category
   })
   console.log(filterOptions)
   // this is an array of arrays of the restaurants categories 
@@ -35,31 +33,21 @@ const FilteredForm = ({ Restaurants }) => {
   // gives the values in the multiselect 
 
  
-  function handleSelect(e) {
-    // listen for select of a value 
-    // then filter the restaurants based on this selected value 
-    // map over selected options and map over data to look for the match 
-    //.includes(e.target.value)
-    // map through the options selected then for each map through the data to match - start with one?
-    // push matching restaurants into filtered restaurants 
-    if (e === null) 
-      return
-    e.map((type) => {
-      console.log(type.value)
-      if (type.value === 'Pasta') 
-        console.log('hello')
-      // then maybe have a function to display filtered restaurants
-    })
+  function handleSelect(selectedItems) {
+    if (selectedItems === null) return updateRestaurants([])
+    updateRestaurants([...selectedItems])
   }
+
+  // could do axios.get(api/restaurants?category=vegetarian) - ${type.value}
 	
-  function filteredRestaurants() {
-		let category = 
-  }
 	
-  const tag = allTags.map((tag) => {
-			 console.log(tag)
-  })
-  
+  // axios.get(/api/restaurants/${category})
+	
+
+  // const tag = allTags.map((tag) => {
+  //   console.log(tag)
+  // })
+
 
   // function handleSubmit(event) {
   //   event.preventDefault()
@@ -71,7 +59,6 @@ const FilteredForm = ({ Restaurants }) => {
   //     // logic needed for if the tag matches any restaurant categories, show those cards 
   //   })
   // }
-	
 
   return <Select
     isMulti
