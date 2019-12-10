@@ -4,77 +4,88 @@ import axios from 'axios'
 import CategoryCard from './CategoryCard'
 import RecipeCard from './recipecard'
 import { UserContext } from './UserContext'
+import FilteredRecipeForm from './FilteredRecipeForm'
+import { filter } from 'minimatch'
+import Select from 'react-select'
 
 const Recipes = () => {
-  const [data, setData] = useState([])
+  const [initialData, setInitialData] = useState([])
+  const [filteredData, setFilteredData] = useState([])
 
   const { userInfo } = useContext(UserContext)
 
+
+
+  //***********************Fetches all Recipes from the API */
   useEffect(() => {
     axios.get('/api/recipes')
-      .then(response => setData(response.data))
+      .then(response => {
+        setInitialData(response.data)
+        setFilteredData([...response.data])
+      })
       .catch(error => console.log(error))
   }, [])
 
 
-
-
-
-
-  let selectedCategory = 'Vegan'
-
-
-  let specialData = data
-
-
-
-  // finds all the categories to be added to the page as clickable links
-  const createTags = data.map((recipes) => {
-    return recipes.category
-  })
-  const tagsArray = createTags.flat()
-  const allTags = [...new Set(tagsArray)]
-
-
-  // maps through the data and returns all the objects that comtain a specific Category
-  const filteredData = data.map((recipes) => {
-    return recipes.category.filter((tag) => {
-      return tag.includes(selectedCategory)
+  function filterRecipes(tags) {
+    if (tags.length === 0) {
+      return setFilteredData([...initialData])
+    }
+    const types = tags.map(item => item.value)
+    const recipes = filteredData.filter((recipe) => {
+      return recipe.category.some(item => types.includes(item))
     })
-  })
-
-  // maps through the filtered data and returns the whole objects that contain a specific category and otherwise a null value at the remaining indexes
-  const filteredTags = filteredData.map((tags) => {
-    return (tags.includes(selectedCategory) ? data : null)
-  })
-
-  // creates a variable that only returns the objects that have the chosen category
-  const newData = filteredTags.filter(Boolean)
-
-
-
-
-
-  const filteredRecipes = data.map((recipes) => {
-    return Object.values(recipes).flat()
-  })
-  const handleSubmit = () => {
-    console.log(newData)
+    setFilteredData(recipes)
+    console.log(recipes)
   }
+
+
+
+
+  // let selectedCategory = data
+
+
+  // function handleSelect(selectedTag) {
+  //   if (selectedTag === null)
+  //     return
+  //   selectedTag.map((type) => {
+  //     return selectedCategory = type.value
+
+  //   })
+  // }
+
+
+  // function filterData() {
+  //   setData(data.filter((recipe) => {
+  //     return recipe.category.includes(selectedCategory)
+  //   }))
+  // }
+
+  // const handleSubmit = () => {
+  //   filterData()
+  //   console.log(selectedCategory)
+  // }
+
+
 
 
   return <div className="section">
     <div className="container">
-      <button className="button is-success" onClick={(e) => handleSubmit(e)}>
+      {/* <button className="button is-success" onClick={(e) => handleSubmit(e)}>
         TEST!
-      </button>
+      </button> */}
       <div>
-        {allTags.map((categories, i) => {
+        <FilteredRecipeForm
+          Recipes={filteredData}
+          updateRecipes={filterRecipes}
+        />
+        {/* <FilteredRecipeForm recipe={data} /> */}
+        {/* {allTags.map((categories, i) => {
           return <CategoryCard key={i} categories={categories} />
-        })}
+        })} */}
       </div>
       <div className="columns is-mobile is-multiline">
-        {data.map((results, i) => {
+        {filteredData.map((results, i) => {
           return <RecipeCard key={i} results={results} />
         })}
       </div>

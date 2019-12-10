@@ -6,9 +6,14 @@ import { UserContext } from './UserContext'
 
 const SingleRecipe = (props) => {
   const [data, setData] = useState({ ingredients: [], method: [] })
+<<<<<<< Updated upstream
 
   const { userInfo } = useContext(UserContext)
 
+=======
+  const { userInfo } = useContext(UserContext)
+	
+>>>>>>> Stashed changes
   useEffect(() => {
     const id = props.match.params.id
     axios.get(`/api/recipes/${id}`)
