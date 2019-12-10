@@ -50,7 +50,7 @@ const Profile = () => {
         </div>
         <div>
           <div className="subtitle">Quicklinks</div>
-          <Link className="tag is-info is-light" to='/'>Edit Profile</Link>
+          <Link className="tag is-info is-light" to='/profile/edit'>Edit Profile</Link>
           <Link className="tag is-info is-light" to='/recipes'>Recipes</Link>
           <Link className="tag is-info is-light" to='/restaurants'>Restaurants</Link>
           <Link className="tag is-info is-light" to='/'>Food Focus</Link>

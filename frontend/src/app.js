@@ -18,7 +18,8 @@ import SingleRecipe from './components/singlerecipe'
 
 import Register from './components/Register'
 import Profile from './components/Profile'
-import Logout from './components/LogOut'
+import EditProfile from './components/EditProfile'
+import Logout from './components/Logout'
 import { UserContext } from './components/UserContext'
 
 const App = () => {
@@ -72,6 +73,7 @@ const App = () => {
         {/* <SecureRoute path="/recipes/new" component={NewRecipe} />
       <SecureRoute path="/recipes/edit/:id" component={EditRecipe} /> */}
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/profile/edit" component={EditProfile} />
       </Switch>
     </UserContext.Provider>
   </BrowserRouter>)

@@ -68,9 +68,9 @@ const Navbar = () => {
           </Link>}
           {/* {Auth.isAuthorized() &&  */}
           {/* Added a logout path */}
-          <Link className="navbar-item" id="logout" to="/logout">
+          {userInfo && <Link className="navbar-item" id="logout" to="/logout">
             Logout
-          </Link>
+          </Link>}
         </div>
       </div>
       <div className="navbar-item"></div>

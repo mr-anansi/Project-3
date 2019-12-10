@@ -24,6 +24,9 @@ router.route('/restaurants/:id')
 router.route('/profile')
   .get(secureRoute, users.show)
 
+router.route('/profile/edit')
+  .put(secureRoute, users.edit)
+
 router.route('/register')
   .post(users.register)
 

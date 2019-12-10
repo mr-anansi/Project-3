@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const Register = (props) => {
   const [data, setData] = useState({})
-  const [errors, setErrors] = useState('')
+  const [errors, setErrors] = useState({})
   // const [formReady, setFormReady] = useState(false)
 
   //Reggie: This commented out code is on queue to be removed as a code reduction has been managed.
@@ -32,11 +32,12 @@ const Register = (props) => {
     // } else return
   }
 
-  //Reggie: This adds the data to the state. It also clears the errors to an empty string thereby rendering it false
+  //Reggie: This adds the data to the state. I've changed the errors setting work in better practice. It's initialised to an object instead of
+  // a string (the quotation marks) and then when a change is made, its replaced with an empty object
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })
-    setErrors({ message: '' })
+    setErrors({})
     // console.log(errors.email.message)
   }
 
