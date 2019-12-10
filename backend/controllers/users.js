@@ -43,6 +43,17 @@ function show(req, res) {
     })
 }
 
+// function edit(req, res) {
+//   User
+//     .findById(req.currentUser)
+//     .then(user) {
+//       if (!user) {
+//         return res.status(401).json({ message: 'There\'s a problem with this user...' })
+//       }
+
+//     }
+// }
+
 module.exports = {
   register,
   login,

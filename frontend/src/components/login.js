@@ -21,7 +21,7 @@ const Login = (props) => {
   /* This following line is the first intro of the useContext hook. In essence it allows for us to share info across the whole code plain.
   It's first wrapped around all the components that will need the data and then it is referenced in each by declaring the variable linked to 
   state at the parent level. */
-  const { userInfo, setUserInfo } = useContext(UserContext)
+  const { setUserInfo } = useContext(UserContext)
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })

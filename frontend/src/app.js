@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-// import axios from 'axios'
-// import Auth from './lib/auth'
+import axios from 'axios'
+import Auth from './lib/auth'
 
 import 'bulma'
 import '../src/style.scss'
@@ -32,18 +32,25 @@ const App = () => {
   change. */
   const sharedInfo = useMemo(() => ({ userInfo, setUserInfo }), [userInfo, setUserInfo])
 
-  // useEffect(() => {
-  //   console.log('running', Auth.isAuthorized())
-  //   console.log(profile)
-  //   axios.get('/api/profile', {
-  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
-  //   })
-  //     .then(response => {
-  //       setUserInfo(response.data)
-  //     })
-  //     .catch(error => console.log(error))
-  //   // .then(console.log(data))
-  // }, [profile])
+  useEffect(() => {
+    console.log('running')
+    // console.log(Auth.getToken())
+    if (Auth.isAuthorized()) {
+      console.log('setting user')
+      axios.get('/api/profile', {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      })
+        .then(response => {
+          setUserInfo(response.data.user)
+          // console.log(response.data)
+        })
+        .catch(error => {
+          console.log(error)
+          setUserInfo(null)
+        })
+    } else return
+    // .then(console.log(data))
+  }, [])
 
   //Reggie: Logout and Profile paths were created over the weekend
   /* This is where the wrapper that establishes the scope of the sharing of changeable information is provided. The constant defined up

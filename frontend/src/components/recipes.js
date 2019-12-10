@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import RecipeCard from './recipecard'
-import { UserContext } from './UserContext'
+// import { UserContext } from './UserContext'
 
 const Recipes = () => {
   const [data, setData] = useState([])
 
-  const { userInfo } = useContext(UserContext)
+  // const { userInfo } = useContext(UserContext)
 
   useEffect(() => {
     axios.get('/api/recipes')
