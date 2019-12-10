@@ -6,12 +6,7 @@ import { UserContext } from './UserContext'
 //Some bugs exist. Too many changes across the form. Needs some updates
 
 const EditProfile = (props) => {
-  const [data, setData] = useState({
-    username: 'loading',
-    email: 'loading',
-    age: 0,
-    dietary: 'loading'
-  })
+  const [data, setData] = useState({})
   const [errors, setErrors] = useState({})
 
   const { userInfo } = useContext(UserContext)
@@ -58,7 +53,7 @@ const EditProfile = (props) => {
           <div className='control'>
             <label htmlFor=''>
               Username
-              <input onChange={handleChange} className='input is-info' type='text' name='username' value={data.username} />
+              <input onChange={handleChange} className='input is-info' type='text' name='username' value={data.username ? data.username : ''}/>
             </label>
           </div>
           {errors.username && <small className="help is-danger">
@@ -69,7 +64,7 @@ const EditProfile = (props) => {
           <div className='control'>
             <label htmlFor=''>
               E-mail
-              <input onChange={handleChange} className='input is-info' type='text' name='email' value={data.email} />
+              <input onChange={handleChange} className='input is-info' type='text' name='email' value={data.email ? data.email : ''}/>
             </label>
           </div>
           {errors.email && <small className="help is-danger">
@@ -80,7 +75,7 @@ const EditProfile = (props) => {
           <div className='control'>
             <label htmlFor=''>
               Age
-              <input onChange={handleChange} className='input is-info' type='text' name='age' value={data.age} />
+              <input onChange={handleChange} className='input is-info' type='text' name='age' value={data.age ? data.age : ''}/>
             </label>
           </div>
           {errors.age && <small className="help is-danger">
@@ -92,7 +87,7 @@ const EditProfile = (props) => {
           <div className='control'>
             <label htmlFor=''>
               Dietary
-              <input onChange={handleChange} className='input is-info' type='text' name='dietary' value={data.dietary} />
+              <input onChange={handleChange} className='input is-info' type='text' name='dietary' value={data.dietary ? data.dietary : ''}/>
             </label>
           </div>
           {errors.dietary && <small className="help is-danger">
