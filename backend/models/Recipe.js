@@ -17,6 +17,7 @@ const recipeSchema = new mongoose.Schema({
   cuisine: { type: String },
   type: { type: [String], required: true },
   dietary: { type: [String] },
+  serves: { type: String },
   complexity: { type: [String], required: true },
   time: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },

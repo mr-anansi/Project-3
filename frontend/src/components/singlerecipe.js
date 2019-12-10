@@ -6,8 +6,14 @@ import { UserContext } from './UserContext'
 
 const SingleRecipe = (props) => {
   const [data, setData] = useState({ ingredients: [], method: [] })
+<<<<<<< HEAD
   const { userInfo } = useContext(UserContext)
 	
+=======
+
+  const { userInfo } = useContext(UserContext)
+
+>>>>>>> development
   useEffect(() => {
     const id = props.match.params.id
     axios.get(`/api/recipes/${id}`)
@@ -20,6 +26,7 @@ const SingleRecipe = (props) => {
   const shoppingList = data.ingredients.map(function (ingredient) {
     return '<li>' + ingredient + '</li>'
   }).join('')
+
 
   const handleSubmit = () => {
     const templateParams = {
@@ -38,6 +45,9 @@ const SingleRecipe = (props) => {
       })
   }
 
+
+
+  
   console.log(data.ingredients)
   return (
     <div className="section">
@@ -73,7 +83,5 @@ const SingleRecipe = (props) => {
     </div>
   )
 }
-
-
 
 export default SingleRecipe
