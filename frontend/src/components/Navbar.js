@@ -40,8 +40,8 @@ const Navbar = () => {
           <Link className="navbar-item">
             North London
           </Link>
-          <Link className="navbar-item" to="/restaurants">
-            West London
+          <Link className="navbar-item">
+						West London 
           </Link>
           <Link className="navbar-item">
             East London

@@ -39,7 +39,7 @@ class InputTag extends React.Component {
         <ul className='input-tag__tags'>
           { tags.map((tag, i) => (
             <li key={tag}>
-              {tag}
+              {/* {tag} */}
               <button type='button' onClick={() => {
                 this.removeTag(i)
               }}> - </button>
