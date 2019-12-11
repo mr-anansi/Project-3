@@ -35,45 +35,20 @@ const Recipes = () => {
     const recipes = filteredData.filter((recipe) => {
       return recipe.category.some(item => types.includes(item))
     })
-    setFilteredData(recipes)
     console.log(recipes)
+    setFilteredData(recipes)
   }
 
-
-
-
-  // let selectedCategory = data
-
-
-  // function handleSelect(selectedTag) {
-  //   if (selectedTag === null)
-  //     return
-  //   selectedTag.map((type) => {
-  //     return selectedCategory = type.value
-
-  //   })
-  // }
-
-
-  // function filterData() {
-  //   setData(data.filter((recipe) => {
-  //     return recipe.category.includes(selectedCategory)
-  //   }))
-  // }
-
-  // const handleSubmit = () => {
-  //   filterData()
-  //   console.log(selectedCategory)
-  // }
-
-
-
+  function handleSubmit() {
+    console.log(...filteredData)
+  }
+  
 
   return <div className="section">
     <div className="container">
-      {/* <button className="button is-success" onClick={(e) => handleSubmit(e)}>
+      <button className="button is-success" onClick={(e) => handleSubmit(e)}>
         TEST!
-      </button> */}
+      </button>
       <div>
         <FilteredRecipeForm
           Recipes={filteredData}
@@ -104,3 +79,27 @@ export default Recipes
 
 
 
+
+// let selectedCategory = data
+
+
+// function handleSelect(selectedTag) {
+//   if (selectedTag === null)
+//     return
+//   selectedTag.map((type) => {
+//     return selectedCategory = type.value
+
+//   })
+// }
+
+
+// function filterData() {
+//   setData(data.filter((recipe) => {
+//     return recipe.category.includes(selectedCategory)
+//   }))
+// }
+
+// const handleSubmit = () => {
+//   filterData()
+//   console.log(selectedCategory)
+// }
