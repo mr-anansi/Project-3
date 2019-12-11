@@ -11,8 +11,8 @@ const userSchema = new mongoose.Schema({
   dietary: { type: [String] },
   //---------------------------------
   //user additions ------------------
-  favouriteRestaurants: { type: [String] },
-  favouriteRecipes: { type: [String] }
+  favouriteRestaurants: { type: [Object] },
+  favouriteRecipes: { type: [Object] }
   //---------------------------------
 }, {
   timestamps: true,

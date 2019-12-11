@@ -18,21 +18,22 @@ const SingleRestaurant = (props) => {
       .catch(err => console.log(err))
   }, [])
 
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     setInfo(userInfo)
-  //   } else return
-  // }, [userInfo])
+  useEffect(() => {
+    if (userInfo) {
+      setInfo(userInfo)
+    } else return
+  }, [userInfo])
 
 
   const favourite = () => {
-    const sticky = userInfo.favouriteRestaurants.push(data)
-    setInfo({ favouriteRestaurants: sticky })
+    let sticky = info.favouriteRestaurants
+    sticky.push(data)
+    setInfo({ ...info, favouriteRestaurants: sticky })
     console.log(info)
-    // axios.put('/api/profile/edit', info, {
-    //   headers: { Authorization: `Bearer ${Auth.getToken()}` } })
-    //   .then(res => console.log(res))
-    //   .catch(err => console.log(err))
+    axios.put('/api/profile/edit', info, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` } })
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
   }
 
   return <div className="section has-text-centered is-full-height">
@@ -58,7 +59,7 @@ const SingleRestaurant = (props) => {
           <p>
             {data.priceRange}
           </p>
-          {userInfo && info && <button className="button is-success" onClick={favourite}>Save to Profile</button>}
+          {userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>}
         </div>
       </div>
     </div>
