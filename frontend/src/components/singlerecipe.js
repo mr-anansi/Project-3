@@ -2,19 +2,33 @@ import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import emailjs from 'emailjs-com'
 import { UserContext } from './UserContext'
+import Auth from '../lib/auth'
 
 
 const SingleRecipe = (props) => {
   const [data, setData] = useState({ ingredients: [], method: [], comments: [] })
-  const { userInfo } = useContext(UserContext)
+  const [info, setInfo] = useState({})
+  const [added, setAdded] = useState(false)
+
+  const { userInfo, setUserInfo } = useContext(UserContext)
 
   useEffect(() => {
     const id = props.match.params.id
     axios.get(`/api/recipes/${id}`)
-      .then(response => setData(response.data))
-      .catch(error => console.log(error))
-      .then(console.log(data))
-  }, [])
+      .then(res => {
+        const newData = res.data
+        setData(newData)
+        setData(res.data)
+        if (userInfo) {
+          setInfo(userInfo)
+          const alreadyAdded = userInfo.favouriteRecipes.some((recipe) => {
+            return recipe._id === newData._id
+          })
+          setAdded(alreadyAdded)
+        }
+      })
+      .catch(err => console.log(err))
+  }, [userInfo])
 
 
   const shoppingList = data.ingredients.map(function (ingredient) {
@@ -23,25 +37,39 @@ const SingleRecipe = (props) => {
 
 
   const handleSubmit = () => {
-    const templateParams = {
-      email_to: userInfo.email,
-      to_name: userInfo.username,
-      author_name: data.author,
-      recipe_name: data.name,
-      message_html: shoppingList
+    if (userInfo) {
+      const templateParams = {
+        email_to: userInfo.email,
+        to_name: userInfo.username,
+        author_name: data.author,
+        recipe_name: data.name,
+        message_html: shoppingList
+      }
+
+      emailjs.send('gmail', 'template_WaFbUNl4', templateParams, 'user_phelnwXOqjMmZRbyROmsu')
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text)
+        }, function (error) {
+          console.log('FAILED...', error)
+        })
     }
-		
-    emailjs.send('gmail', 'template_WaFbUNl4', templateParams, 'user_phelnwXOqjMmZRbyROmsu')
-      .then(function (response) {
-        console.log('SUCCESS!', response.status, response.text)
-      }, function (error) {
-        console.log('FAILED...', error)
-      })
   }
 
+  const favourite = () => {
+    let update = info.favouriteRecipes
+    update.push(data)
+    setInfo({ ...info, favouriteRecipes: update })
+    axios.put('/api/profile/edit', info, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(res => {
+        setUserInfo(res.data.user)
+      })
+      .catch(err => console.log(err))
+  }
 
-  console.log(data.ingredients)
-  console.log(data.comments)
+  // console.log(data.ingredients)
+  // console.log(data.comments)
   return (
     <div className="section">
       <div className="container">
@@ -67,7 +95,7 @@ const SingleRecipe = (props) => {
                 <li key={id}>{ingredient}</li>
               )}
             </ol>
-
+            {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>} 
             <br />
             <br />
             <br />
@@ -157,45 +185,6 @@ const SingleRecipe = (props) => {
                 </div>
               </div>
             </article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

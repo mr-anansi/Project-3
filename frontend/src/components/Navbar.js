@@ -17,6 +17,13 @@ const Navbar = () => {
   //   setNav({ isOpen: !isOpen })
   // }
   // useState({isOpen: false})
+  const handleMenu = () => {
+    const burger = document.querySelector('.burger')
+    const menuList = document.querySelector('#' + burger.dataset.target)
+  
+    burger.classList.toggle('is-active')
+    menuList.classList.toggle('is-active')
+  }
 
   return <nav className="navbar is-black is-fixed-top ">
     <div className="navbar-brand">
@@ -25,8 +32,13 @@ const Navbar = () => {
       {/* Reggie: The following line displays the change in status of the logged in user by displaying an internet icon on logon */}
       {/* {userInfo ? <img className="navbar-item" src="https://bit.ly/2PtuQAG" alt="" /> : <span className="navbar-item">Try Log in...</span>} */}
     </div>
+    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navDrop" onClick={handleMenu}>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
     <div className="navbar-end">
-      <div className="navbar-item has-dropdown is-hoverable">
+      <div id="navDrop" className="navbar-item has-dropdown is-hoverable">
         <Link className="navbar-link is-arrowless" to="/restaurants">
           Restaurants
         </Link>
@@ -41,7 +53,7 @@ const Navbar = () => {
             North London
           </Link>
           <Link className="navbar-item">
-						West London 
+            West London
           </Link>
           <Link className="navbar-item">
             East London

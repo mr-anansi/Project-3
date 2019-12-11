@@ -22,7 +22,6 @@ const Profile = () => {
     })
       .then(response => {
         setData(response.data)
-        console.log(response.data)
       })
       .catch(error => console.log(error))
     // .then(console.log(data))
@@ -34,48 +33,74 @@ const Profile = () => {
 
   return (
     <div className="section">
-      <div className="container">
-        {/* <div className="columns is-multiline">
+      <div className="section">
+        <div className="container">
+          {/* <div className="columns is-multiline">
           <div className="column is-half-tablet"> */}
-        {data.user && <p className="title">
-          Hey {data.user.username}
-        </p>}
-        {data.user && <div className="subtitle">
-          {data.user.email}
-        </div>}
-        <div className="subtitle">
-          {data.user && data.user.dietary.map((diet, id) =>
-            <p key={id}>{diet}</p>
-          )}
-        </div>
-        <div>
-          <div className="subtitle">Quicklinks</div>
-          <Link className="tag is-info is-light" to='/profile/edit'>Edit Profile</Link>
-          <Link className="tag is-info is-light" to='/recipes'>Recipes</Link>
-          <Link className="tag is-info is-light" to='/restaurants'>Restaurants</Link>
-          <Link className="tag is-info is-light" to='/'>Food Focus</Link>
-        </div>
-        <div>
-          <h3>Favourite Restaurants</h3>
-          <div className="tile is-parent">
-            {/* {data.user && data.user.favouriteRestaurants.map((eateries, id) =>
-              <li className="tile is-child" key={id}>{eateries.image ? eateries.image[0] : eateries}</li>
-            )} */}
-            {data.user && data.user.favouriteRestaurants.map((rest, id) => {
-              return <img key={id} src={rest.image[0]} />
-            })}
+          {data.user && <p className="title">
+            Hey {data.user.username}
+          </p>}
+          {data.user && <div className="subtitle">
+            {data.user.email}
+          </div>}
+          <div className="subtitle">
+            {data.user && data.user.dietary.map((diet, id) =>
+              <p key={id}>{diet}</p>
+            )}
+          </div>
+          <div>
+            <div className="subtitle">Quicklinks</div>
+            <Link className="tag is-info is-light" to='/profile/edit'>Edit Profile</Link>
+            <Link className="tag is-info is-light" to='/recipes'>Recipes</Link>
+            <Link className="tag is-info is-light" to='/restaurants'>Restaurants</Link>
+            <Link className="tag is-info is-light" to='/'>Food Focus</Link>
           </div>
         </div>
-        <div>
-          <h3>Favourite Recipes</h3>
-          <ul className="tile is-parent">
-            {data.user && data.user.favouriteRecipes.map((recipes, id) =>
-              <li className="tile is-child" key={id}>{recipes}</li>
-            )}
-          </ul>
-        </div>
-        {/* </div>
+        <div className="section">
+          <div className="container">
+            <h2>Favourite Restaurants</h2>
+            <div className="columns is-multiline">
+              {/* {data.user && data.user.favouriteRestaurants.map((eateries, id) =>
+              <li className="tile is-child" key={id}>{eateries.image ? eateries.image[0] : eateries}</li>
+            )} */}
+              {data.user && data.user.favouriteRestaurants.map((rest, id) => {
+                return (
+                  <div key={id} className="column is-one-quarter-desktop">
+                    <div className="card">
+                      <h3 className="fav-title card-header-title is-centered">{rest.name}</h3>
+                      <p className="fav-sub">{rest.location}</p>
+                      <div className="card-image">
+                        <figure className="image is-4by3">
+                          <img className="fav-image" src={rest.image[0]} />
+                        </figure>
+                      </div>
+                    </div>
+                  </div>)
+              })}
+            </div>
+          </div>
+          <div className="container">
+            <h3>Favourite Recipes</h3>
+            <div className="columns is-multiline">
+              {data.user && data.user.favouriteRecipes.map((recipes, id) => {
+                return (
+                  <div key={id} className="column is-one-quarter-desktop">
+                    <div className="card">
+                      <h3 className="fav-title-recipe card-header-title is-centered">{recipes.name}</h3>
+                      <p className="fav-sub">{recipes.author}</p>
+                      <div className="card-image">
+                        <figure className="image is-4by3">
+                          <img className="fav-image" src={recipes.image[0]} />
+                        </figure>
+                      </div>
+                    </div>
+                  </div>)
+              })}
+            </div>
+          </div>
+          {/* </div>
         </div> */}
+        </div>
       </div>
     </div>
   )

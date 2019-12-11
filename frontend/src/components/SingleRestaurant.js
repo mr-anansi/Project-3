@@ -9,35 +9,20 @@ const SingleRestaurant = (props) => {
   const [info, setInfo] = useState({})
   const [added, setAdded] = useState(false)
 
-
-
   const { userInfo, setUserInfo } = useContext(UserContext)
-
-  // useEffect(() => {
-  //   const id = props.match.params.id
-  //   axios.get(`/api/restaurants/${id}`)
-  //     .then(res => setData(res.data))
-  //     .catch(err => console.log(err))
-  // }, [])
 
   useEffect(() => {
     const id = props.match.params.id
     axios.get(`/api/restaurants/${id}`)
       .then(res => {
-        console.log('running a fetch')
         const newData = res.data
         setData(newData)
         if (userInfo) {
-          // console.log(data)
-          // console.log(userInfo)
           setInfo(userInfo)
-          console.log(userInfo.favouriteRestaurants)
           const alreadyAdded = userInfo.favouriteRestaurants.some((rest) => {
             return rest._id === newData._id
           })
           setAdded(alreadyAdded)
-          console.log('running')
-          console.log('State of already alreadyAdded: ', alreadyAdded)
         }
       })
       .catch(err => console.log(err))
@@ -49,13 +34,11 @@ const SingleRestaurant = (props) => {
     let update = info.favouriteRestaurants
     update.push(data)
     setInfo({ ...info, favouriteRestaurants: update })
-    // console.log(info)
     axios.put('/api/profile/edit', info, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => {
         setUserInfo(res.data.user)
-        console.log(res)
       })
       .catch(err => console.log(err))
   }
