@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
-
 import CategoryCard from './CategoryCard'
 import RecipeCard from './recipecard'
 import { UserContext } from './UserContext'
@@ -8,11 +7,13 @@ import FilteredRecipeForm from './FilteredRecipeForm'
 import { filter } from 'minimatch'
 import Select from 'react-select'
 
+
 const Recipes = () => {
   const [initialData, setInitialData] = useState([])
   const [filteredData, setFilteredData] = useState([])
 
   const { userInfo } = useContext(UserContext)
+	
 
 
 
@@ -25,6 +26,7 @@ const Recipes = () => {
       })
       .catch(error => console.log(error))
   }, [])
+	
 
 
   function filterRecipes(tags) {
@@ -38,6 +40,8 @@ const Recipes = () => {
     console.log(recipes)
     setFilteredData(recipes)
   }
+	
+
 
   function handleSubmit() {
     console.log(...filteredData)
@@ -67,7 +71,6 @@ const Recipes = () => {
     </div>
   </div>
 }
-
 export default Recipes
 
 

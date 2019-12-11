@@ -30,6 +30,7 @@ const SingleRecipe = (props) => {
       recipe_name: data.name,
       message_html: shoppingList
     }
+		
     emailjs.send('gmail', 'template_WaFbUNl4', templateParams, 'user_phelnwXOqjMmZRbyROmsu')
       .then(function (response) {
         console.log('SUCCESS!', response.status, response.text)
