@@ -1,5 +1,5 @@
 import React from 'react'
-import Auth from '../lib/auth'
+// import Auth from '../lib/auth'
 import HandleDelete from '../components/DeleteComment'
 
 
@@ -28,19 +28,12 @@ const CommentCard = ({ comments, userInfo, props }) => (
             <br />
             {comments.text}
             <br />
-            {comments.user._id === userInfo._id &&
+            {/* {comments.user._id === userInfo._id &&
               <>
                 <small><button className='deletetag' onClick={<HandleDelete userInfo={userInfo} props={props}/> }
-                
-                
-                
-                
-                
-                
-                
                 >Delete</button></small>
               </>
-            }
+            } */}
           </p>
         </div>
       </div>

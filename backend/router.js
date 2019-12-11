@@ -8,6 +8,9 @@ const secureRoute = require('./lib/secureRoute')
 
 router.route('/recipes')
   .get(recipes.index)
+  .post(secureRoute, recipes.createRecipe)
+
+
 
 router.route('/recipes/:id')
   .get(recipes.show)

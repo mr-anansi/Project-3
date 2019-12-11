@@ -4,6 +4,8 @@ const uniqueValidator = require('mongoose-unique-validator')
 const commentSchema = new mongoose.Schema({
   text: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
 })
 
 const recipeSchema = new mongoose.Schema({
@@ -18,8 +20,8 @@ const recipeSchema = new mongoose.Schema({
   type: { type: [String], required: true },
   dietary: { type: [String] },
   serves: { type: String },
-  complexity: { type: [String], required: true },
-  time: { type: String, required: true },
+  complexity: { type: [String] },
+  time: { type: String  },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [ commentSchema ] 
 }, {

@@ -59,7 +59,7 @@ const Navbar = () => {
       </div>
       {Auth.isAuthorized() && 
       <div className="navbar-item has-dropdown is-hoverable">
-        <Link className="navbar-link is-arrowless" to="/recipes/new">
+        <Link className="navbar-link is-arrowless" to="/recipe/new">
           Add a Recipe
         </Link>
       </div>}

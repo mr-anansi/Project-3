@@ -23,9 +23,13 @@ function show(req, res) {
 }
 
 
-
-
-
+function createRecipe(req, res) {
+  req.body.user = req.currentUser
+  Recipe
+    .create(req.body)
+    .then(recipe => res.status(201).json(recipe))
+    .catch(err => console.log(err))
+}
 
 
 //************************ADDING COMMENTS FUNCTIONALITY */
@@ -72,6 +76,7 @@ function deleteComment(req, res) {
 module.exports = {
   index,
   show,
+  createRecipe,
   createComment,
   deleteComment
 }

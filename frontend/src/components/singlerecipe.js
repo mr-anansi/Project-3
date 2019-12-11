@@ -54,7 +54,7 @@ const SingleRecipe = (props) => {
     console.log(data._id)
     axios.post(`/api/recipes/${data._id}`, formData,
       {
-        headers: { Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZGYwY2RmZDkxMzllMjNkMTk2NThiOWUiLCJpYXQiOjE1NzYwNjMwOTQsImV4cCI6MTU3NjA4NDY5NH0.R_Qnf7Vo6iNnXLxjkHzPXzybrvYAkNOBbugHAaSuZoM' }
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       .then(() => props.history.push(`${data._id}`))
       .catch(err => {
@@ -68,7 +68,7 @@ const SingleRecipe = (props) => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    console.log(data.comments[0].user)
+    console.log(data)
     setErrors({})
   }
 
