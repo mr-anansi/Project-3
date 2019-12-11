@@ -6,9 +6,9 @@ const RecipeCard = ({ results }) => (
     <div className="card">
       <div className="card-image">
         <figure className='image is-1by1 is-centered'>
-          {/* <Link to={`/recipes/${results._id}`}> */}
+          <Link to={`/recipes/${results._id}`}>
             <img className='image' src={results.image} alt={results.name} />
-          {/* </Link> */}
+          </Link>
         </figure>
       </div>
       <div className="card-content">

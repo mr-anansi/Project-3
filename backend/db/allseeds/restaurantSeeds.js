@@ -27,7 +27,7 @@ const restaurantSeed = (user) => {
     name: 'Lahpet', 
     location: 'East', 
     image: 'https://firsttable-images-1n1f2ybvzswiv.s3.us-west-2.amazonaws.com/public/restaurant/2436/f38a6f2232/Lahpet-009__CarouselPhotoW10.JPG', 
-    category: ['Vegetarian', 'Burmese', 'Asian', 'Cocktails', 'Vegan', 'Gluten Free Options', 'Lunch', 'Dinner'], 
+    category: ['Vegetarian', 'Burmese', 'Asian', 'Cocktails', 'Vegan', 'Gluten Free', 'Lunch', 'Dinner'], 
     postcode: 'E1 6JW', 
     priceRange: '£30-50pp', 
     link: 'https://lahpet.co.uk/', 
@@ -37,7 +37,7 @@ const restaurantSeed = (user) => {
     name: 'Hicce', 
     location: 'North', 
     image: 'https://images.squaremeal.co.uk/cloud/restaurants/12089/images/78334965-0fbd-4fb9-90da-e1022ac12cce.jpg?w=900&h=600&fit=crop', 
-    category: ['Vegetarian', 'Tapas', 'Barbecue', 'Cocktails', 'Lunch', 'Dinner', 'Vegan', 'Gluten Free Options'], 
+    category: ['Vegetarian', 'Tapas', 'Barbecue', 'Cocktails', 'Lunch', 'Dinner', 'Vegan', 'Gluten Free'], 
     postcode: 'N1C 4DQ', 
     priceRange: '£30-50pp', 
     link: 'https://www.kingscross.co.uk/hicce', 
@@ -47,7 +47,7 @@ const restaurantSeed = (user) => {
     name: 'Alpes', 
     location: 'South', 
     image: 'https://media.timeout.com/images/105387630/630/472/image.jpg', 
-    category: ['Vegetarian', 'Swiss', 'Tapas', 'Lunch', 'Dinner', 'Gluten Free Options'], 
+    category: ['Vegetarian', 'Swiss', 'Tapas', 'Lunch', 'Dinner', 'Gluten Free'], 
     postcode: 'SW9 8PQ', 
     priceRange: '£10-30pp', 
     link: 'https://www.raclettebrothers.co.uk/', 
@@ -116,13 +116,23 @@ const restaurantSeed = (user) => {
   {
     name: 'Half Cup', 
     location: 'West', 
-    image: 'https://imgur.com/1103ceb5-2508-4513-bc1e-4fb31f2fbb3d', 
+    image: 'https://i.imgur.com/lx2p7B1.jpg', 
     category: ['Vegetarian', 'Vegan', 'Gluten Free', 'Breakfast', 'Lunch'], 
     postcode: 'WC1H 9NT', 
     priceRange: '£10-30pp', 
     link: 'http://www.halfcup.co.uk', 
     user: user
-  }
+	}
+	// {
+  //   name: 'Half Cup', 
+  //   location: 'West', 
+  //   image: 'https://i.imgur.com/lx2p7B1.jpg', 
+  //   category: ['Vegetarian', 'Vegan', 'Gluten Free', 'Breakfast', 'Lunch'], 
+  //   postcode: 'WC1H 9NT', 
+  //   priceRange: '£10-30pp', 
+  //   link: 'http://www.halfcup.co.uk', 
+  //   user: user
+  // }
   ]
 }
 

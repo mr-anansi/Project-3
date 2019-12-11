@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import RestaurantCard from './RestaurantCard'
 import axios from 'axios'
-
 import FilteredForm from './filterForm'
-
+import { filter } from 'minimatch'
+// import FilteredForm from './filterForm'
 const Restaurants = () => {
   const [initialData, setInitialData] = useState([])
   const [filteredData, setFilteredData] = useState([])
-
   useEffect(() => {
     axios.get('/api/restaurants')
       .then(res => {
@@ -16,21 +15,34 @@ const Restaurants = () => {
       })
       .catch(err => console.log(err))
   }, [])
-	
-  function filterRestaurants(tags) {
-    if (tags.length === 0) {
+    
+  function filterRestaurants(typesToFilterBy) {
+    if (typesToFilterBy.length === 0) {
       return setFilteredData([...initialData])
     }
-    const types = tags.map(item => item.value)
-    const restaurants = initialData.filter((restaurant) => {
-      return types.every(element => restaurant.category.includes(element))
+    const types = typesToFilterBy.map(item => item.value)
+    const restaurants = filteredData.filter((restaurant) => {
+      return restaurant.category.some(item => types.includes(item))
     })
-    setFilteredData(restaurants) 
-  // is the first array a subset of the second?
-  // this basically checks every type 
+    setFilteredData(restaurants)
   }
-	
-	
+    
+  // let filterOptions = data.map((restaurant) => {
+  //   return restaurant.category   
+  // })
+    
+  // const tagsArray = filterOptions.flat()
+  // console.log(filterOptions.flat())
+  // const allTags = [...new Set(tagsArray)]
+  // console.log(allTags)
+  // function handleSubmit() {
+  //   const filteredTags = allTags.map((tag) => {
+  //     console.log(tag)
+  //     return tag
+  //     // logic needed for if the tag matches any restaurant categories, show those cards 
+  //   })
+  // }
+    
   return <div className="restaurants">
     <div className="section">
       {/* <div className="container is-fixed-top">{allTags.toString()}</div> */}
@@ -49,7 +61,5 @@ const Restaurants = () => {
       </div>
     </div>
   </div>
-
 }
-
 export default Restaurants

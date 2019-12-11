@@ -11,6 +11,11 @@ router.route('/recipes')
 
 router.route('/recipes/:id')
   .get(recipes.show)
+  .post(secureRoute, recipes.createComment)
+
+
+router.route('/recipes/:id/comments/:commentId')
+  .delete(secureRoute, recipes.deleteComment)
 
 router.route('/restaurants')
   .get(restaurants.index)
