@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   age: { type: Number },
+  image: { type: String },
   dietary: { type: [String] },
   //---------------------------------
   //user additions ------------------

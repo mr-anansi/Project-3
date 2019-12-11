@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Select from 'react-select'
-import Restaurants from './Restaurants'
-import axios from 'axios'
-import { filter } from 'minimatch'
+// import Restaurants from './Restaurants'
+// import axios from 'axios'
+// import { filter } from 'minimatch'
 
-const initialData = {
-  tags: [],
-  selectedTags: [],
-  filteredRestaurants: [],
-  e: []
-}
+
 
 const FilteredForm = ({ Restaurants }) => {
 
-  const [form, updateForm] = useState(initialData)
+  // const [form, updateForm] = useState(initialData)
 
   const filterOptions = Restaurants.map((restaurant) => {
     return restaurant.category
@@ -56,9 +51,7 @@ const FilteredForm = ({ Restaurants }) => {
   // 	let category = 'all'
   // }
 
-  const tag = allTags.map((tag) => {
-    console.log(tag)
-  })
+
 
 
   // function handleSubmit(event) {
