@@ -58,7 +58,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-item has-dropdown is-hoverable">
-        {userInfo ? <Link className="navbar-link is-arrowless" id="profile" to="/profile">{userInfo.username}</Link> : <div className="navbar-item is-arrowless" >Not Signed In</div>}
+        {userInfo ? <Link className="navbar-link is-arrowless" id="profile" to="/profile">{userInfo.username}</Link> : <div className="navbar-item is-arrowless" >Log In</div>}
         <div className="navbar-dropdown is-boxed">
           {!userInfo && <Link className="navbar-item" id="register" to="/register">
             Register

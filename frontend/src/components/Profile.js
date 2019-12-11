@@ -57,11 +57,14 @@ const Profile = () => {
         </div>
         <div>
           <h3>Favourite Restaurants</h3>
-          <ul className="tile is-parent">
-            {data.user && data.user.favouriteRestaurants.map((eateries, id) =>
-              <li className="tile is-child" key={id}>{eateries}</li>
-            )}
-          </ul>
+          <div className="tile is-parent">
+            {/* {data.user && data.user.favouriteRestaurants.map((eateries, id) =>
+              <li className="tile is-child" key={id}>{eateries.image ? eateries.image[0] : eateries}</li>
+            )} */}
+            {data.user && data.user.favouriteRestaurants.map((image, id) => {
+              <img key={id} src={image} />
+            })}
+          </div>
         </div>
         <div>
           <h3>Favourite Recipes</h3>
