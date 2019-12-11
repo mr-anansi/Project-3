@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Select from 'react-select'
-import Restaurants from './Restaurants'
-import axios from 'axios'
-import { filter } from 'minimatch'
 
-// const initialData = {
-//   tags: [], 
-//   selectedTags: [],
-//   filteredRestaurants: [], 
-//   e: []
-// }
+
 
 const FilteredForm = ({ Restaurants, updateRestaurants }) => {
 
@@ -37,28 +29,6 @@ const FilteredForm = ({ Restaurants, updateRestaurants }) => {
     if (selectedItems === null) return updateRestaurants([])
     updateRestaurants([...selectedItems])
   }
-
-  // could do axios.get(api/restaurants?category=vegetarian) - ${type.value}
-	
-	
-  // axios.get(/api/restaurants/${category})
-	
-
-  // const tag = allTags.map((tag) => {
-  //   console.log(tag)
-  // })
-
-
-  // function handleSubmit(event) {
-  //   event.preventDefault()
-  //   allTags.map((tag) => {
-  //     console.log(tag)
-  //     if (tag === allTags) 
-  //       console.log('hello')
-  //     // return updateForm(filteredTags)
-  //     // logic needed for if the tag matches any restaurant categories, show those cards 
-  //   })
-  // }
 
   return <Select
     isMulti

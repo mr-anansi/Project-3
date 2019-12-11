@@ -7,41 +7,41 @@ import { UserContext } from './UserContext'
 
 const Recipes = () => {
   const [data, setData] = useState([])
-	const { userInfo } = useContext(UserContext)
+  const { userInfo } = useContext(UserContext)
 	
 
   useEffect(() => {
     axios.get('/api/recipes')
       .then(response => setData(response.data))
       .catch(error => console.log(error))
-	}, [])
+  }, [])
 	
 
   let selectedCategory = 'Pasta'
-	// finds all the categories to be added to the page as clickable links
+  // finds all the categories to be added to the page as clickable links
 	
 
   const createTags = data.map((recipes) => {
     return recipes.category
-	})
+  })
 	
 
   const tagsArray = createTags.flat()
-	const allTags = [...new Set(tagsArray)]
+  const allTags = [...new Set(tagsArray)]
 	
   const filteredData = data.filter((recipes) => {
     return recipes.category.includes(selectedCategory)
-	})
+  })
 	
 
   // const filteredRecipes = data.map((recipes) => {
   //   return Object.values(recipes).flat()
-	// })
+  // })
 	
 
   const handleSubmit = () => {
     console.log(filteredData)
-	}
+  }
 	
 
 
