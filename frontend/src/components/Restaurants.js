@@ -22,7 +22,7 @@ const Restaurants = () => {
       return setFilteredData([...initialData])
     }
     const types = tags.map(item => item.value)
-    const restaurants = filteredData.filter((restaurant) => {
+    const restaurants = initialData.filter((restaurant) => {
       return types.every(element => restaurant.category.includes(element))
     })
     setFilteredData(restaurants) 
