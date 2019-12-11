@@ -7,9 +7,13 @@ import Auth from '../lib/auth'
 const SingleRestaurant = (props) => {
   const [data, setData] = useState({})
   const [info, setInfo] = useState({})
+  const [added, setAdded] = useState(false)
+  
 
 
-  const { userInfo } = useContext(UserContext)
+  const { userInfo, setUserInfo } = useContext(UserContext)
+
+  let alreadyAdded = null
 
   useEffect(() => {
     const id = props.match.params.id
@@ -21,20 +25,30 @@ const SingleRestaurant = (props) => {
   useEffect(() => {
     if (userInfo) {
       setInfo(userInfo)
+      alreadyAdded = userInfo.favouriteRestaurants.some((rest) => {
+        return rest._id === data._id
+      })
+      setAdded(alreadyAdded)
+    
     } else return
   }, [userInfo])
 
 
   const favourite = () => {
-    let sticky = info.favouriteRestaurants
-    sticky.push(data)
-    setInfo({ ...info, favouriteRestaurants: sticky })
+    let update = info.favouriteRestaurants
+    update.push(data)
+    setInfo({ ...info, favouriteRestaurants: update })
     console.log(info)
     axios.put('/api/profile/edit', info, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` } })
-      .then(res => console.log(res))
+      .then(res => {
+        setUserInfo(res.data)
+        console.log(res)
+      })
       .catch(err => console.log(err))
   }
+  console.log(userInfo)
+  console.log(added)
 
   return <div className="section has-text-centered is-full-height">
     <div className="container is-center">
@@ -59,7 +73,7 @@ const SingleRestaurant = (props) => {
           <p>
             {data.priceRange}
           </p>
-          {userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>}
+          {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>}
         </div>
       </div>
     </div>
