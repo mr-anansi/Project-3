@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-// import Auth from '../lib/auth'
+import Auth from '../lib/auth'
 import { UserContext } from './UserContext'
 
 //Reggie: Weekend work
@@ -57,6 +57,12 @@ const Navbar = () => {
           Recipes
         </Link>
       </div>
+      {Auth.isAuthorized() && 
+      <div className="navbar-item has-dropdown is-hoverable">
+        <Link className="navbar-link is-arrowless" to="/recipes/new">
+          Add a Recipe
+        </Link>
+      </div>}
       <div className="navbar-item has-dropdown is-hoverable">
         {userInfo ? <Link className="navbar-link is-arrowless" id="profile" to="/profile">{userInfo.username}</Link> : <div className="navbar-item is-arrowless" >Log In</div>}
         <div className="navbar-dropdown is-boxed">

@@ -1,7 +1,19 @@
 import React from 'react'
 import Auth from '../lib/auth'
+import HandleDelete from '../components/DeleteComment'
 
-const CommentCard = ({ comments, userInfo }) => (
+
+// handleDelete() {
+//   const id = this.props.match.params.id
+//   axios.delete(`https://cheesebored.herokuapp.com/cheeses/${id}`, {
+//     headers: { Authorization: `Bearer ${Auth.getToken()}` }
+//   })
+//     .then(() => this.props.history.push('/cheeses'))
+//     .catch(err => console.log(err))
+// }
+
+
+const CommentCard = ({ comments, userInfo, props }) => (
   <>
     <article className="media">
       <figure className="media-left">
@@ -18,7 +30,15 @@ const CommentCard = ({ comments, userInfo }) => (
             <br />
             {comments.user._id === userInfo._id &&
               <>
-                <small><a className='deletetag'>Delete</a></small>
+                <small><button className='deletetag' onClick={<HandleDelete userInfo={userInfo} props={props}/> }
+                
+                
+                
+                
+                
+                
+                
+                >Delete</button></small>
               </>
             }
           </p>

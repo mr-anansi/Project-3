@@ -23,8 +23,6 @@ const SingleRecipe = (props) => {
 
 
 
- 
-
 
 
   const shoppingList = data.ingredients.map(function (ingredient) {
@@ -120,7 +118,7 @@ const SingleRecipe = (props) => {
             <br />
             <br />
             {data.comments.map((comments, i) => {
-              return <CommentCard key={i} comments={comments} userInfo={userInfo} isOwner={isOwner} />
+              return <CommentCard key={i} comments={comments} userInfo={userInfo} isOwner={isOwner} props={props} />
             })}
             {userInfo ?
             <>
