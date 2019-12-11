@@ -34,8 +34,8 @@ const Recipes = () => {
       return setFilteredData([...initialData])
     }
     const types = tags.map(item => item.value)
-    const recipes = filteredData.filter((recipe) => {
-      return recipe.category.some(item => types.includes(item))
+    const recipes = initialData.filter((recipe) => {
+      return types.every(element => recipe.category.includes(element))
     })
     console.log(recipes)
     setFilteredData(recipes)
