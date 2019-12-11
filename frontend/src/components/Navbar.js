@@ -23,56 +23,54 @@ const Navbar = () => {
       <div className="navbar-item"></div>
       <Link className="navbar-item" to="/">Home</Link>
       {/* Reggie: The following line displays the change in status of the logged in user by displaying an internet icon on logon */}
-      {userInfo ? <img className="navbar-item" src="https://bit.ly/2PtuQAG" alt="" /> : <span className="navbar-item">Try Log in...</span>}
+      {/* {userInfo ? <img className="navbar-item" src="https://bit.ly/2PtuQAG" alt="" /> : <span className="navbar-item">Try Log in...</span>} */}
     </div>
     <div className="navbar-end">
       <div className="navbar-item has-dropdown is-hoverable">
         <Link className="navbar-link is-arrowless" to="/restaurants">
-					Restaurants
+          Restaurants
         </Link>
         <div className="navbar-dropdown is-boxed">
           <Link className="navbar-item" to="/restaurants">
-						All 
+            All
           </Link>
           <Link className="navbar-item">
-						South London 
+            South London
           </Link>
           <Link className="navbar-item">
-						North London 
+            North London
           </Link>
-          <Link className="navbar-item" to="">
+          <Link className="navbar-item">
 						West London 
           </Link>
           <Link className="navbar-item">
-						East London 
+            East London
           </Link>
           <Link className="navbar-item">
-						Central London 
+            Central London
           </Link>
         </div>
       </div>
       {/* {Auth.isAuthorized() &&  */}
       <div className="navbar-item has-dropdown is-hoverable">
         <Link className="navbar-link is-arrowless" to="/recipes">
-					Recipes
+          Recipes
         </Link>
       </div>
       <div className="navbar-item has-dropdown is-hoverable">
-        <Link className="navbar-link is-arrowless" to="/">
-					User
-        </Link>
+        {userInfo ? <Link className="navbar-link is-arrowless" id="profile" to="/profile">{userInfo.username}</Link> : <div className="navbar-item is-arrowless" >Log In</div>}
         <div className="navbar-dropdown is-boxed">
-          <Link className="navbar-item" id="user" to="/register">
-						Register
-          </Link>
-          <Link className="navbar-item" id="user" to="/login">
-						Login
-          </Link>
+          {!userInfo && <Link className="navbar-item" id="register" to="/register">
+            Register
+          </Link>}
+          {!userInfo && <Link className="navbar-item" id="login" to="/login">
+            Login
+          </Link>}
           {/* {Auth.isAuthorized() &&  */}
           {/* Added a logout path */}
-          <Link className="navbar-item" id="user" to="/logout">
+          {userInfo && <Link className="navbar-item" id="logout" to="/logout">
             Logout
-          </Link>
+          </Link>}
         </div>
       </div>
       <div className="navbar-item"></div>

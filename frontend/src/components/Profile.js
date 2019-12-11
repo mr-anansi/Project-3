@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Auth from '../lib/auth'
 
@@ -21,10 +22,10 @@ const Profile = () => {
     })
       .then(response => {
         setData(response.data)
-        console.log(typeof response.data)
+        console.log(response.data)
       })
       .catch(error => console.log(error))
-      // .then(console.log(data))
+    // .then(console.log(data))
   }, [])
 
   /* There's another oddity at this point. The render happens before the data is pulled and thus one of those conditional tricks is needed
@@ -34,33 +35,47 @@ const Profile = () => {
   return (
     <div className="section">
       <div className="container">
-        <div className="columns is-multiline">
-          <div className="column is-half-tablet">
-            {data.user && <p className="title">
-              {data.user.username}'s Dashboard
-            </p>}
-            <div className="subtitle">
-              {data.email}
-            </div>
-            <div className="subtitle">
-              {data.user && data.user.dietary.map((diet, id) =>
-                <p key={id}>{diet}</p>
-              )}
-            </div>
-            <h3>Favourite Restaurants</h3>
-            <ul>
-              {data.favouriteRestaurants && data.user.favouriteRestaurants.map((eateries, id) =>
-                <li key={id}>{eateries}</li>
-              )}
-            </ul>
-            <h3>Favourite Recipes</h3>
-            <ul>
-              {data.favouriteRecipes && data.user.favouriteRecipes.map((recipes, id) =>
-                <li key={id}>{recipes}</li>
-              )}
-            </ul>
+        {/* <div className="columns is-multiline">
+          <div className="column is-half-tablet"> */}
+        {data.user && <p className="title">
+          Hey {data.user.username}
+        </p>}
+        {data.user && <div className="subtitle">
+          {data.user.email}
+        </div>}
+        <div className="subtitle">
+          {data.user && data.user.dietary.map((diet, id) =>
+            <p key={id}>{diet}</p>
+          )}
+        </div>
+        <div>
+          <div className="subtitle">Quicklinks</div>
+          <Link className="tag is-info is-light" to='/profile/edit'>Edit Profile</Link>
+          <Link className="tag is-info is-light" to='/recipes'>Recipes</Link>
+          <Link className="tag is-info is-light" to='/restaurants'>Restaurants</Link>
+          <Link className="tag is-info is-light" to='/'>Food Focus</Link>
+        </div>
+        <div>
+          <h3>Favourite Restaurants</h3>
+          <div className="tile is-parent">
+            {/* {data.user && data.user.favouriteRestaurants.map((eateries, id) =>
+              <li className="tile is-child" key={id}>{eateries.image ? eateries.image[0] : eateries}</li>
+            )} */}
+            {data.user && data.user.favouriteRestaurants[1].image.map((image, id) => {
+              return <img key={id} src={image} />
+            })}
           </div>
         </div>
+        <div>
+          <h3>Favourite Recipes</h3>
+          <ul className="tile is-parent">
+            {data.user && data.user.favouriteRecipes.map((recipes, id) =>
+              <li className="tile is-child" key={id}>{recipes}</li>
+            )}
+          </ul>
+        </div>
+        {/* </div>
+        </div> */}
       </div>
     </div>
   )

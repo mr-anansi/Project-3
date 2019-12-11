@@ -5,9 +5,9 @@ import axios from 'axios'
 import { filter } from 'minimatch'
 
 const initialData = {
-  tags: [], 
+  tags: [],
   selectedTags: [],
-  filteredRestaurants: [], 
+  filteredRestaurants: [],
   e: []
 }
 
@@ -16,11 +16,11 @@ const FilteredForm = ({ Restaurants }) => {
   const [form, updateForm] = useState(initialData)
 
   const filterOptions = Restaurants.map((restaurant) => {
-    return restaurant.category 	
+    return restaurant.category
   })
   console.log(filterOptions)
   // this is an array of arrays of the restaurants categories 
-	
+
   const tagsArray = filterOptions.flat()
   console.log(filterOptions.flat())
   // creates an array of all tags/categories as strings
@@ -28,13 +28,13 @@ const FilteredForm = ({ Restaurants }) => {
   const allTags = [...new Set(tagsArray)]
   console.log(allTags)
   // creates an array of tags with no repetition
-	
+
   const allTagsLabeled = allTags.map((tag) => {
     return { value: tag, label: tag }
   })
   // gives the values in the multiselect 
 
- 
+
   function handleSelect(e) {
     // listen for select of a value 
     // then filter the restaurants based on this selected value 
@@ -42,24 +42,24 @@ const FilteredForm = ({ Restaurants }) => {
     //.includes(e.target.value)
     // map through the options selected then for each map through the data to match - start with one?
     // push matching restaurants into filtered restaurants 
-    if (e === null) 
+    if (e === null)
       return
     e.map((type) => {
       console.log(type.value)
-      if (type.value === 'Pasta') 
+      if (type.value === 'Pasta')
         console.log('hello')
       // then maybe have a function to display filtered restaurants
     })
   }
-	
+
   // function filteredRestaurants() {
-	// 	let category = 
+  // 	let category = 'all'
   // }
-	
+
   const tag = allTags.map((tag) => {
-			 console.log(tag)
+    console.log(tag)
   })
-  
+
 
   // function handleSubmit(event) {
   //   event.preventDefault()
@@ -71,12 +71,12 @@ const FilteredForm = ({ Restaurants }) => {
   //     // logic needed for if the tag matches any restaurant categories, show those cards 
   //   })
   // }
-	
+
 
   return <Select
     isMulti
     name="tags"
-    options={allTagsLabeled} 
+    options={allTagsLabeled}
     onChange={handleSelect}
     className="basic-multi-select"
     classNamePrefix="select"

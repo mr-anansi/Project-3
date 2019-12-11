@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import CategoryCard from './CategoryCard'
 import RecipeCard from './recipecard'
-import { UserContext } from './UserContext'
+// import { UserContext } from './UserContext'
 import FilteredRecipeForm from './FilteredRecipeForm'
 import { filter } from 'minimatch'
 import Select from 'react-select'
@@ -12,7 +12,7 @@ const Recipes = () => {
   const [initialData, setInitialData] = useState([])
   const [filteredData, setFilteredData] = useState([])
 
-  const { userInfo } = useContext(UserContext)
+  // const { userInfo } = useContext(UserContext)
 	
 
 
