@@ -64,7 +64,7 @@ function edit(req, res) {
       return user.set(req.body)
     })
     .then(user => user.save())
-    .then(user => res.status(202).json(user))
+    .then(user => res.status(202).json({ user }))
     .catch(() => res.status(401).json({ message: 'Profile Not Found' }))
 }
 

@@ -8,29 +8,40 @@ const SingleRestaurant = (props) => {
   const [data, setData] = useState({})
   const [info, setInfo] = useState({})
   const [added, setAdded] = useState(false)
-  
+
 
 
   const { userInfo, setUserInfo } = useContext(UserContext)
 
-  let alreadyAdded = null
+  // useEffect(() => {
+  //   const id = props.match.params.id
+  //   axios.get(`/api/restaurants/${id}`)
+  //     .then(res => setData(res.data))
+  //     .catch(err => console.log(err))
+  // }, [])
 
   useEffect(() => {
     const id = props.match.params.id
     axios.get(`/api/restaurants/${id}`)
-      .then(res => setData(res.data))
-      .catch(err => console.log(err))
-  }, [])
-
-  useEffect(() => {
-    if (userInfo) {
-      setInfo(userInfo)
-      alreadyAdded = userInfo.favouriteRestaurants.some((rest) => {
-        return rest._id === data._id
+      .then(res => {
+        console.log('running a fetch')
+        const newData = res.data
+        setData(newData)
+        if (userInfo) {
+          // console.log(data)
+          // console.log(userInfo)
+          setInfo(userInfo)
+          console.log(userInfo.favouriteRestaurants)
+          const alreadyAdded = userInfo.favouriteRestaurants.some((rest) => {
+            return rest._id === newData._id
+          })
+          setAdded(alreadyAdded)
+          console.log('running')
+          console.log('State of already alreadyAdded: ', alreadyAdded)
+        }
       })
-      setAdded(alreadyAdded)
+      .catch(err => console.log(err))
     
-    } else return
   }, [userInfo])
 
 
@@ -38,17 +49,16 @@ const SingleRestaurant = (props) => {
     let update = info.favouriteRestaurants
     update.push(data)
     setInfo({ ...info, favouriteRestaurants: update })
-    console.log(info)
+    // console.log(info)
     axios.put('/api/profile/edit', info, {
-      headers: { Authorization: `Bearer ${Auth.getToken()}` } })
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
       .then(res => {
-        setUserInfo(res.data)
+        setUserInfo(res.data.user)
         console.log(res)
       })
       .catch(err => console.log(err))
   }
-  console.log(userInfo)
-  console.log(added)
 
   return <div className="section has-text-centered is-full-height">
     <div className="container is-center">
