@@ -8,9 +8,10 @@ const restaurantSeed = (user) => {
     name: 'Padella',
     location: 'South',
     image: 'https://i0.wp.com/missportmanteau.com/wp-content/uploads/2019/03/Best-Pasta-in-London-Padella-vs-Pastaio.jpg?fit=1440%2C960&ssl=1',
-    category: ['Italian', 'Pasta', 'Vegetarian', 'Lunch', 'Dinner'],
+    category: ['Italian', 'Vegetarian', 'Lunch', 'Dinner'],
     postcode: 'SE1 1TQ',
     priceRange: '£10-30pp',
+    link: 'https://www.padella.co/',
     user: user
   },
   {
@@ -79,7 +80,7 @@ const restaurantSeed = (user) => {
     image: 'https://media.timeout.com/images/105562701/630/472/image.jpg', 
     category: ['Vegetarian', 'Vegan', 'European', 'Lunch', 'Dinner'], 
     postcode: 'N16 7JD', 
-    priceRange: '£40-70pp', 
+    priceRange: '£50-80pp', 
     link: 'https://moiorestaurant.com', 
     user: user
   },
@@ -109,7 +110,7 @@ const restaurantSeed = (user) => {
     image: 'https://i.imgur.com/59fGMcl.jpg', 
     category: ['Vegetarian', 'Vegan', 'Indian', 'Gluten Free', 'Lunch', 'Dinner'], 
     postcode: 'W1S 2PA', 
-    priceRange: '£40-70pp', 
+    priceRange: '£50-80pp', 
     link: 'https://www.bombaybustle.com', 
     user: user
   }, 
@@ -122,17 +123,67 @@ const restaurantSeed = (user) => {
     priceRange: '£10-30pp', 
     link: 'http://www.halfcup.co.uk', 
     user: user
+  },
+  {
+    name: 'Som Saa', 
+    location: 'East', 
+    image: 'https://i.imgur.com/Z77VJpM.jpg', 
+    category: ['Vegetarian', 'Vegan', 'Thai', 'Gluten Free', 'Dinner', 'Lunch'], 
+    postcode: 'E1 6BD', 
+    priceRange: '£10-30pp', 
+    link: 'https://www.somsaa.com/', 
+    user: user
+  },
+  {
+    name: 'Salut!', 
+    location: 'North', 
+    image: 'https://i.imgur.com/3qRFgTe.jpg', 
+    category: ['Vegetarian', 'Vegan', 'European', 'Gluten Free', 'Dinner', 'Lunch'], 
+    postcode: 'N1 3PJ', 
+    priceRange: '£30-50pp', 
+    link: 'https://salut-london.co.uk', 
+    user: user
+  },
+  {
+    name: 'Bubala', 
+    location: 'East', 
+    image: 'https://i.imgur.com/DCqCuCz.jpg', 
+    category: ['Vegetarian', 'Vegan', 'Middle Eastern', 'Gluten Free', 'Tapas', 'Dinner', 'Lunch'], 
+    postcode: 'E1 6BW', 
+    priceRange: '£10-30pp', 
+    link: 'https://www.bubala.co.uk/', 
+    user: user
+  },
+  {
+    name: 'Bob Bob Cité', 
+    location: 'Central', 
+    image: 'https://i.imgur.com/R9ymzn4.jpg', 
+    category: ['Vegetarian', 'Vegan', 'French', 'Gluten Free', 'Dinner', 'Lunch'], 
+    postcode: 'EC3V 4AB', 
+    priceRange: '£50-80pp', 
+    link: 'https://www.bobbobcite.com', 
+    user: user
+  },
+  {
+    name: 'Gloria', 
+    location: 'East', 
+    image: 'https://i.imgur.com/D5hZBgs.jpg', 
+    category: ['Vegetarian', 'Vegan', 'Italian', 'Gluten Free', 'Dinner', 'Lunch'], 
+    postcode: 'EC2A 3HS' , 
+    priceRange: '£10-30pp', 
+    link: 'https://www.bigmammagroup.com/en/trattorias/gloria', 
+    user: user
+  },
+  {
+    name: 'Peg', 
+    location: 'East', 
+    image: 'blob:https://imgur.com/cb30bc6b-25d5-4663-bac0-dcc951e1dbd7', 
+    category: ['Vegetarian', 'Vegan', 'Japanese', 'Tapas', 'Gluten Free', 'Dinner', 'Lunch'], 
+    postcode: 'E9 6LH ' , 
+    priceRange: '£30-50pp', 
+    link: 'https://www.peglondon.co.uk', 
+    user: user
 	}
-	// {
-  //   name: 'Half Cup', 
-  //   location: 'West', 
-  //   image: 'https://i.imgur.com/lx2p7B1.jpg', 
-  //   category: ['Vegetarian', 'Vegan', 'Gluten Free', 'Breakfast', 'Lunch'], 
-  //   postcode: 'WC1H 9NT', 
-  //   priceRange: '£10-30pp', 
-  //   link: 'http://www.halfcup.co.uk', 
-  //   user: user
-  // }
   ]
 }
 

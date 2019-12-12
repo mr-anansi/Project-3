@@ -16,7 +16,7 @@ const restaurantSchema = new mongoose.Schema({
   dietary: { type: [String] },
   postcode: { type: [String], required: true },
   priceRange: { type: String, required: true },
-  link: { type: String },
+  link: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [commentSchema]
 }, {
