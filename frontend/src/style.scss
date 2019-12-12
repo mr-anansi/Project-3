@@ -1,6 +1,6 @@
 
 body, html {
-	font-family: 'Anton', sans-serif;
+	font-family: 'Courier New', Courier, monospace;
 	width: 100%;
 	height: 100%;
 	text-transform: lowercase;
@@ -34,12 +34,13 @@ color: red;
 
 
 .title, .subtitle {
-	color: rgb(207, 144, 7);
+	color: rgb(0, 0, 0);
+	font-size: 100px;
 }
 
-.container {
-	margin-left: 300px;
-}
+// .container {
+// 	margin-left: 300px;
+// }
 
 
 .restaurants {
@@ -67,6 +68,81 @@ input {
 	text-align: center;
 }
 
+.below-hero {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center; 
+	align-items: center;
+	justify-content: space-around;
+}
+
+.second-below-hero {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center; 
+	align-items: center;
+	justify-content: space-around;
+	background-image: url('https://i.pinimg.com/originals/f0/19/d3/f019d3ef77077e3c9d1c0624918a28c8.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.box {
+	height: 250px;
+	width: 450px;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white; 
+	font-weight: 800;
+	border-radius: 0%;
+}
+
+#inner-border {
+		outline: 3px solid white;
+		outline-offset: -30px;
+}
+
+.box:not(:last-child) {
+	margin: 0;
+}
+
+p {
+	margin-top: 50px; 
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#dataImage {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	height: 750px;
+	opacity: 80%;
+}
+
+
+.title:not(:last-child) {
+	margin: 0; 
+}
+
+.card-content, h2 {
+	font-weight: 700;
+	color: black;
+}
+
+// .clip-me {
+// 	clip-path: ellipse(65px 30px at 125px 40px);
+// }
 //------cards-----
 
 .card {

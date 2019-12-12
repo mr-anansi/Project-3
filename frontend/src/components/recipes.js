@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 // import CategoryCard from './CategoryCard'
 import RecipeCard from './recipecard'
@@ -14,7 +14,6 @@ const Recipes = () => {
 
   // const { userInfo } = useContext(UserContext)
 	
-
 
 
   //***********************Fetches all Recipes from the API */

@@ -5,10 +5,7 @@ import Select from 'react-select'
 // import { filter } from 'minimatch'
 
 
-
-const FilteredForm = ({ Restaurants }) => {
-
-  // const [form, updateForm] = useState(initialData)
+const FilteredForm = ({ Restaurants, updateRestaurants }) => {
 
   const filterOptions = Restaurants.map((restaurant) => {
     return restaurant.category

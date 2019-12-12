@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import React, { useState, useEffect, useContext } from 'react'
 // import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -6,72 +7,41 @@ import Auth from '../lib/auth'
 
 const SingleRestaurant = (props) => {
   const [data, setData] = useState({})
-  const [info, setInfo] = useState({})
-  const [added, setAdded] = useState(false)
-
-  const { userInfo, setUserInfo } = useContext(UserContext)
+  // const [background, setBackground] = useState()
 
   useEffect(() => {
     const id = props.match.params.id
     axios.get(`/api/restaurants/${id}`)
-      .then(res => {
-        const newData = res.data
-        setData(newData)
-        if (userInfo) {
-          setInfo(userInfo)
-          const alreadyAdded = userInfo.favouriteRestaurants.some((rest) => {
-            return rest._id === newData._id
-          })
-          setAdded(alreadyAdded)
-        }
-      })
+      .then(res => setData(res.data))
+      // .then(res => setBackground({ ...background, background: res.image }))
       .catch(err => console.log(err))
-    
-  }, [userInfo])
-
-
-  const favourite = () => {
-    let update = info.favouriteRestaurants
-    update.push(data)
-    setInfo({ ...info, favouriteRestaurants: update })
-    axios.put('/api/profile/edit', info, {
-      headers: { Authorization: `Bearer ${Auth.getToken()}` }
-    })
-      .then(res => {
-        setUserInfo(res.data.user)
-      })
-      .catch(err => console.log(err))
-  }
-
-  return <div className="section has-text-centered is-full-height">
-    <div className="container is-center">
-      <div className="columns is-multiline">
-        <div className="column is-half-tablet">
-          <div className="title">
-            {data.name}
-          </div>
-          <div className="subtitle">
-            {data.category}
-          </div>
-          <img src={data.image} alt="Placeholder image" />
-          <p>
-            {data.type}
-          </p>
-          <p>
+  }, [])
+	
+  console.log(data)
+  return <div className="section has-text-centered is-full-height" id="dataImage" style={{ backgroundImage: `url(${data.image})` }}>
+    {/* <img className="clip-me" src='https://cdn.mos.cms.futurecdn.net/iuWB2NM48R2r9q7QhyJfhe-320-80.jpg'/> */}
+		<div className="column">
+      <div className="card">
+        <div className="title" style={{ textShadow: '#FFF 1px 0 10px' }}>
+          {data.name}
+        </div>
+        <div className="card-content">
+          <h2>
             {data.location}
-          </p>
-          <p>
+          </h2>
+          <h2>
             {data.postcode}
-          </p>
-          <p>
+          </h2>
+          <h2>
             {data.priceRange}
-          </p>
-          {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>}
+          </h2>
+          <h2>
+            <a href={data.link}>{data.link}</a>
+          </h2>
         </div>
       </div>
     </div>
   </div>
-
 }
 
 export default SingleRestaurant
