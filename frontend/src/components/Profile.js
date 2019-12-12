@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Auth from '../lib/auth'
+
+import { UserContext } from './UserContext'
 
 //Reggie: Weekend Work
 /* Reggie: I created this page over the weekend for the project. Obviously Marissa will have something to say about styling, 
@@ -11,6 +13,9 @@ only accessible by the logged in user. It's up to us to decide what to display.*
 const Profile = () => {
   // I've initialised our state with an object
   const [data, setData] = useState({})
+  const [info, setInfo] = useState({})
+
+  const { userInfo, setUserInfo } = useContext(UserContext)
 
   /* In order to get the api to recognise the user as the backend logic dictates, i need to present the token received from the login process.
   Since we're working with local storage (see Auth class), at this point I retrieve the token from local storage and insert it into the 
@@ -20,12 +25,30 @@ const Profile = () => {
     axios.get('/api/profile', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(response => {
-        setData(response.data)
+      .then(res => {
+        const newData = res.data
+        setData(newData)
+        if (userInfo) {
+          setInfo(userInfo)
+        }
       })
       .catch(error => console.log(error))
     // .then(console.log(data))
-  }, [])
+  }, [userInfo])
+
+
+  // const favourite = (e) => {
+  //   let update = info.favouriteRestaurants
+  //   update.push(data)
+  //   setInfo({ ...info, favouriteRestaurants: update })
+  //   axios.put('/api/profile/edit', info, {
+  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
+  //   })
+  //     .then(res => {
+  //       setUserInfo(res.data.user)
+  //     })
+  //     .catch(err => console.log(err))
+  // }
 
   /* There's another oddity at this point. The render happens before the data is pulled and thus one of those conditional tricks is needed
   to get the data to show correctly. At a later stage, we can include a couple of loading styles to replace what at times can be blank load
