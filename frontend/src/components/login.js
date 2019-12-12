@@ -51,7 +51,7 @@ const Login = (props) => {
 
   return <section className="section has-text-centered is-full-height" id="loginPage" style={{ sectionStyle }}>
     <div className="container has-text-centered" id="newform">
-      <div className="title title has-text-white">Login</div>
+      <div className="title is-size-1 title has-text-white">Login</div>
       <form className="form has-text-centered" onSubmit={handleSubmit}>
         <div className="field">
           <label htmlFor="" className="label has-text-white">
@@ -82,7 +82,7 @@ const Login = (props) => {
             {errors.message}
           </small>}
         </div>
-        <button className="button is-black">
+        <button className="button is-black" style={{ border: '1px solid white' }}>
           Login
         </button>
       </form>
