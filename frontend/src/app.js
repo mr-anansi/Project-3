@@ -14,6 +14,7 @@ import Navbar from './components/Navbar'
 import Login from './components/login'
 import Recipes from './components/recipes'
 import SingleRecipe from './components/singlerecipe'
+import LandingPage from './components/LandingPage'
 
 
 import Register from './components/Register'
@@ -49,12 +50,12 @@ const App = () => {
   /* This is where the wrapper that establishes the scope of the sharing of changeable information is provided. The constant defined up
   top is passed down into the wrapper at the value property. */
 
-  return (<BrowserRouter>
+  return ( <BrowserRouter>
     <UserContext.Provider value={sharedInfo}>
       <Navbar />
       <Switch>
-        {/* <Route exact path="/" component={Landing} />
-      <Route exact path="/home" component={Home} /> */}
+        <Route exact path="/" component={LandingPage} />
+        {/* <Route exact path="/home" component={Home} /> */}
         <Route exact path="/recipes" component={Recipes} />
         <Route exact path="/recipes/:id" component={SingleRecipe} />
         <Route exact path="/restaurants" component={Restaurants} />
@@ -69,5 +70,8 @@ const App = () => {
     </UserContext.Provider>
   </BrowserRouter>)
 }
+
 ReactDOM.render(<App />,
   document.getElementById('root'))
+	
+

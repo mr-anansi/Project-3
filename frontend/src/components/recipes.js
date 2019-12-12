@@ -1,50 +1,51 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import CategoryCard from './CategoryCard'
 import RecipeCard from './recipecard'
-import { UserContext } from './UserContext'
+// import { UserContext } from './UserContext'
+import FilteredRecipeForm from './FilteredRecipeForm'
+import { filter } from 'minimatch'
+import Select from 'react-select'
 
 
 const Recipes = () => {
-  const [data, setData] = useState([])
-  const { userInfo } = useContext(UserContext)
+  const [initialData, setInitialData] = useState([])
+  const [filteredData, setFilteredData] = useState([])
+
+  // const { userInfo } = useContext(UserContext)
 	
 
+
+  //***********************Fetches all Recipes from the API */
   useEffect(() => {
     axios.get('/api/recipes')
-      .then(response => setData(response.data))
+      .then(response => {
+        setInitialData(response.data)
+        setFilteredData([...response.data])
+      })
       .catch(error => console.log(error))
   }, [])
 	
 
-  let selectedCategory = 'Pasta'
-  // finds all the categories to be added to the page as clickable links
-	
 
-  const createTags = data.map((recipes) => {
-    return recipes.category
-  })
-	
-
-  const tagsArray = createTags.flat()
-  const allTags = [...new Set(tagsArray)]
-	
-  const filteredData = data.filter((recipes) => {
-    return recipes.category.includes(selectedCategory)
-  })
-	
-
-  // const filteredRecipes = data.map((recipes) => {
-  //   return Object.values(recipes).flat()
-  // })
-	
-
-  const handleSubmit = () => {
-    console.log(filteredData)
+  function filterRecipes(tags) {
+    if (tags.length === 0) {
+      return setFilteredData([...initialData])
+    }
+    const types = tags.map(item => item.value)
+    const recipes = filteredData.filter((recipe) => {
+      return recipe.category.some(item => types.includes(item))
+    })
+    console.log(recipes)
+    setFilteredData(recipes)
   }
 	
 
 
+  function handleSubmit() {
+    console.log(...filteredData)
+  }
+  
 
   return <div className="section">
     <div className="container">
@@ -52,9 +53,11 @@ const Recipes = () => {
         TEST!
       </button>
       <div>
-        {allTags.map((categories, i) => {
-          return <FilteredRecipeForm key={i} categories={categories} />
-        })}
+        <FilteredRecipeForm
+          Recipes={filteredData}
+          updateRecipes={filterRecipes}
+        />
+        {/* <FilteredRecipeForm recipe={data} /> */}
         {/* {allTags.map((categories, i) => {
           return <CategoryCard key={i} categories={categories} />
         })} */}
@@ -68,7 +71,6 @@ const Recipes = () => {
   </div>
 }
 export default Recipes
-
 
 
 
