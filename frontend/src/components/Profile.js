@@ -61,8 +61,8 @@ const Profile = () => {
             {/* {data.user && data.user.favouriteRestaurants.map((eateries, id) =>
               <li className="tile is-child" key={id}>{eateries.image ? eateries.image[0] : eateries}</li>
             )} */}
-            {data.user && data.user.favouriteRestaurants[1].image.map((image, id) => {
-              return <img key={id} src={image} />
+            {data.user && data.user.favouriteRestaurants.map((rest, id) => {
+              return <img key={id} src={rest.image[0]} />
             })}
           </div>
         </div>
