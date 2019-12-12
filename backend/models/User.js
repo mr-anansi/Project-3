@@ -3,14 +3,18 @@ const bcrypt = require('bcrypt')
 
 
 const userSchema = new mongoose.Schema({
+  //user settings info --------------
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   age: { type: Number },
+  image: { type: String },
   dietary: { type: [String] },
-  favouriteRestaurants: { type: [String] },
-  favouriteRecipes: { type: [String] }
-
+  //---------------------------------
+  //user additions ------------------
+  favouriteRestaurants: { type: [Object] },
+  favouriteRecipes: { type: [Object] }
+  //---------------------------------
 }, {
   timestamps: true,
   toJSON: {
@@ -29,7 +33,7 @@ const userSchema = new mongoose.Schema({
 userSchema.plugin(require('mongoose-unique-validator'))
 
 //This is the virtual method to check that the password confirmation field has been provided. It sets a virutal schema field, then runs a function.
-//In the function created it checks to see that the confirmatino field has been filled.
+//In the function created it checks to see that the confirmation field has been filled.
 
 userSchema
   .virtual('passwordConfirmation')

@@ -6,11 +6,21 @@ body, html {
 	text-transform: lowercase;
 }
 
+.usercommentimage {
+  background-image: url('https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png');
+}
+
+.deletetag {
+color: red;
+
+}
+
 .Links {
 	text-decoration: none;
 	color: black;
 	font-size: 20px;
 }
+
 
 .title, .subtitle {
 	color: rgb(0, 0, 0);
@@ -122,3 +132,58 @@ p {
 // .clip-me {
 // 	clip-path: ellipse(65px 30px at 125px 40px);
 // }
+//------cards-----
+
+.card {
+  height: 80%;
+  display:flex;
+  flex-direction: column;
+}
+
+.cart-footer {
+  margin-top: auto;
+}
+
+.fav-image {
+  padding: 10px;
+}
+
+.fav-title {
+  font-size: 1.4rem;
+  color: rgb(207, 144, 7);
+  padding-top: 0
+}
+
+.fav-link {
+  font-size: 1.4rem;
+  color: rgb(207, 144, 7);
+  padding-top: 0
+}
+
+.fav-title-recipe {
+  font-size: 1rem;
+  color: rgb(207, 144, 7);
+  padding-top: 0 
+}
+
+.fav-sub {
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 0px 10px;
+}
+
+.container {
+  padding: 20px 0px;
+  margin: 20px 0px;
+}
+
+.card {
+  padding: 20px;
+  margin: 20px;
+}
+
+.card-footer-item {
+  color: red;
+  font-size: 0.7rem;
+}
+

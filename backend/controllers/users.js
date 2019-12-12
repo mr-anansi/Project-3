@@ -7,7 +7,7 @@ const { secret } = require('../config/environment')
 
 function register(req, res, next) {
   User
-    .create(req.body) 
+    .create(req.body)
     .then(user => res.status(200).json({ message: `Hi ${user.username}! Let's change the way you do food..` })) // evaluate if welcome message set up correctly
     .catch(next)
 }
@@ -25,7 +25,7 @@ function login(req, res) {
       // Reggie: I've included the user in the response object. This is crucial for further info use across the app (I may change profile logic because of this.)
       res.status(202).json({ message: `Welcome Back ${user.username}`, user, token })
     }) //finally send back a message with that created token
-    .catch(() => res.status(401).json({ message: 'Unauthorized' } ))
+    .catch(() => res.status(401).json({ message: 'Unauthorized' }))
 }
 
 // Reggie: This is where I'm creating the profile handler. The logic on what to do when the route is followed is all here.
@@ -43,8 +43,34 @@ function show(req, res) {
     })
 }
 
+// function update(req, res) {
+//   Animal
+//     .findById(req.params.id)
+//     .then(animal => {
+//       if (!animal) return res.status(404).json({ message: '404 Not found' })
+//       if (!req.currentUser._id.equals(animal.user)) return res.status(401).json({ message: 'Unauthorized' })
+//       return animal.set(req.body)
+//     })
+//     .then(animal => animal.save())
+//     .then(animal => res.status(202).json(animal))
+// }
+
+
+function edit(req, res) {
+  User
+    .findById(req.currentUser)
+    .then(user => {
+      if (!user) return res.status(401).json({ message: 'There\'s a problem with this user...' })
+      return user.set(req.body)
+    })
+    .then(user => user.save())
+    .then(user => res.status(202).json({ user }))
+    .catch(() => res.status(401).json({ message: 'Profile Not Found' }))
+}
+
 module.exports = {
   register,
   login,
-  show
+  show,
+  edit
 }

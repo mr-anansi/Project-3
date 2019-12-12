@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import React, { useState, useEffect, useContext } from 'react'
+// import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { UserContext } from './UserContext'
+import Auth from '../lib/auth'
 
 const SingleRestaurant = (props) => {
   const [data, setData] = useState({})

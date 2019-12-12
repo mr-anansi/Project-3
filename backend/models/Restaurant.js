@@ -9,7 +9,7 @@ const commentSchema = new mongoose.Schema({
 const restaurantSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   location: { type: String, required: true },
-  image: { type: [String], required: true },
+  image: { type: String, required: true },
   category: { type: [String], required: true },
   cuisine: { type: String },
   type: { type: [String] },

@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-// import axios from 'axios'
-// import Auth from './lib/auth'
+import axios from 'axios'
+import Auth from './lib/auth'
 
 import 'bulma'
 import '../src/style.scss'
@@ -15,11 +15,13 @@ import Login from './components/login'
 import Recipes from './components/recipes'
 import SingleRecipe from './components/singlerecipe'
 import LandingPage from './components/LandingPage'
+import NewRecipe from './components/NewRecipe'
 
 
 import Register from './components/Register'
 import Profile from './components/Profile'
-import Logout from './components/LogOut'
+import EditProfile from './components/EditProfile'
+import Logout from './components/Logout'
 import { UserContext } from './components/UserContext'
 
 const App = () => {
@@ -33,18 +35,25 @@ const App = () => {
   change. */
   const sharedInfo = useMemo(() => ({ userInfo, setUserInfo }), [userInfo, setUserInfo])
 
-  // useEffect(() => {
-  //   console.log('running', Auth.isAuthorized())
-  //   console.log(profile)
-  //   axios.get('/api/profile', {
-  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
-  //   })
-  //     .then(response => {
-  //       setUserInfo(response.data)
-  //     })
-  //     .catch(error => console.log(error))
-  //   // .then(console.log(data))
-  // }, [profile])
+  useEffect(() => {
+    console.log('running')
+    // console.log(Auth.getToken())
+    if (Auth.isAuthorized()) {
+      console.log('setting user')
+      axios.get('/api/profile', {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      })
+        .then(response => {
+          setUserInfo(response.data.user)
+          // console.log(response.data)
+        })
+        .catch(error => {
+          console.log(error)
+          setUserInfo(null)
+        })
+    } else return
+    // .then(console.log(data))
+  }, [])
 
   //Reggie: Logout and Profile paths were created over the weekend
   /* This is where the wrapper that establishes the scope of the sharing of changeable information is provided. The constant defined up
@@ -63,9 +72,10 @@ const App = () => {
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
-        {/* <SecureRoute path="/recipes/new" component={NewRecipe} />
-      <SecureRoute path="/recipes/edit/:id" component={EditRecipe} /> */}
+        <Route path="/recipe/new" component={NewRecipe} />
+        {/* <SecureRoute path="/recipes/edit/:id" component={EditRecipe} /> */}
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/profile/edit" component={EditProfile} />
       </Switch>
     </UserContext.Provider>
   </BrowserRouter>)
