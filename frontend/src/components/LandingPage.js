@@ -60,7 +60,7 @@ class LandingPage extends React.Component {
             <h2>Providing food for those who love too cook...</h2>
           </Fade>
           <Fade left>
-            <h2>...and those who prefer to be cooked for</h2>
+            <h2>...and for those who prefer to be cooked for</h2>
           </Fade>
         </div>
       </div>

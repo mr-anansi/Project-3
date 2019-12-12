@@ -10,9 +10,59 @@ body, html {
   background-image: url('https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png');
 }
 
+#homeicon{
+  font-size: 150%;
+  font-weight: bolder;
+}
+
 .deletetag {
 color: red;
 
+}
+
+h1{
+  font-size: 200%;
+  font-weight: bolder;
+}
+
+
+.card {
+  background-color: whitesmoke;
+	-webkit-animation: flip-in-ver-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-ver-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+
+@-webkit-keyframes card {
+  0% {
+    -webkit-transform: rotateY(80deg);
+            transform: rotateY(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    opacity: 1;
+  }
+}
+@keyframes flip-in-ver-left {
+  0% {
+    -webkit-transform: rotateY(80deg);
+            transform: rotateY(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+a.subtitle{
+  font-size: 100%;
 }
 
 

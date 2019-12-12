@@ -41,28 +41,20 @@ const Recipes = () => {
   }
 	
 
-
-  function handleSubmit() {
-    console.log(...filteredData)
-  }
   
 
   return <div className="section">
+    <h1>Have a look at these Recipes...</h1>
+    <br />
+    <h2>Or sign up to add your own</h2>
     <div className="container">
-      <button className="button is-success" onClick={(e) => handleSubmit(e)}>
-        TEST!
-      </button>
       <div>
         <FilteredRecipeForm
           Recipes={filteredData}
           updateRecipes={filterRecipes}
         />
-        {/* <FilteredRecipeForm recipe={data} /> */}
-        {/* {allTags.map((categories, i) => {
-          return <CategoryCard key={i} categories={categories} />
-        })} */}
       </div>
-      <div className="columns is-mobile is-multiline">
+      <div className="columns is-multiline is-gapless">
         {filteredData.map((results, i) => {
           return <RecipeCard key={i} results={results} />
         })}

@@ -16,7 +16,7 @@ const Restaurants = () => {
       })
       .catch(err => console.log(err))
   }, [])
-	
+
   function filterRestaurants(tags) {
     if (tags.length === 0) {
       return setFilteredData([...initialData])
@@ -25,30 +25,29 @@ const Restaurants = () => {
     const restaurants = initialData.filter((restaurant) => {
       return types.every(element => restaurant.category.includes(element))
     })
-    setFilteredData(restaurants) 
-  // is the first array a subset of the second?
-  // this basically checks every type 
+    setFilteredData(restaurants)
+    // is the first array a subset of the second?
+    // this basically checks every type 
   }
-	
-	
-  return <div className="restaurants">
-    <div className="section">
-      {/* <div className="container is-fixed-top">{allTags.toString()}</div> */}
-    </div>
-    <FilteredForm 
-      Restaurants={filteredData}
-      updateRestaurants={filterRestaurants}
-    />
-    <div className="section has-text-centered">
-      <div className="container is-center">
-        <div className="column is-centered">
-          <div>{filteredData.map((restaurant, index) => {
-            return <RestaurantCard key={index} restaurant={restaurant} />
-          })}</div>
-        </div>
+
+
+  return <div className="section">
+    <h1>Our pick of London Restaurants...</h1>
+    <div className="container">
+      <div>
+        <FilteredForm
+          Restaurants={filteredData}
+          updateRestaurants={filterRestaurants}
+        />
+      </div>
+      <div className="columns is-multiline is-gapless">
+        {filteredData.map((restaurant, index) => {
+          return <RestaurantCard key={index} restaurant={restaurant} />
+        })}
       </div>
     </div>
   </div>
+
 
 }
 

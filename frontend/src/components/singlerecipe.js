@@ -168,7 +168,7 @@ const SingleRecipe = (props) => {
                   <article className="media">
                     <figure className="media-left">
                       <p className="image is-64x64">
-                        <img src={userProfilePic ? userProfilePic : 'https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png'} />
+                        <img className="is-rounded" src={userProfilePic ? userProfilePic : 'https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png'} />
                       </p>
                     </figure>
                     <div className="media-content">

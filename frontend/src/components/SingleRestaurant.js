@@ -16,11 +16,11 @@ const SingleRestaurant = (props) => {
       // .then(res => setBackground({ ...background, background: res.image }))
       .catch(err => console.log(err))
   }, [])
-	
+
   console.log(data)
   return <div className="section has-text-centered is-full-height" id="dataImage" style={{ backgroundImage: `url(${data.image})` }}>
     {/* <img className="clip-me" src='https://cdn.mos.cms.futurecdn.net/iuWB2NM48R2r9q7QhyJfhe-320-80.jpg'/> */}
-		<div className="column">
+    <div className="column">
       <div className="card">
         <div className="title" style={{ textShadow: '#FFF 1px 0 10px' }}>
           {data.name}

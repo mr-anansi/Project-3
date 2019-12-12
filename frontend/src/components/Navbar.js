@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return <nav className="navbar is-black is-fixed-top ">
     <div className="navbar-brand">
-      <Link className="navbar-item" to="/">Home</Link>
+      <Link id="homeicon" className="navbar-item" to="/">the kitchen</Link>
       {/* Reggie: The following line displays the change in status of the logged in user by displaying an internet icon on logon */}
       {/* {userInfo ? <img className="navbar-item" src="https://bit.ly/2PtuQAG" alt="" /> : <span className="navbar-item">Try Log in...</span>} */}
       <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navDrop" onClick={handleMenu}>

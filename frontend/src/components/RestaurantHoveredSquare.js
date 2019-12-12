@@ -15,17 +15,17 @@ const StyledSquare = styled(Square)`
 `
 
 class RestaurantHoveredSquare extends React.Component {
-	state = { hovering: false }
+  state = { hovering: false }
 
-	render() {
-	  return (
-	    <StyledSquare className="box" id="inner-border"
-	      pose={this.state.hovering ? 'hovered' : 'idle'}
-	      onMouseEnter={() => this.setState({ hovering: true })}
-	      onMouseLeave={() => this.setState({ hovering: false })}
-	    ><Link to="/restaurants" style={{ color: '#FFF' }}>Feeling Lazy?</Link></StyledSquare>
-	  )
-	}
+  render() {
+    return (
+      <StyledSquare className="box" id="inner-border"
+        pose={this.state.hovering ? 'hovered' : 'idle'}
+        onMouseEnter={() => this.setState({ hovering: true })}
+        onMouseLeave={() => this.setState({ hovering: false })}
+      ><Link to="/restaurants" style={{ color: '#FFF' }}>...or would you rather eat out?</Link></StyledSquare>
+    )
+  }
 }
 
 export default RestaurantHoveredSquare

@@ -69,6 +69,7 @@ const FilteredForm = ({ Restaurants, updateRestaurants }) => {
     onChange={handleSelect}
     className="basic-multi-select"
     classNamePrefix="select"
+    placeholder="Search by category..."
   />
 }
 
