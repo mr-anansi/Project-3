@@ -3,9 +3,9 @@ import axios from 'axios'
 import emailjs from 'emailjs-com'
 import { UserContext } from './UserContext'
 import CommentCard from './CommentCard'
-import moment from 'moment'
 import Auth from '../lib/auth'
-
+import Background from '../images/recipeBg.png'
+import Bounce from 'react-reveal/Bounce'
 
 const SingleRecipe = (props) => {
   const [data, setData] = useState({ ingredients: [], method: [], comments: [] })
@@ -91,7 +91,7 @@ const SingleRecipe = (props) => {
   }
 
 
-  moment(data.comments.timestamp)
+  // moment(data.comments.timestamp)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -109,46 +109,52 @@ const SingleRecipe = (props) => {
     
   }
 
- 
-
   const userProfilePic = userInfo ? userInfo.image : 'https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png'
 
-
-  // console.log(data.ingredients)
-  // console.log(data.comments[0])
   return (
-    <div className="section">
+    <div className="section" id="single-recipe-page" style={{ marginTop: 50, backgroundImage: 'url(' + { Background } + ')'  }}>
       <div className="container">
-        <div className="columns is-multiline">
-          <div className="column is-half-tablet">
-            <p className="title">
-              {data.name}
-            </p>
-            <p className="subtitle">
+        {/* <div className="columns is-multiline">
+          <div className="column is-half-tablet"> */}
+        <p className="title is-size-2-mobile">
+          {data.name}
+        </p>
+        <br />
+        <p className="subtitle is-size-2 is-size-3-mobile">
               by {data.author}
-            </p>
-            <ul>
-              {data.ingredients.map((ingredient, id) =>
-                <li key={id}>{ingredient}</li>
-              )}
-            </ul>
-            <button className="button is-success" onClick={(e) => handleSubmit(e)}>
+        </p>
+        <Bounce>
+          <div className="box is-size-6-mobile is-size-5 is-size-7-tablet desktop-only" id="inner-border" style={{ width: 1350, height: 780 }}>
+            <div className="section" style={{ width: 1000 }}>
+              <div className="container is-size-6">
+                <ul>
+                  {data.ingredients.map((ingredient, id) =>
+                    <li key={id}>{ingredient}</li>
+                  )}
+                </ul>
+              </div>
+              <div className="column is-size-7-mobile">
+                <ol>
+                  {data.method.map((ingredient, id) =>
+                    <li key={id}>{ingredient}</li>
+                  )}
+                </ol>
+                <br />
+                <button className="button is-black" style={{ border: '1px solid white' }} onClick={(e) => handleSubmit(e)}>
               Email me this Recipe!
-            </button>
-            <br />
-            <ol>
-              {data.method.map((ingredient, id) =>
-                <li key={id}>{ingredient}</li>
-              )}
-            </ol>
-            {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>} 
-            <br />
-            <br />
-            <br />
-            {data.comments.map((comments, i) => {
-              return <CommentCard key={i} comments={comments} userInfo={userInfo} isOwner={isOwner} props={props} />
-            })}
-            {userInfo ?
+                </button>
+              </div>
+            </div>
+          </div>
+        </Bounce>
+        <br />
+        {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite}>Save to Profile</button>} 
+        <br />
+        <br />
+        {data.comments.map((comments, i) => {
+          return <CommentCard key={i} comments={comments} userInfo={userInfo} isOwner={isOwner} props={props} />
+        })}
+        {userInfo ?
             <>
             <br />
               <form className="form" onSubmit={postComment}>
@@ -173,18 +179,13 @@ const SingleRecipe = (props) => {
                 </article>
               </form>
               </>
-              : <>
+          : <>
                 <br />
                 <br />
                 <h1>You must be signed in to post a comment!</h1>
               </>}
-          </div>
-          <div className="column is-half-tablet">
-            <img src={data.image} />
-          </div>
-        </div>
       </div>
-    </div >
+    </div>
   )
 }
 

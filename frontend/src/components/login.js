@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import Auth from '../lib/auth'
 import { UserContext } from './UserContext'
+import Background from '../images/bg2.png'
 
 //Reggie: Weekend Work
 //Reggie: This page had some slight changes to make with regards to the syntax for state on the page. The initial state had to be initialised to
@@ -13,6 +14,11 @@ routes to users that hadn't logged in.
 
 Eventually, an elegant solution has been found with the introduction of a new hook. This method is quick and concise, gets around directional passing
 of state and updates and allows on page conditionals to be nicely rendered, however it can be broken by page refreshes. */
+
+const sectionStyle = {
+  backgroundImage: 'url(' + { Background } + ')'
+}
+
 
 const Login = (props) => {
   const [data, setData] = useState({})
@@ -43,12 +49,12 @@ const Login = (props) => {
   }
 
 
-  return <section className="section">
-    <div className="container">
-      <div className="title">Login</div>
-      <form className="form" onSubmit={handleSubmit}>
+  return <section className="section has-text-centered is-full-height" id="loginPage" style={{ sectionStyle }}>
+    <div className="container has-text-centered" id="newform">
+      <div className="title title has-text-white">Login</div>
+      <form className="form has-text-centered" onSubmit={handleSubmit}>
         <div className="field">
-          <label htmlFor="" className="label">
+          <label htmlFor="" className="label has-text-white">
             Email
           </label>
           <div className="control">
@@ -61,7 +67,7 @@ const Login = (props) => {
           </div>
         </div>
         <div className="field">
-          <label htmlFor="" className="label">
+          <label htmlFor="" className="label has-text-white">
             Password
           </label>
           <div className="control">
@@ -76,7 +82,7 @@ const Login = (props) => {
             {errors.message}
           </small>}
         </div>
-        <button className="button is-success">
+        <button className="button is-black">
           Login
         </button>
       </form>
