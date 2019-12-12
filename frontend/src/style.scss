@@ -111,10 +111,6 @@ input {
 	margin: 0;
 }
 
-p {
-	margin-top: 50px; 
-}
-
 .centered {
   position: absolute;
   top: 50%;
@@ -143,10 +139,34 @@ p {
 // .clip-me {
 // 	clip-path: ellipse(65px 30px at 125px 40px);
 // }
+//------profile-text-------
+
+.pro-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.pro-subtitle {
+  font-size: 1.8rem;
+  // font-weight: bold;
+}
+
+.pro-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  margin: 10px;
+}
+
+
 //------cards-----
 
 .card {
-  height: 80%;
+  height: 100%;
   display:flex;
   flex-direction: column;
 }

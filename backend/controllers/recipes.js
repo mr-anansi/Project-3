@@ -44,19 +44,20 @@ function createComment(req, res) {
       return recipe.save()
     })
     .then(recipe => res.status(201).json(recipe))
-    .catch(err => res.status(404).json({ message: 'Not Found' }))
+    .catch(() => res.status(404).json({ message: 'Not Found' }))
 }
 
 function deleteComment(req, res) {
   Recipe
     .findById(req.params.id)
+    .populate('comments.user')
     .then(recipe => {
       if (!recipe) return res.status(404).json({ message: 'Not Found' })
       const comment = recipe.comments.id(req.params.commentId)
       comment.remove()
       return recipe.save()
     })
-    .then(animal => res.status(200).json(animal))
+    .then(recipe => res.status(200).json(recipe))
     .catch(err => res.json(err))
 }
 

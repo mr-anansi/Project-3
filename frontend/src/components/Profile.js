@@ -86,19 +86,19 @@ const Profile = () => {
         <div className="container">
           {/* <div className="columns is-multiline">
           <div className="column is-half-tablet"> */}
-          {data.user && <p className="title">
+          {data.user && <p className="pro-title">
             Hey {data.user.username}
           </p>}
-          {data.user && <div className="subtitle">
+          {data.user && <div className="pro-subtitle">
             {data.user.email}
           </div>}
-          <div className="subtitle">
+          <div className="pro-subtitle">
             {data.user && data.user.dietary.map((diet, id) =>
               <p key={id}>{diet}</p>
             )}
           </div>
           <div>
-            <div className="subtitle">Quicklinks</div>
+            <div className="pro-link">Quicklinks</div>
             <Link className="tag is-info is-light" to='/profile/edit'>Edit Profile</Link>
             <Link className="tag is-info is-light" to='/recipes'>Recipes</Link>
             <Link className="tag is-info is-light" to='/restaurants'>Restaurants</Link>
