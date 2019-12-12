@@ -14,6 +14,7 @@ const Profile = () => {
   // I've initialised our state with an object
   const [data, setData] = useState({})
   const [info, setInfo] = useState({})
+  const [update, setUpdate] = useState(false)
 
   const { userInfo, setUserInfo } = useContext(UserContext)
 
@@ -36,19 +37,43 @@ const Profile = () => {
     // .then(console.log(data))
   }, [userInfo])
 
+  useEffect(() => {
+    if (update) {
+      axios.put('/api/profile/edit', info, {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      })
+        .then(res => {
+          // console.log(res.data)
+          // console.log(res.data.user)
+          setUserInfo(res.data.user)
+          setUpdate(false)
+        })
+        .catch(err => console.log(err))
+    }
+  }, [info])
 
-  // const favourite = (e) => {
-  //   let update = info.favouriteRestaurants
-  //   update.push(data)
-  //   setInfo({ ...info, favouriteRestaurants: update })
-  //   axios.put('/api/profile/edit', info, {
-  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
-  //   })
-  //     .then(res => {
-  //       setUserInfo(res.data.user)
-  //     })
-  //     .catch(err => console.log(err))
-  // }
+
+  const removeFavRest = (e) => {
+    let match = info.favouriteRestaurants
+    const update = match.filter((rest) => {
+      return rest.name !== e.target.attributes.getNamedItem('data-name').value
+    })
+    console.log(update)
+    setInfo({ ...info, favouriteRestaurants: update })
+    setUpdate(true)
+    // console.log(update)  
+  }
+  
+  const removeFavReci = (e) => {
+    let match = info.favouriteRecipes
+    const update = match.filter((reci) => {
+      return reci.name !== e.target.attributes.getNamedItem('data-name').value
+    })
+    console.log(update)
+    setInfo({ ...info, favouriteRecipes: update })
+    setUpdate(true)
+    // console.log(update)  
+  }
 
   /* There's another oddity at this point. The render happens before the data is pulled and thus one of those conditional tricks is needed
   to get the data to show correctly. At a later stage, we can include a couple of loading styles to replace what at times can be blank load
@@ -56,6 +81,7 @@ const Profile = () => {
 
   return (
     <div className="section">
+      {console.log(info)}
       <div className="section">
         <div className="container">
           {/* <div className="columns is-multiline">
@@ -87,6 +113,7 @@ const Profile = () => {
               <li className="tile is-child" key={id}>{eateries.image ? eateries.image[0] : eateries}</li>
             )} */}
               {data.user && data.user.favouriteRestaurants.map((rest, id) => {
+                // console.log(rest.name)
                 return (
                   <div key={id} className="column is-one-quarter-desktop">
                     <div className="card">
@@ -98,7 +125,7 @@ const Profile = () => {
                         </figure>
                       </div>
                       <footer className="card-footer">
-                        <Link to="/" className="card-footer-item">Remove</Link>
+                        <Link data-name={rest.name} onClick={removeFavRest} className="card-footer-item">Remove</Link>
                       </footer>
                     </div>
                   </div>)
@@ -112,7 +139,7 @@ const Profile = () => {
                 return (
                   <div key={id} className="column is-one-quarter-desktop">
                     <div className="card">
-                      <h3 className="fav-title-recipe card-header-title is-centered"><Link className='fav-title-recipe' to={`/restaurants/${recipes._id}`}>{recipes.name}</Link></h3>
+                      <h3 className="fav-title-recipe card-header-title is-centered"><Link className='fav-title-recipe' to={`/recipes/${recipes._id}`}>{recipes.name}</Link></h3>
                       <p className="fav-sub">{recipes.author}</p>
                       <div className="card-image">
                         <figure className="image is-4by3">
@@ -120,7 +147,7 @@ const Profile = () => {
                         </figure>
                       </div>
                       <footer className="card-footer">
-                        <Link to="/" className="card-footer-item">Remove</Link>
+                        <Link data-name={recipes.name} onClick={removeFavReci} className="card-footer-item">Remove</Link>
                       </footer>
                     </div>
                   </div>)
