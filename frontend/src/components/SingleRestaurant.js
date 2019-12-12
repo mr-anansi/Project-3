@@ -1,9 +1,6 @@
-import { Link } from 'react-router-dom'
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 // import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { UserContext } from './UserContext'
-import Auth from '../lib/auth'
 
 const SingleRestaurant = (props) => {
   const [data, setData] = useState({})
@@ -17,28 +14,19 @@ const SingleRestaurant = (props) => {
       .catch(err => console.log(err))
   }, [])
 	
-  console.log(data)
-  return <div className="section has-text-centered is-full-height" id="dataImage" style={{ backgroundImage: `url(${data.image})` }}>
-    {/* <img className="clip-me" src='https://cdn.mos.cms.futurecdn.net/iuWB2NM48R2r9q7QhyJfhe-320-80.jpg'/> */}
-		<div className="column">
-      <div className="card">
-        <div className="title" style={{ textShadow: '#FFF 1px 0 10px' }}>
-          {data.name}
-        </div>
-        <div className="card-content">
-          <h2>
-            {data.location}
-          </h2>
-          <h2>
-            {data.postcode}
-          </h2>
-          <h2>
-            {data.priceRange}
-          </h2>
-          <h2>
-            <a href={data.link}>{data.link}</a>
-          </h2>
-        </div>
+  return <div className="section">
+    <div className="single-parallax">
+      <div className="mask">
+        <div className="headline">{data.name}</div>
+      </div>
+    </div>
+    <div className="content-div">
+      <div className="card has-text-centered" id="inner-border-card">
+        {/* <h1 className="title">{data.name}</h1> */}
+        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet" id="location">{data.location}</h1>
+        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.postcode}</h1>
+        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.priceRange}</h1>
+        <h1><a href={data.link}>{data.link}</a></h1>
       </div>
     </div>
   </div>
