@@ -56,7 +56,7 @@ const SingleRecipe = (props) => {
       {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      .then(() => props.history.push(`${data._id}`))
+      .then(() => props.history.push(`/recipes/${data._id}`))
       .catch(err => {
         setErrors(err.response.data.errors)
         console.log(err.response.data.errors)

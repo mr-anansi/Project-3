@@ -1,14 +1,25 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import useForm from "react-hook-form"
+
+
+function createArrayWithNumbers(length) {
+  return Array.from({ length }, (_, k) => k + 1)
+}
 
 
 const Register = (props) => {
   const [data, setData] = useState({})
   const [errors, setErrors] = useState({})
- 
+  const { register } = useForm()
+  const [ingredientSize, setIngredientSize] = useState(1)
+  const [methodSize, setMethodSize] = useState(1)
+  const [categorySize, setCategorySize] = useState(1)
+  const onSubmit = data => console.log(data)
+
 
   const postIt = () => {
-    axios.post('/api/register', data)
+    axios.post('/api/recipes', data)
       .then(() => props.history.push('/login'))
       .catch(err => {
         setErrors(err.response.data.errors)
@@ -35,7 +46,7 @@ const Register = (props) => {
         <div className='field'>
           <div className='control'>
             <label htmlFor=''>
-              What's it called?
+              What&apos;s it called?
               <input onChange={handleChange} className='input is-info' type='text' name='name' />
             </label>
           </div>
@@ -58,46 +69,70 @@ const Register = (props) => {
           <div className='control'>
             <label htmlFor=''>
               What&apos;s the story behind this dish?
-              <input onChange={handleChange} className='input is-info' type='text' name='author' />
+              <input onChange={handleChange} className='input is-info' type='text' name='method' />
             </label>
           </div>
-          {errors.author && <small className="help is-danger">
-            {errors.author}
+          {errors.method && <small className="help is-danger">
+            {errors.method}
           </small>}
         </div>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              List the ingredients
-              <input onChange={handleChange} className='input is-info' type='text' name='author' />
-            </label>
-          </div>
-          {errors.author && <small className="help is-danger">
-            {errors.author}
-          </small>}
-        </div>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              List the steps to make it
-              <input onChange={handleChange} className='input is-info' type='text' name='author' />
-            </label>
-          </div>
-          {errors.author && <small className="help is-danger">
-            {errors.author}
-          </small>}
-        </div>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              Add categories
-              <input onChange={handleChange} className='input is-info' type='text' name='author' />
-            </label>
-          </div>
-          {errors.author && <small className="help is-danger">
-            {errors.author}
-          </small>}
-        </div>
+        {createArrayWithNumbers(ingredientSize).map(index => {
+          return (
+            <div className='field'>
+              <div className='control'>
+                <label htmlFor=''>
+                  Add ingredient {index}
+                  <input onChange={handleChange} className='input is-info' type='text' name={`ingredients[${index}]`} />
+                </label>
+              </div>
+              {errors.ingredients && <small className="help is-danger">
+                {errors.ingredients}
+              </small>}
+            </div>
+          )
+        })}
+        <button type="button" onClick={() => setIngredientSize(ingredientSize + 1)} >
+          Add another ingredient
+        </button>
+        {
+          createArrayWithNumbers(methodSize).map(index => {
+            return (
+              <div className='field'>
+                <div className='control'>
+                  <label htmlFor=''>
+                    Add step {index}
+                    <input onChange={handleChange} className='input is-info' type='text' name={`method[${index}]`} />
+                  </label>
+                </div>
+                {errors.method && <small className="help is-danger">
+                  {errors.method}
+                </small>}
+              </div>
+            )
+          })}
+        <button type="button" onClick={() => setMethodSize(methodSize + 1)} >
+          Add another step
+        </button>
+
+        {
+          createArrayWithNumbers(categorySize).map(index => {
+            return (
+              <div className='field'>
+                <div className='control'>
+                  <label htmlFor=''>
+                    Add a category (e.g 'Vegetarian', 'Comfort-food')
+                    <input onChange={handleChange} className='input is-info' type='text' name={`category[${index}]`} />
+                  </label>
+                </div>
+                {errors.category && <small className="help is-danger">
+                  {errors.category}
+                </small>}
+              </div>
+            )
+          })}
+        <button type="button" onClick={() => setCategorySize(categorySize + 1)} >
+          Add another category
+        </button>
         <div className='field'>
           <div className='control'>
             <label htmlFor=''>
@@ -113,7 +148,7 @@ const Register = (props) => {
           Submit Recipe!
         </button>
       </form>
-    </section>
+    </section >
   )
 }
 
