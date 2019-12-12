@@ -67,13 +67,16 @@ const Profile = () => {
                 return (
                   <div key={id} className="column is-one-quarter-desktop">
                     <div className="card">
-                      <h3 className="fav-title card-header-title is-centered">{rest.name}</h3>
+                      <h3 className="fav-title card-header-title is-centered"><Link className='fav-link' to={`/restaurants/${rest._id}`}>{rest.name}</Link></h3>
                       <p className="fav-sub">{rest.location}</p>
                       <div className="card-image">
                         <figure className="image is-4by3">
                           <img className="fav-image" src={rest.image[0]} />
                         </figure>
                       </div>
+                      <footer className="card-footer">
+                        <Link to="/" class="card-footer-item">Remove</Link>
+                      </footer>
                     </div>
                   </div>)
               })}
@@ -86,13 +89,16 @@ const Profile = () => {
                 return (
                   <div key={id} className="column is-one-quarter-desktop">
                     <div className="card">
-                      <h3 className="fav-title-recipe card-header-title is-centered">{recipes.name}</h3>
+                      <h3 className="fav-title-recipe card-header-title is-centered"><Link className='fav-title-recipe' to={`/restaurants/${recipes._id}`}>{recipes.name}</Link></h3>
                       <p className="fav-sub">{recipes.author}</p>
                       <div className="card-image">
                         <figure className="image is-4by3">
                           <img className="fav-image" src={recipes.image[0]} />
                         </figure>
                       </div>
+                      <footer className="card-footer">
+                        <Link to="/" class="card-footer-item">Remove</Link>
+                      </footer>
                     </div>
                   </div>)
               })}

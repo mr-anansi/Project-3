@@ -18,15 +18,15 @@ const FilteredForm = ({ Restaurants }) => {
   const filterOptions = Restaurants.map((restaurant) => {
     return restaurant.category
   })
-  console.log(filterOptions)
+  // console.log(filterOptions)
   // this is an array of arrays of the restaurants categories 
 
   const tagsArray = filterOptions.flat()
-  console.log(filterOptions.flat())
+  // console.log(filterOptions.flat())
   // creates an array of all tags/categories as strings
 
   const allTags = [...new Set(tagsArray)]
-  console.log(allTags)
+  // console.log(allTags)
   // creates an array of tags with no repetition
 
   const allTagsLabeled = allTags.map((tag) => {
@@ -45,7 +45,7 @@ const FilteredForm = ({ Restaurants }) => {
     if (e === null)
       return
     e.map((type) => {
-      console.log(type.value)
+      // console.log(type.value)
       if (type.value === 'Pasta')
         console.log('hello')
       // then maybe have a function to display filtered restaurants
@@ -56,9 +56,9 @@ const FilteredForm = ({ Restaurants }) => {
   // 	let category = 'all'
   // }
 
-  const tag = allTags.map((tag) => {
-    console.log(tag)
-  })
+  // const tag = allTags.map((tag) => {
+  //   console.log(tag)
+  // })
 
 
   // function handleSubmit(event) {
