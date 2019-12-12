@@ -37,7 +37,6 @@ const SingleRecipe = (props) => {
 
 
 
-
   const shoppingList = data.ingredients.map(function (ingredient) {
     return '<li>' + ingredient + '</li>'
   }).join('')
@@ -63,7 +62,7 @@ const SingleRecipe = (props) => {
   }
 
   const favourite = () => {
-    let update = info.favouriteRecipes
+    const update = info.favouriteRecipes
     update.push(data)
     setInfo({ ...info, favouriteRecipes: update })
     axios.put('/api/profile/edit', info, {
