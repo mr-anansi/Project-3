@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
-import CategoryCard from './CategoryCard'
+// import CategoryCard from './CategoryCard'
 import RecipeCard from './recipecard'
 // import { UserContext } from './UserContext'
 import FilteredRecipeForm from './FilteredRecipeForm'
-import { filter } from 'minimatch'
-import Select from 'react-select'
+// import { filter } from 'minimatch'
+// import Select from 'react-select'
 
 
 const Recipes = () => {
@@ -34,8 +34,8 @@ const Recipes = () => {
       return setFilteredData([...initialData])
     }
     const types = tags.map(item => item.value)
-    const recipes = filteredData.filter((recipe) => {
-      return recipe.category.some(item => types.includes(item))
+    const recipes = initialData.filter((recipe) => {
+      return types.every(element => recipe.category.includes(element))
     })
     console.log(recipes)
     setFilteredData(recipes)

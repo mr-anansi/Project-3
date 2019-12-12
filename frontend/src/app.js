@@ -14,6 +14,7 @@ import Navbar from './components/Navbar'
 import Login from './components/login'
 import Recipes from './components/recipes'
 import SingleRecipe from './components/singlerecipe'
+import NewRecipe from './components/NewRecipe'
 
 
 import Register from './components/Register'
@@ -70,8 +71,8 @@ const App = () => {
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
-        {/* <SecureRoute path="/recipes/new" component={NewRecipe} />
-      <SecureRoute path="/recipes/edit/:id" component={EditRecipe} /> */}
+        <Route path="/recipe/new" component={NewRecipe} />
+        {/* <SecureRoute path="/recipes/edit/:id" component={EditRecipe} /> */}
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/profile/edit" component={EditProfile} />
       </Switch>

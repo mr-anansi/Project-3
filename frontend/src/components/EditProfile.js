@@ -45,8 +45,8 @@ const EditProfile = (props) => {
         <div className='field'>
           <div className='control'>
             <label htmlFor=''>
-              Username
-              <input onChange={handleChange} className='input is-info' type='text' name='username' value={data.username ? data.username : ''}/>
+              Full Name
+              <input onChange={handleChange} className='input is-info' type='text' name='username' value={data.username ? data.username : ''} />
             </label>
           </div>
           {errors.username && <small className="help is-danger">
@@ -57,7 +57,7 @@ const EditProfile = (props) => {
           <div className='control'>
             <label htmlFor=''>
               E-mail
-              <input onChange={handleChange} className='input is-info' type='text' name='email' value={data.email ? data.email : ''}/>
+              <input onChange={handleChange} className='input is-info' type='text' name='email' value={data.email ? data.email : ''} />
             </label>
           </div>
           {errors.email && <small className="help is-danger">
@@ -68,11 +68,22 @@ const EditProfile = (props) => {
           <div className='control'>
             <label htmlFor=''>
               Age
-              <input onChange={handleChange} className='input is-info' type='text' name='age' value={data.age ? data.age : ''}/>
+              <input onChange={handleChange} className='input is-info' type='text' name='age' value={data.age ? data.age : ''} />
             </label>
           </div>
           {errors.age && <small className="help is-danger">
             {errors.age}
+          </small>}
+        </div>
+        <div className='field'>
+          <div className='control'>
+            <label htmlFor=''>
+              Link to Profile Picture
+              <input onChange={handleChange} className='input is-info' type='text' name='image' value={data.image ? data.image : ''} />
+            </label>
+          </div>
+          {errors.image && <small className="help is-danger">
+            {errors.image}
           </small>}
         </div>
         {/* I might need some Marissa tag magic on this field for array entry */}
@@ -80,7 +91,7 @@ const EditProfile = (props) => {
           <div className='control'>
             <label htmlFor=''>
               Dietary
-              <input onChange={handleChange} className='input is-info' type='text' name='dietary' value={data.dietary ? data.dietary : ''}/>
+              <input onChange={handleChange} className='input is-info' type='text' name='dietary' value={data.dietary ? data.dietary : ''} />
             </label>
           </div>
           {errors.dietary && <small className="help is-danger">

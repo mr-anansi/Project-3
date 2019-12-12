@@ -4,6 +4,7 @@ function index(req, res) {
   Recipe
     .find()
     .populate('user')
+    .populate('comments.user')
     .then(recipes => res.status(200).json(recipes))
     .catch(err => console.log(err))
 }
@@ -11,6 +12,7 @@ function index(req, res) {
 function show(req, res) {
   Recipe
     .findById(req.params.id)
+    .populate('comments.user')
     .then(recipe => {
       // Reggie: console logged the name as opposed to the whole object
       console.log('My recipe is', recipe.name)
@@ -21,9 +23,13 @@ function show(req, res) {
 }
 
 
-
-
-
+function createRecipe(req, res) {
+  req.body.user = req.currentUser
+  Recipe
+    .create(req.body)
+    .then(recipe => res.status(201).json(recipe))
+    .catch(err => console.log(err))
+}
 
 
 //************************ADDING COMMENTS FUNCTIONALITY */
@@ -70,6 +76,7 @@ function deleteComment(req, res) {
 module.exports = {
   index,
   show,
+  createRecipe,
   createComment,
   deleteComment
 }

@@ -75,7 +75,7 @@ const Profile = () => {
                         </figure>
                       </div>
                       <footer className="card-footer">
-                        <Link to="/" class="card-footer-item">Remove</Link>
+                        <Link to="/" className="card-footer-item">Remove</Link>
                       </footer>
                     </div>
                   </div>)
@@ -97,7 +97,7 @@ const Profile = () => {
                         </figure>
                       </div>
                       <footer className="card-footer">
-                        <Link to="/" class="card-footer-item">Remove</Link>
+                        <Link to="/" className="card-footer-item">Remove</Link>
                       </footer>
                     </div>
                   </div>)
