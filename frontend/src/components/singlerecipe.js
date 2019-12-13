@@ -88,14 +88,14 @@ const SingleRecipe = (props) => {
 
   const postIt = () => {
 
-    console.log(data._id)
+    // console.log(data._id)
     axios.post(`/api/recipes/${data._id}`, formData,
       {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       .then(res => {
         setReci(res.data)
-        console.log(res.data)
+        setFormData({ ...formData, text: '' })
         // props.history.push(`/recipes/${data._id}`)
       })
       .catch(err => {
@@ -109,13 +109,14 @@ const SingleRecipe = (props) => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    console.log(data.comments)
+    console.log(formData.text)
     setErrors({})
   }
 
   const postComment = (e) => {
     e.preventDefault()
     postIt()
+    // ReactDOM.findDOMNode()
   }
 
   const isOwner = function () {
@@ -180,7 +181,7 @@ const SingleRecipe = (props) => {
                     <div className="media-content">
                       <div className="field">
                         <p className="control">
-                          <textarea onChange={handleChange} name="text" className="textarea" placeholder="Add a comment..."></textarea>
+                          <textarea onChange={handleChange} name="text" className="textarea" placeholder="Add a comment..." value={formData.text}></textarea>
                         </p>
                       </div>
                       <div className="field">
