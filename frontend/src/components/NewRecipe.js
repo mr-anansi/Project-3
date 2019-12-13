@@ -16,8 +16,6 @@ const Register = (props) => {
   const [ingredientSize, setIngredientSize] = useState(1)
   const [methodSize, setMethodSize] = useState(1)
   const [categorySize, setCategorySize] = useState(1)
-  const onSubmit = data => console.log(data)
-
 
 
   const postIt = () => {
@@ -43,7 +41,8 @@ const Register = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     postIt()
-  }
+	}
+	
 
   return <div className="section has-text-centered is-full-height" id="newRecipe">
     <div className="container has-text-centered" id="newform">
@@ -75,7 +74,7 @@ const Register = (props) => {
           <div className='control'>
             <label htmlFor='' className="label has-text-white">
               What&apos;s the story behind this dish?
-              <input onChange={handleChange} className='input is-info' type='text' name='method' />
+              <input onChange={handleChange} className='input is-info' type='text' name='about' />
             </label>
           </div>
           {errors.method && <small className="help is-danger">
@@ -88,7 +87,7 @@ const Register = (props) => {
             <div key={i} className='field'>
               <div className='control'>
                 <label htmlFor='' className="label has-text-white">
-                  Add ingredient {index}
+                  Add ingredient {index + 1}
                   <input onChange={handleChange} className='input is-info' type='text' name={`ingredients[${index}]`} />
                 </label>
               </div>
@@ -107,7 +106,7 @@ const Register = (props) => {
               <div key={i} className='field'>
                 <div className='control'>
                   <label htmlFor='' className="label has-text-white">
-                    Add step {index}
+                    Add step {index + 1}
                     <input onChange={handleChange} className='input is-info' type='text' name={`method[${index}]`} />
                   </label>
                 </div>
