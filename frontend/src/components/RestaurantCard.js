@@ -7,7 +7,9 @@ const RestaurantCard = ({ restaurant }) => (
     <div className="card">
       <div className="card-image">
         <figure className='image is-5by4 is-centered'>
-          <img src={restaurant.image} alt="Placeholder image" />
+          <Link to={`/restaurants/${restaurant._id}`} >
+            <img src={restaurant.image} alt="Placeholder image" />
+          </Link>
         </figure>
       </div>
       <div className="card-content">
