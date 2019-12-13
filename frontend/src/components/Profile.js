@@ -100,13 +100,14 @@ const Profile = () => {
           <Link className="tag is-info is-light" to='/profile/edit'>Edit Profile</Link>
           <Link className="tag is-info is-light" to='/recipes'>Recipes</Link>
           <Link className="tag is-info is-light" to='/restaurants'>Restaurants</Link>
-          <Link className="tag is-info is-light" to='/'>Home</Link>
         </div>
       </div>
       <div className="section">
         <div className="container">
-          <h2>Your Favourite Restaurants...</h2>
-          <div className="columns is-multiline is-gapless">
+          <div className="titlecontain">
+            <h2 className="headers">Your Favourite Restaurants...</h2>
+          </div>
+          <div className="columns is-multiline">
             {data.user && data.user.favouriteRestaurants.map((rest, id) => {
               return (
                 <div key={id} className="column is-one-quarter-desktop is-one-third-tablet is-three-quartes-mobile">
@@ -124,7 +125,6 @@ const Profile = () => {
                         <br />
                         <Link data-name={rest.name} onClick={removeFavRest} className="card-footer-item">Remove</Link>
                       </div>
-                      <br />
                     </div>
 
                   </div>
@@ -135,7 +135,9 @@ const Profile = () => {
         </div>
         <div className="section">
           <div className="container">
-            <h2>Your Favourite Recipes...</h2>
+            <div className="titlecontain">
+              <h2 className="headers">Your Favourite Recipes...</h2>
+            </div>
             <div className="columns is-multiline">
               {data.user && data.user.favouriteRecipes.map((recipes, id) => {
                 return (
@@ -152,7 +154,6 @@ const Profile = () => {
                         <div className="card-footer">
                           <Link data-name={recipes.name} onClick={removeFavReci} className="card-footer-item">Remove</Link>
                         </div>
-                        <br />
                       </div>
                     </div>
                   </div>)
