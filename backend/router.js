@@ -14,6 +14,8 @@ router.route('/recipes')
 
 router.route('/recipes/:id')
   .get(recipes.show)
+  .put(secureRoute, recipes.updateRecipe)
+  .delete(secureRoute, recipes.removeRecipe)
   .post(secureRoute, recipes.createComment)
 
 

@@ -31,6 +31,35 @@ function createRecipe(req, res) {
 }
 
 
+
+function updateRecipe(req, res) {
+  Recipe
+    .findById(req.params.id)
+    .then(recipe => {
+      if (!recipe) return res.status(404).json({ message: '404 Not found' })
+      if (!req.currentUser._id.equals(recipe.user)) return res.status(401).json({ message: 'Unauthorized' })
+      return recipe.set(req.body)
+    })
+    .then(recipe => recipe.save())
+    .then(recipe => res.status(202).json(recipe))
+}
+
+
+function removeRecipe(req, res) {
+  Recipe
+    .findById(req.params.id)
+    .then(recipe => {
+      if (!recipe) return res.status(404).json({ message: 'Not Found' })
+      return recipe.remove()
+    })
+    .then(() => res.status(200).json({ message: 'Recipe deleted' }))
+    .catch(err => console.log(err))
+}
+
+
+
+
+
 //************************ADDING COMMENTS FUNCTIONALITY */
 function createComment(req, res) {
   req.body.user = req.currentUser
@@ -63,6 +92,8 @@ function deleteComment(req, res) {
 module.exports = {
   index,
   show,
+  updateRecipe,
+  removeRecipe,
   createRecipe,
   createComment,
   deleteComment

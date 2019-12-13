@@ -73,7 +73,6 @@ const App = () => {
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
         <Route path="/recipe/new" component={NewRecipe} />
-        {/* <SecureRoute path="/recipes/edit/:id" component={EditRecipe} /> */}
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/profile/edit" component={EditProfile} />
       </Switch>

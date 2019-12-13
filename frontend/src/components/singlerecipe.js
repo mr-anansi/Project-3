@@ -63,10 +63,10 @@ const SingleRecipe = (props) => {
         .then(function (response) {
           console.log('SUCCESS!', response.status, response.text)
         },
-          notify(),
-          function (error) {
-            console.log('FAILED...', error)
-          })
+        notify(),
+        function (error) {
+          console.log('FAILED...', error)
+        })
     }
   }
 
@@ -103,7 +103,7 @@ const SingleRecipe = (props) => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    console.log(data.comments)
+    console.log(data.user)
     setErrors({})
   }
 
@@ -112,8 +112,20 @@ const SingleRecipe = (props) => {
     postIt()
   }
 
+
+  const handleDelete = (e) => {
+    const id = props.match.params.id
+    axios.delete(`/api/recipes/${id}`, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => props.history.push('/recipes'))
+      .catch(err => console.log(err))
+  }
+
+
+
   const isOwner = function () {
-    return Auth.getUserId() === userInfo._id
+    return Auth.getUserId() === data.user
 
   }
 
@@ -148,15 +160,23 @@ const SingleRecipe = (props) => {
                   )}
                 </ol>
                 <br />
-                <button className="button is-success" onClick={(e) => handleSubmit(e)}>
+                {userInfo ? <button className="button is-success" onClick={(e) => handleSubmit(e)}>
                   Email me this Recipe!
-              </button>
-                :
-              <button className="button is-success">
-                  Sign in to email yourself these ingredients
-              </button>
+                </button>
+                  :
+                  <button className="button is-success">
+                    Sign in to email yourself these ingredients
+                  </button>
                 }
-            <br />
+                <br />
+                {isOwner() &&
+                  <>
+                    <button className="button is-danger" onClick={(e) => handleDelete(e)}>
+                      {'Remove this recipe'}
+                    </button>
+                  </>
+                }
+                <br />
               </div>
             </div>
           </div>
