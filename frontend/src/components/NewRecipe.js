@@ -16,8 +16,6 @@ const Register = (props) => {
   const [ingredientSize, setIngredientSize] = useState(1)
   const [methodSize, setMethodSize] = useState(1)
   const [categorySize, setCategorySize] = useState(1)
-  const onSubmit = data => console.log(data)
-
 
 
   const postIt = () => {
@@ -43,7 +41,8 @@ const Register = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     postIt()
-  }
+	}
+	
 
   return <div className="section has-text-centered is-full-height" id="newRecipe">
     <div className="container has-text-centered" id="newform">

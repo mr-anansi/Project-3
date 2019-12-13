@@ -22,7 +22,8 @@ color: red;
 
 h1{
   font-size: 200%;
-  font-weight: bolder;
+	font-weight: bolder;
+	color: black;
 }
 
 
@@ -88,17 +89,11 @@ a.subtitle{
 	font-size: 100px;
 }
 
-// .container {
-// 	margin-left: 300px;
-// }
 
-
-// .restaurants {
-// 	background-image: url('../src/images/proj3-2.png');
-// 	min-width: 70%;
-// 	min-height: 70%;
-// 	background-repeat: no-repeat;
-// 	background-attachment: fixed;
+// .card {
+// 	width: 75%;
+// 	height: 75%; 
+// 	margin-left: 100px;
 // }
 
 // .card {
@@ -189,6 +184,16 @@ input {
 // 	clip-path: ellipse(65px 30px at 125px 40px);
 // }
 //------profile-text-------
+
+.headers {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 1rem;
+}
+
+.titlecontain {
+  padding: 0.8rem;
+}
 
 .pro-title {
   font-size: 3rem;
@@ -353,9 +358,9 @@ input {
 #single-recipe-page {
 	background-image: url('../src/images/bgImage.png');
 	background-size: cover;
+	background-position: center;
 	height: 100%;
 	width: 100%;
-
 }
 
 
@@ -369,5 +374,17 @@ input {
 .restaurants {
 	background-image: url('../src/images/ivy.png');
 	background-position: center;
-	background-size: cover;
+	background-repeat: no-repeat
 }
+
+.recipes {
+	background-image: url('../src/images/ivy.png');
+	background-position: center;
+}
+
+a {
+	text-decoration: none; 
+	color: black
+}
+
+

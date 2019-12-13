@@ -4,7 +4,7 @@ import emailjs from 'emailjs-com'
 import { UserContext, ReciContext } from './UserContext'
 import CommentCard from './CommentCard'
 import Auth from '../lib/auth'
-import Bounce from 'react-reveal/Bounce'
+import Fade from 'react-reveal/Bounce'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -137,47 +137,47 @@ const SingleRecipe = (props) => {
 
   const userProfilePic = userInfo ? userInfo.image : 'https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png'
 
-  return (
-    <div className="section" id="single-recipe-page" style={{ marginTop: 50 }}>
-      <div className="container">
-        {/* <div className="columns is-multiline">
-          <div className="column is-half-tablet"> */}
-        <p className="title is-size-2-mobile">
-          {data.name}
-        </p>
-        <br />
-        <p className="subtitle is-size-2 is-size-3-mobile">
-          by {data.author}
-        </p>
-        <Bounce>
-          <div className="box is-size-6-mobile is-size-5 is-size-7-tablet desktop-only" id="inner-border" style={{ width: 1350, height: 780 }}>
-            <div className="section" style={{ width: 1000 }}>
-              <div className="container is-size-6">
+  return <div className="section" id="single-recipe-page" style={{ marginTop: 50  }}>
+    <div className="container">
+      <p className="title is-size-2-mobile">
+        {data.name}
+      </p>
+      <br />
+      <p className="subtitle is-size-2 is-size-3-mobile">
+              by {data.author}
+      </p>
+      <Fade right>
+        {/* <div className="box is-size-6-mobile is-size-5 is-size-7-tablet desktop-only" id="inner-border" style={{ width: 1350, height: 780 }}> */}
+        <div className="section" style={{ width: 1000 }}>
+          <div className="container is-size-6">
+            <div className="columns">
+              <div className="column is-three-quarters is-size-7-mobile">
                 <ul>
                   {data.ingredients.map((ingredient, id) =>
-                    <li key={id}>{ingredient}</li>
+                    <li key={id} style={{ fontWeight: 700 }}>{ingredient}</li>
                   )}
                 </ul>
-              </div>
-              <div className="column is-size-7-mobile">
                 <ol>
                   {data.method.map((ingredient, id) =>
                     <li key={id}>{ingredient}</li>
                   )}
                 </ol>
                 <br />
-                {userInfo ? <button className="button is-success" onClick={(e) => handleSubmit(e)}>
-                  Email me this Recipe!
+                {userInfo ? <button className="button is-black" onClick={(e) => handleSubmit(e)}>
+                Email me this Recipe!
                 </button>
                   :
-                  <button className="button is-success">
-                    Sign in to email yourself these ingredients
+                  <button className="button is-black">
+               Sign in to email yourself these ingredients
                   </button>
                 }
+              </div>
+              <div className="column is-half is-size-7-mobile">
+                <img src={data.image} style={{ width: 800, height: 420 }} />
                 <br />
                 {isOwner() &&
                   <>
-                    <button className="button is-danger" onClick={(e) => handleDelete(e)}>
+                    <button className="button is-black" onClick={(e) => handleDelete(e)}>
                       {'Remove this recipe'}
                     </button>
                   </>
@@ -186,16 +186,16 @@ const SingleRecipe = (props) => {
               </div>
             </div>
           </div>
-        </Bounce>
-        <br />
-        {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite}>Save to Profile</button>}
-        <br />
-        <br />
-        {reci && reci.comments.map((comments, i) => {
-          return <CommentCard key={i} comments={comments} recipeInfo={data} setRecipeInfo={setData} isOwner={isOwner} props={props} />
-        })}
-        {userInfo ?
-          <>
+        </div>
+      </Fade>
+      <br />
+      {added ? <button className="button is-light" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite} style={{ marginBottom: 20 }}>Save to Profile</button>} 
+      <br />
+      {reci && reci.comments.map((comments, i) => {
+        return <CommentCard key={i} comments={comments} recipeInfo={data} setRecipeInfo={setData} isOwner={isOwner} props={props} />
+      })}
+      {userInfo ?
+            <>
             <br />
             <form className="form" onSubmit={postComment}>
               <article className="media">
@@ -212,21 +212,20 @@ const SingleRecipe = (props) => {
                   </div>
                   <div className="field">
                     <p className="control">
-                      <button className="button">Post comment</button>
+                      <button className="button" style={{ marginBottom: 20 }}>Post comment</button>
                     </p>
                   </div>
                 </div>
               </article>
             </form>
           </>
-          : <>
+        : <>
             <br />
             <br />
             <h1>You must be signed in to post a comment!</h1>
           </>}
-      </div>
     </div>
-  )
+  </div>
 }
 
 export default SingleRecipe

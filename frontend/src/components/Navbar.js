@@ -42,7 +42,7 @@ const Navbar = () => {
           <Link className="navbar-link is-arrowless" to="/restaurants">
             Restaurants
           </Link>
-          <div className="navbar-dropdown is-boxed">
+          {/* <div className="navbar-dropdown is-boxed">
             <Link className="navbar-item" to="/restaurants">
               All
             </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <Link className="navbar-item">
               Central London
             </Link>
-          </div>
+          </div> */}
         </div>
         {/* {Auth.isAuthorized() &&  */}
         <div className="navbar-item has-dropdown is-hoverable">
