@@ -64,10 +64,10 @@ const SingleRecipe = (props) => {
         .then(function (response) {
           console.log('SUCCESS!', response.status, response.text)
         },
-        notify(),
-        function (error) {
-          console.log('FAILED...', error)
-        })
+          notify(),
+          function (error) {
+            console.log('FAILED...', error)
+          })
     }
   }
 
@@ -115,7 +115,7 @@ const SingleRecipe = (props) => {
   const postComment = (e) => {
     e.preventDefault()
     postIt()
-    // ReactDOM.findDOMNode()
+    setFormData({ ...formData, text: '' })
   }
 
 
@@ -207,7 +207,7 @@ const SingleRecipe = (props) => {
                 <div className="media-content">
                   <div className="field">
                     <p className="control">
-                      <textarea onChange={handleChange} name="text" className="textarea" placeholder="Add a comment..."></textarea>
+                      <textarea onChange={handleChange} name="text" className="textarea" placeholder="Add a comment..." value={formData.text}></textarea>
                     </p>
                   </div>
                   <div className="field">

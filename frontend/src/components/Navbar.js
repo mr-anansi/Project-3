@@ -25,7 +25,7 @@ const Navbar = () => {
     menuList.classList.toggle('is-active')
   }
 
-  return <nav className="navbar is-black is-fixed-top ">
+  return <nav className="navbar is-black is-fixed-top">
     <div className="navbar-brand">
       <Link id="homeicon" className="navbar-item" to="/">the kitchen</Link>
       {/* Reggie: The following line displays the change in status of the logged in user by displaying an internet icon on logon */}
