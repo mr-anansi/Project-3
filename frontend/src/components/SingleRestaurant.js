@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 // import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { UserContext } from './UserContext'
 import Auth from '../lib/auth'
+import { UserContext } from './UserContext'
 
 const SingleRestaurant = (props) => {
   const [data, setData] = useState({})
@@ -26,7 +26,6 @@ const SingleRestaurant = (props) => {
         }
       })
       .catch(err => console.log(err))
-    
   }, [userInfo])
 
 
@@ -42,32 +41,21 @@ const SingleRestaurant = (props) => {
       })
       .catch(err => console.log(err))
   }
-
-  return <div className="section has-text-centered is-full-height">
-    <div className="container is-center">
-      <div className="columns is-multiline">
-        <div className="column is-half-tablet">
-          <div className="title">
-            {data.name}
-          </div>
-          <div className="subtitle">
-            {data.category}
-          </div>
-          <img src={data.image} alt="Placeholder image" />
-          <p>
-            {data.type}
-          </p>
-          <p>
-            {data.location}
-          </p>
-          <p>
-            {data.postcode}
-          </p>
-          <p>
-            {data.priceRange}
-          </p>
-          {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>}
-        </div>
+	
+  return <div className="section">
+    <div className="single-parallax">
+      <div className="mask">
+        <div className="headline">{data.name}</div>
+      </div>
+    </div>
+    <div className="content-div">
+      <div className="card has-text-centered" id="inner-border-card">
+        {/* <h1 className="title">{data.name}</h1> */}
+        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet" id="location">{data.location}</h1>
+        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.postcode}</h1>
+        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.priceRange}</h1>
+        <h1><a href={data.link}>{data.link}</a></h1>
+        {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>}
       </div>
     </div>
   </div>

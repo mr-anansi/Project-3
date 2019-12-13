@@ -23,7 +23,7 @@ const FilteredRecipeForm = ({ Recipes, updateRecipes }) => {
     updateRecipes([...selectedItems])
     console.log(...selectedItems)
   }
-  
+
 
   return <Select
     isMulti
@@ -32,6 +32,7 @@ const FilteredRecipeForm = ({ Recipes, updateRecipes }) => {
     onChange={handleSelect}
     className="basic-multi-select"
     classNamePrefix="select"
+    placeholder="Choose by category here..."
 
   />
 }

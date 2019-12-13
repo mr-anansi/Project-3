@@ -23,7 +23,7 @@ class RecipeHoveredSquare extends React.Component {
 	      pose={this.state.hovering ? 'hovered' : 'idle'}
 	      onMouseEnter={() => this.setState({ hovering: true })}
 	      onMouseLeave={() => this.setState({ hovering: false })}
-	    ><Link to="/recipes" style={{ color: '#FFF' }}>Fancy Cheffing Up?</Link></StyledSquare>
+	    ><Link to="/recipes" style={{ color: '#FFF' }}>looking for something to cook?</Link></StyledSquare>
 	  )
 	}
 }

@@ -10,9 +10,59 @@ body, html {
   background-image: url('https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png');
 }
 
+#homeicon{
+  font-size: 150%;
+  font-weight: bolder;
+}
+
 .deletetag {
 color: red;
 
+}
+
+h1{
+  font-size: 200%;
+  font-weight: bolder;
+}
+
+
+.card {
+  background-color: whitesmoke;
+	-webkit-animation: flip-in-ver-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-ver-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+
+@-webkit-keyframes card {
+  0% {
+    -webkit-transform: rotateY(80deg);
+            transform: rotateY(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    opacity: 1;
+  }
+}
+@keyframes flip-in-ver-left {
+  0% {
+    -webkit-transform: rotateY(80deg);
+            transform: rotateY(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+a.subtitle{
+  font-size: 100%;
 }
 
 
@@ -43,13 +93,13 @@ color: red;
 // }
 
 
-.restaurants {
-	background-image: url('../src/images/proj3-2.png');
-	min-width: 70%;
-	min-height: 70%;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-}
+// .restaurants {
+// 	background-image: url('../src/images/proj3-2.png');
+// 	min-width: 70%;
+// 	min-height: 70%;
+// 	background-repeat: no-repeat;
+// 	background-attachment: fixed;
+// }
 
 .card {
 	width: 75%;
@@ -61,7 +111,6 @@ color: red;
 input {
 	width: 200px;
 	height: 20px; 
-	font-family: 'Anton', sans-serif;
 	border: 2px solid black;
 	font-weight: 100;
 	padding: 10px; 
@@ -203,10 +252,10 @@ input {
   padding: 0px 10px;
 }
 
-.container {
-  padding: 20px 0px;
-  margin: 20px 0px;
-}
+// .container {
+//   padding: 20px 0px;
+//   margin: 20px 0px;
+// }
 
 .card {
   padding: 20px;
@@ -218,3 +267,107 @@ input {
   font-size: 0.7rem;
 }
 
+.single-parallax {
+	width: 100%; 
+	height: 130vh; 
+	background-image: url('../src/images/newbgwhite.png');
+	background-size: cover;
+}
+
+.content-div {
+	width: 100%; 
+	margin-top: 100px;
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	background-image: url('../src/images/bg2.png');
+	background-size: cover; 
+	height: 700px; 
+	background-repeat: no-repeat;
+}
+
+.headline {
+	font-size: 220px; 
+	position: fixed; 
+	top:5vh; 
+	width: 100%;
+	text-align: center; 
+	color: black;
+	text-shadow: 1px 1px 10px black;
+}
+
+.mask {
+	mask: url('../src/images/masked.png');
+	mask-size: cover; 
+	-webkit-mask:url('../src/images/masked.png');
+	-webkit-mask-size:cover;
+	width: 100%;
+	height: 100%;
+}
+
+#restaurant-single-card {
+	align-items: center;
+}
+
+#inner-border-card {
+		outline: 3px solid black; 
+		outline-offset: -30px;
+		height: 300px;
+}
+
+.section {
+	padding: 0; 
+}
+
+#location {
+	margin-top: 10px; 
+}
+
+#filter-form {
+	margin: 50px 0 0 20px;
+	width: 800px;
+	background-color: black;
+}
+
+
+#newform {
+	background-color: black; 
+	color: white;
+	width: 500px;
+	margin-top: 80px;
+	padding: 20px; 
+}
+
+#loginPage {
+	background-image: url('../src/images/champagne.png');
+	background-size: cover;
+	background-position: center;
+	width: 100%; 
+	height: 100vh;
+}
+
+.label {
+	font-family: monospace;
+}
+
+#single-recipe-page {
+	background-image: url('../src/images/bgImage.png');
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+
+}
+
+
+#newRecipe {
+	background-image: url('../src/images/new-recipe.png');
+	background-position: center;
+	background-size: 150vh;
+	background-repeat: no-repeat;
+}
+
+.restaurants {
+	background-image: url('../src/images/ivy.png');
+	background-position: center;
+	background-size: cover;
+}

@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import Background from '../images/bg2.png'
 
+const sectionStyle = {
+  backgroundImage: 'url(' + { Background } + ')'
+}
 
 const Register = (props) => {
   const [data, setData] = useState({})
@@ -49,13 +53,13 @@ const Register = (props) => {
     // setFormReady(true)
   }
 
-  return (
-    <section className='section'>
-      <div className="title">Register</div>
-      <form className="form" onSubmit={handleSubmit}>
+  return <div className="section has-text-centered is-full-height" id="loginPage" style={{ sectionStyle }}>
+    <div className="container has-text-centered" id="newform">
+      <div className="title is-size-1 title has-text-white">Register</div>
+      <form className="form has-text-centered" onSubmit={handleSubmit}>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               Full Name
               <input onChange={handleChange} className='input is-info' type='text' name='username' />
             </label>
@@ -66,7 +70,7 @@ const Register = (props) => {
         </div>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               E-mail
               <input onChange={handleChange} className='input is-info' type='text' name='email' />
             </label>
@@ -77,7 +81,7 @@ const Register = (props) => {
         </div>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               Link to Profile Picture
               <input onChange={handleChange} className='input is-info' type='text' name='image' value={data.image ? data.image : ''} />
             </label>
@@ -88,7 +92,7 @@ const Register = (props) => {
         </div>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               Password
               <input onChange={handleChange} className='input is-info' type='password' name='password' />
             </label>
@@ -99,7 +103,7 @@ const Register = (props) => {
         </div>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               Confirm Password
               <input onChange={handleChange} className='input is-info' type='password' name='passwordConfirmation' />
             </label>
@@ -108,12 +112,12 @@ const Register = (props) => {
             {errors.passwordConfirmation}
           </small>}
         </div>
-        <button className="button is-info">
+        <button className="button is-black" style={{ border: '1px solid white' }}>
           Register
         </button>
       </form>
-    </section>
-  )
+    </div>
+  </div>
 }
 
 export default Register
