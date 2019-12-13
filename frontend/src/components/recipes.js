@@ -43,21 +43,22 @@ const Recipes = () => {
 
   
 
-  return <div className="section" id="data-bg ">
-    <h1>Have a look at these Recipes...</h1>
-    <br />
-    <h2>Or sign up to add your own</h2>
-    <div className="container">
-      <div>
-        <FilteredRecipeForm
-          Recipes={filteredData}
-          updateRecipes={filterRecipes}
-        />
-      </div>
-      <div className="columns is-multiline is-gapless">
-        {filteredData.map((results, i) => {
-          return <RecipeCard key={i} results={results} />
-        })}
+  return <div className="recipes">
+    <div className="section">
+      <h1 className="is-size-1 is-black has-text-centered">Have a look at these Recipes...</h1>
+      <h2 className="is-black has-text-centered" style={{ margin: '20px 0 20px 0' }}>Or sign up to add your own</h2>
+      <div className="container">
+        <div>
+          <FilteredRecipeForm
+            Recipes={filteredData}
+            updateRecipes={filterRecipes}
+          />
+        </div>
+        <div className="columns is-multiline">
+          {filteredData.map((results, i) => {
+            return <RecipeCard key={i} results={results} />
+          })}
+        </div>
       </div>
     </div>
   </div>

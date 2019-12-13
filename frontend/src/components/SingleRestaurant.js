@@ -43,19 +43,24 @@ const SingleRestaurant = (props) => {
   }
 	
   return <div className="section">
-    <div className="single-parallax">
-      <div className="mask">
-        <div className="headline">{data.name}</div>
+    <div className="container">
+      <div className="single-parallax">
+        <div className="mask">
+          <div className="headline">{data.name}</div>
+        </div>
       </div>
-    </div>
-    <div className="content-div">
-      <div className="card has-text-centered" id="inner-border-card">
-        {/* <h1 className="title">{data.name}</h1> */}
-        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet" id="location">{data.location}</h1>
-        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.postcode}</h1>
-        <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.priceRange}</h1>
-        <h1><a href={data.link}>{data.link}</a></h1>
-        {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-success" onClick={favourite}>Save to Profile</button>}
+      <div className="content-div">
+        <div className="card has-text-centered" id="inner-border-card" style={{ height: 380, paddingTop: 50 }}>
+          {/* <h1 className="title">{data.name}</h1> */}
+          <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet" id="location">{data.location}</h1>
+          <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.postcode}</h1>
+          <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.priceRange}</h1>
+          <h2><a href={data.link}>{data.link}</a></h2>
+          <div>
+            <br />
+            {added ? <button className="button is-white" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-white" onClick={favourite}>Save to Profile</button>}
+          </div>
+        </div>
       </div>
     </div>
   </div>

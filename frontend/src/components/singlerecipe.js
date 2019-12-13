@@ -166,10 +166,9 @@ const SingleRecipe = (props) => {
             </div>
           </div>
         </div>
-        <br />
       </Fade>
       <br />
-      {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite}>Save to Profile</button>} 
+      {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite} style={{ marginBottom: 20 }}>Save to Profile</button>} 
       <br />
       {reci && reci.comments.map((comments, i) => {
         return <CommentCard key={i} comments={comments} recipeInfo={data} setRecipeInfo={setData} isOwner={isOwner} props={props} />
@@ -192,7 +191,7 @@ const SingleRecipe = (props) => {
                   </div>
                   <div className="field">
                     <p className="control">
-                      <button className="button">Post comment</button>
+                      <button className="button" style={{ marginBottom: 20 }}>Post comment</button>
                     </p>
                   </div>
                 </div>

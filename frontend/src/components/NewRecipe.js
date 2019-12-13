@@ -16,7 +16,6 @@ const Register = (props) => {
   const [ingredientSize, setIngredientSize] = useState(1)
   const [methodSize, setMethodSize] = useState(1)
   const [categorySize, setCategorySize] = useState(1)
-  const onSubmit = data => console.log(data)
 
 
   const postIt = () => {

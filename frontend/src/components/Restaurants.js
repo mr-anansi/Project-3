@@ -4,10 +4,6 @@ import axios from 'axios'
 import FilteredForm from './filterForm'
 
 
-const formStyle = {
-  marginTop: 100
-}
-
 const Restaurants = () => {
   const [initialData, setInitialData] = useState([])
   const [filteredData, setFilteredData] = useState([])
@@ -35,8 +31,8 @@ const Restaurants = () => {
   }
 
 
-  return <div className="section">
-    <h1>Our pick of London Restaurants...</h1>
+  return <div className="restaurants">
+    <h1 className="is-size-1 is-black has-text-centered" style={{ margin: '20px 0 20px 0' }}>Our pick of London Restaurants...</h1>
     <div className="container">
       <div>
         <FilteredForm
@@ -44,14 +40,13 @@ const Restaurants = () => {
           updateRestaurants={filterRestaurants}
         />
       </div>
-      <div className="columns is-multiline is-gapless">
+      <div className="columns is-multiline">
         {filteredData.map((restaurant, index) => {
           return <RestaurantCard key={index} restaurant={restaurant} />
         })}
       </div>
     </div>
   </div>
-
 
 }
 

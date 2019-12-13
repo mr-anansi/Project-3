@@ -177,7 +177,7 @@ const restaurantSeed = (user) => {
   {
     name: 'Peg', 
     location: 'East', 
-    image: 'blob:https://imgur.com/cb30bc6b-25d5-4663-bac0-dcc951e1dbd7', 
+    image: 'https://cdn.vox-cdn.com/thumbor/hivFBqDe9JE-VH18qY609YZvS4I=/0x0:3293x2352/1200x675/filters:focal(1322x916:1848x1442)/cdn.vox-cdn.com/uploads/chorus_image/image/63179520/peg-eater-33.0.0.jpg', 
     category: ['Vegetarian', 'Vegan', 'Japanese', 'Tapas', 'Gluten Free', 'Dinner', 'Lunch'], 
     postcode: 'E9 6LH ' , 
     priceRange: '£30-50pp', 
