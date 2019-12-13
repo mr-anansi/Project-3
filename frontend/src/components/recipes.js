@@ -47,7 +47,7 @@ const Recipes = () => {
   }
   
 
-  return <div className="section">
+  return <div className="section" id="data-bg ">
     <div className="container">
       <button className="button is-success" onClick={(e) => handleSubmit(e)}>
         TEST!
@@ -57,10 +57,6 @@ const Recipes = () => {
           Recipes={filteredData}
           updateRecipes={filterRecipes}
         />
-        {/* <FilteredRecipeForm recipe={data} /> */}
-        {/* {allTags.map((categories, i) => {
-          return <CategoryCard key={i} categories={categories} />
-        })} */}
       </div>
       <div className="columns is-mobile is-multiline">
         {filteredData.map((results, i) => {

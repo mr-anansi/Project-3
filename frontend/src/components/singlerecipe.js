@@ -4,7 +4,6 @@ import emailjs from 'emailjs-com'
 import { UserContext } from './UserContext'
 import CommentCard from './CommentCard'
 import Auth from '../lib/auth'
-import Background from '../images/recipeBg.png'
 import Bounce from 'react-reveal/Bounce'
 
 const SingleRecipe = (props) => {
@@ -111,7 +110,7 @@ const SingleRecipe = (props) => {
   const userProfilePic = userInfo ? userInfo.image : 'https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png'
 
   return (
-    <div className="section" id="single-recipe-page" style={{ marginTop: 50, backgroundImage: 'url(' + { Background } + ')'  }}>
+    <div className="section" id="single-recipe-page" style={{ marginTop: 50  }}>
       <div className="container">
         {/* <div className="columns is-multiline">
           <div className="column is-half-tablet"> */}
