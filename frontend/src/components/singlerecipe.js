@@ -108,7 +108,7 @@ const SingleRecipe = (props) => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    console.log(formData.text)
+    console.log(data.user)
     setErrors({})
   }
 
@@ -118,8 +118,20 @@ const SingleRecipe = (props) => {
     // ReactDOM.findDOMNode()
   }
 
+
+  const handleDelete = (e) => {
+    const id = props.match.params.id
+    axios.delete(`/api/recipes/${id}`, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => props.history.push('/recipes'))
+      .catch(err => console.log(err))
+  }
+
+
+
   const isOwner = function () {
-    return Auth.getUserId() === userInfo._id
+    return Auth.getUserId() === data.user
 
   }
 
@@ -161,6 +173,14 @@ const SingleRecipe = (props) => {
                   <button className="button is-success">
                     Sign in to email yourself these ingredients
                   </button>
+                }
+                <br />
+                {isOwner() &&
+                  <>
+                    <button className="button is-danger" onClick={(e) => handleDelete(e)}>
+                      {'Remove this recipe'}
+                    </button>
+                  </>
                 }
                 <br />
               </div>

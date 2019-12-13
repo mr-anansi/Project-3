@@ -54,7 +54,7 @@ const Recipes = () => {
           updateRecipes={filterRecipes}
         />
       </div>
-      <div className="columns is-multiline is-gapless">
+      <div className="columns is-multiline">
         {filteredData.map((results, i) => {
           return <RecipeCard key={i} results={results} />
         })}

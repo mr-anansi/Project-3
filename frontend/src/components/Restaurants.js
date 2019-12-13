@@ -44,7 +44,7 @@ const Restaurants = () => {
           updateRestaurants={filterRestaurants}
         />
       </div>
-      <div className="columns is-multiline is-gapless">
+      <div className="columns is-multiline">
         {filteredData.map((restaurant, index) => {
           return <RestaurantCard key={index} restaurant={restaurant} />
         })}
