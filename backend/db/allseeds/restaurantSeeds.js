@@ -65,7 +65,7 @@ const restaurantSeed = (user) => {
     user: user
   },
   {
-    name: 'Morty & Bob/s', 
+    name: 'Morty & Bobs', 
     location: 'North', 
     image: 'https://media.timeout.com/images/105465697/1372/772/image.jpg', 
     category: ['Vegetarian', 'American', 'Breakfast', 'Lunch', 'Dinner'], 

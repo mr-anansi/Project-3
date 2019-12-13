@@ -33,7 +33,7 @@ const Restaurants = () => {
 
   return <div className="restaurants">
     <h1 className="is-size-1 is-black has-text-centered" style={{ margin: '20px 0 20px 0' }}>Our pick of London Restaurants...</h1>
-    <div className="container">
+    <div className="container is-centered-mobile">
       <div>
         <FilteredForm
           Restaurants={filteredData}
