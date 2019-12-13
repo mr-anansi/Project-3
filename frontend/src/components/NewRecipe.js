@@ -87,7 +87,7 @@ const Register = (props) => {
             <div key={i} className='field'>
               <div className='control'>
                 <label htmlFor='' className="label has-text-white">
-                  Add ingredient {index}
+                  Add ingredient {index + 1}
                   <input onChange={handleChange} className='input is-info' type='text' name={`ingredients[${index}]`} />
                 </label>
               </div>
@@ -106,7 +106,7 @@ const Register = (props) => {
               <div key={i} className='field'>
                 <div className='control'>
                   <label htmlFor='' className="label has-text-white">
-                    Add step {index}
+                    Add step {index + 1}
                     <input onChange={handleChange} className='input is-info' type='text' name={`method[${index}]`} />
                   </label>
                 </div>
