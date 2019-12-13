@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
+import Auth from '../lib/auth'
 
 import { UserContext } from './UserContext'
 
@@ -9,7 +10,7 @@ const EditProfile = (props) => {
   const [data, setData] = useState({})
   const [errors, setErrors] = useState({})
 
-  const { userInfo } = useContext(UserContext)
+  const { userInfo, setUserInfo } = useContext(UserContext)
 
   useEffect(() => {
     console.log('running form')
@@ -19,8 +20,13 @@ const EditProfile = (props) => {
   }, [userInfo])
 
   const sendUpdates = () => {
-    axios.put('/api/profile/edit', data)
-      .then(() => props.history.push('/profile'))
+    axios.put('/api/profile/edit', data, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(res => {
+        setUserInfo(res.data.user)
+        props.history.push('/profile')
+      })
       .catch(err => {
         setErrors(err.response.data.errors)
         console.log(err.response.data.errors)

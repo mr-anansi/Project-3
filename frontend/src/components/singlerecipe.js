@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import emailjs from 'emailjs-com'
-import { UserContext } from './UserContext'
+import { UserContext, ReciContext } from './UserContext'
 import CommentCard from './CommentCard'
 import Auth from '../lib/auth'
 import Bounce from 'react-reveal/Bounce'
@@ -18,6 +18,7 @@ const SingleRecipe = (props) => {
   const [added, setAdded] = useState(false)
 
   const { userInfo, setUserInfo } = useContext(UserContext)
+  const { reci, setReci } = useContext(ReciContext)
   const [formData, setFormData] = useState({})
   const [errors, setErrors] = useState({})
 
@@ -27,7 +28,7 @@ const SingleRecipe = (props) => {
       .then(res => {
         const newData = res.data
         setData(newData)
-        setData(res.data)
+        setReci(newData)
         if (userInfo) {
           setInfo(userInfo)
           const alreadyAdded = userInfo.favouriteRecipes.some((recipe) => {
@@ -86,12 +87,16 @@ const SingleRecipe = (props) => {
 
   const postIt = () => {
 
-    console.log(data._id)
+    // console.log(data._id)
     axios.post(`/api/recipes/${data._id}`, formData,
       {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      .then(() => props.history.push(`/recipes/${data._id}`))
+      .then(res => {
+        setReci(res.data)
+        setFormData({ ...formData, text: '' })
+        // props.history.push(`/recipes/${data._id}`)
+      })
       .catch(err => {
         setErrors(err.response.data.errors)
         console.log(err.response.data.errors)
@@ -110,6 +115,7 @@ const SingleRecipe = (props) => {
   const postComment = (e) => {
     e.preventDefault()
     postIt()
+    // ReactDOM.findDOMNode()
   }
 
 
@@ -185,8 +191,8 @@ const SingleRecipe = (props) => {
         {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite}>Save to Profile</button>}
         <br />
         <br />
-        {data.comments.map((comments, i) => {
-          return <CommentCard key={i} comments={comments} userInfo={userInfo} isOwner={isOwner} props={props} />
+        {reci && reci.comments.map((comments, i) => {
+          return <CommentCard key={i} comments={comments} recipeInfo={data} setRecipeInfo={setData} isOwner={isOwner} props={props} />
         })}
         {userInfo ?
           <>
