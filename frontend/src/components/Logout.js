@@ -19,8 +19,8 @@ const Logout = (props) => {
 
   return <section className="section">
     <div className="container">
-      <div className="title">But....but....food...</div>
-      <button className="button is-danger" onClick={handleSubmit}>
+      <div className="title" style={{ marginTop: 400 }}>See you soon</div>
+      <button className="button is-black" onClick={handleSubmit}>
         Complete logout
       </button>
       {/* {errors.message && <small className="help is-danger">

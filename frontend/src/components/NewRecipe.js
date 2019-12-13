@@ -41,7 +41,8 @@ const Register = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     postIt()
-  }
+	}
+	
 
   return <div className="section has-text-centered is-full-height" id="newRecipe">
     <div className="container has-text-centered" id="newform">
@@ -73,7 +74,7 @@ const Register = (props) => {
           <div className='control'>
             <label htmlFor='' className="label has-text-white">
               What&apos;s the story behind this dish?
-              <input onChange={handleChange} className='input is-info' type='text' name='method' />
+              <input onChange={handleChange} className='input is-info' type='text' name='about' />
             </label>
           </div>
           {errors.method && <small className="help is-danger">

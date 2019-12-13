@@ -63,7 +63,7 @@ const Profile = () => {
     setUpdate(true)
     // console.log(update)  
   }
-  
+
   const removeFavReci = (e) => {
     let match = info.favouriteRecipes
     const update = match.filter((reci) => {
@@ -100,13 +100,14 @@ const Profile = () => {
           <Link className="tag is-info is-light" to='/profile/edit'>Edit Profile</Link>
           <Link className="tag is-info is-light" to='/recipes'>Recipes</Link>
           <Link className="tag is-info is-light" to='/restaurants'>Restaurants</Link>
-          <Link className="tag is-info is-light" to='/'>Home</Link>
         </div>
       </div>
       <div className="section">
         <div className="container">
-          <h2>Your Favourite Restaurants...</h2>
-          <div className="columns is-multiline is-gapless">
+          <div className="titlecontain">
+            <h2 className="headers">Your Favourite Restaurants...</h2>
+          </div>
+          <div className="columns is-multiline">
             {data.user && data.user.favouriteRestaurants.map((rest, id) => {
               return (
                 <div key={id} className="column is-one-quarter-desktop is-one-third-tablet is-three-quartes-mobile">
@@ -124,7 +125,6 @@ const Profile = () => {
                         <br />
                         <Link data-name={rest.name} onClick={removeFavRest} className="card-footer-item">Remove</Link>
                       </div>
-                      <br />
                     </div>
 
                   </div>
@@ -133,29 +133,32 @@ const Profile = () => {
             })}
           </div>
         </div>
-        <div className="container">
-          <h3>Your Favourite Recipes...</h3>
-          <div className="columns is-multiline">
-            {data.user && data.user.favouriteRecipes.map((recipes, id) => {
-              return (
-                <div key={id} className="column is-one-quarter-desktop is-one-third-tablet is-three-quartes-mobile">
-                  <div className="card">
-                    <h3 className="fav-title-recipe card-header-title is-centered"><Link className='fav-title-recipe' to={`/recipes/${recipes._id}`}>{recipes.name}</Link></h3>
-                    <p className="fav-sub">by {recipes.author}</p>
-                    <div className="card-image">
-                      <figure className="image is-5by4">
-                        <img className="image" src={recipes.image[0]} />
-                      </figure>
-                    </div>
-                    <div className="card-content">
-                      <div className="card-footer">
-                        <Link data-name={recipes.name} onClick={removeFavReci} className="card-footer-item">Remove</Link>
+        <div className="section">
+          <div className="container">
+            <div className="titlecontain">
+              <h2 className="headers">Your Favourite Recipes...</h2>
+            </div>
+            <div className="columns is-multiline">
+              {data.user && data.user.favouriteRecipes.map((recipes, id) => {
+                return (
+                  <div key={id} className="column is-one-quarter-desktop is-one-third-tablet is-three-quartes-mobile">
+                    <div className="card">
+                      <h3 className="fav-title-recipe card-header-title is-centered"><Link className='fav-title-recipe' to={`/recipes/${recipes._id}`}>{recipes.name}</Link></h3>
+                      <p className="fav-sub">by {recipes.author}</p>
+                      <div className="card-image">
+                        <figure className="image is-5by4">
+                          <img className="image" src={recipes.image[0]} />
+                        </figure>
                       </div>
-                      <br />
+                      <div className="card-content">
+                        <div className="card-footer">
+                          <Link data-name={recipes.name} onClick={removeFavReci} className="card-footer-item">Remove</Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>)
-            })}
+                  </div>)
+              })}
+            </div>
           </div>
         </div>
         {/* </div>

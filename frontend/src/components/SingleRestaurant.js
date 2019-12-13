@@ -50,7 +50,7 @@ const SingleRestaurant = (props) => {
         </div>
       </div>
       <div className="content-div">
-        <div className="card has-text-centered" id="inner-border-card" style={{ height: 380, paddingTop: 50 }}>
+        <div className="card has-text-centered" id="inner-border-card" style={{ height: 400, paddingTop: 50, width: 800 }}>
           {/* <h1 className="title">{data.name}</h1> */}
           <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet" id="location">{data.location}</h1>
           <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.postcode}</h1>

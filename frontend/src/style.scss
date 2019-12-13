@@ -90,11 +90,11 @@ a.subtitle{
 }
 
 
-.card {
-	width: 75%;
-	height: 75%; 
-	margin-left: 100px;
-}
+// .card {
+// 	width: 75%;
+// 	height: 75%; 
+// 	margin-left: 100px;
+// }
 
 
 input {
@@ -179,6 +179,16 @@ input {
 // }
 //------profile-text-------
 
+.headers {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 1rem;
+}
+
+.titlecontain {
+  padding: 0.8rem;
+}
+
 .pro-title {
   font-size: 3rem;
   font-weight: bold;
@@ -204,7 +214,7 @@ input {
 //------cards-----
 
 .card {
-  height: 100%;
+  height: 80%;
   display:flex;
   flex-direction: column;
 }
@@ -371,7 +381,4 @@ a {
 	color: black
 }
 
-a:hover {
-	color: red;
-}
 

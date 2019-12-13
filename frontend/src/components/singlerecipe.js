@@ -108,7 +108,7 @@ const SingleRecipe = (props) => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    console.log(formData.text)
+    console.log(data.user)
     setErrors({})
   }
 
@@ -118,8 +118,20 @@ const SingleRecipe = (props) => {
     // ReactDOM.findDOMNode()
   }
 
+
+  const handleDelete = (e) => {
+    const id = props.match.params.id
+    axios.delete(`/api/recipes/${id}`, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => props.history.push('/recipes'))
+      .catch(err => console.log(err))
+  }
+
+
+
   const isOwner = function () {
-    return Auth.getUserId() === userInfo._id
+    return Auth.getUserId() === data.user
 
   }
 
@@ -161,14 +173,23 @@ const SingleRecipe = (props) => {
                 }
               </div>
               <div className="column is-half is-size-7-mobile">
-                <img src={data.image} style={{ width: 800, height: 500 }} />
+                <img src={data.image} style={{ width: 800, height: 420 }} />
+                <br />
+                {isOwner() &&
+                  <>
+                    <button className="button is-black" onClick={(e) => handleDelete(e)}>
+                      {'Remove this recipe'}
+                    </button>
+                  </>
+                }
+                <br />
               </div>
             </div>
           </div>
         </div>
       </Fade>
       <br />
-      {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite} style={{ marginBottom: 20 }}>Save to Profile</button>} 
+      {added ? <button className="button is-light" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite} style={{ marginBottom: 20 }}>Save to Profile</button>} 
       <br />
       {reci && reci.comments.map((comments, i) => {
         return <CommentCard key={i} comments={comments} recipeInfo={data} setRecipeInfo={setData} isOwner={isOwner} props={props} />
