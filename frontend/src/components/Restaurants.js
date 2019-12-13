@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import RestaurantCard from './RestaurantCard'
 import axios from 'axios'
-
 import FilteredForm from './filterForm'
+
+
+const formStyle = {
+  marginTop: 100
+}
 
 const Restaurants = () => {
   const [initialData, setInitialData] = useState([])
@@ -50,5 +54,6 @@ const Restaurants = () => {
 
 
 }
+
 
 export default Restaurants
