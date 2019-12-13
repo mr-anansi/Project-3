@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import useForm from "react-hook-form"
+import useForm from 'react-hook-form'
+import Auth from '../lib/auth'
 
 
 function createArrayWithNumbers(length) {
-  return Array.from({ length }, (_, k) => k + 1)
+  return Array.from({ length }, (_, k) => k)
 }
 
 
@@ -18,8 +19,12 @@ const Register = (props) => {
   const onSubmit = data => console.log(data)
 
 
+
   const postIt = () => {
-    axios.post('/api/recipes', data)
+    axios.post('/api/recipes', data,
+      {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      })
       .then(() => props.history.push('/login'))
       .catch(err => {
         setErrors(err.response.data.errors)
@@ -30,6 +35,7 @@ const Register = (props) => {
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })
+    console.log([e.target.name])
     setErrors({})
   }
 
@@ -76,9 +82,10 @@ const Register = (props) => {
             {errors.method}
           </small>}
         </div>
-        {createArrayWithNumbers(ingredientSize).map(index => {
+
+        {createArrayWithNumbers(ingredientSize).map((index, i) => {
           return (
-            <div className='field'>
+            <div key={i} className='field'>
               <div className='control'>
                 <label htmlFor='' className="label has-text-white">
                   Add ingredient {index}
@@ -95,9 +102,9 @@ const Register = (props) => {
           Add another ingredient
         </button>
         {
-          createArrayWithNumbers(methodSize).map(index => {
+          createArrayWithNumbers(methodSize).map((index, i) => {
             return (
-              <div className='field'>
+              <div key={i} className='field'>
                 <div className='control'>
                   <label htmlFor='' className="label has-text-white">
                     Add step {index}
@@ -115,12 +122,12 @@ const Register = (props) => {
         </button>
 
         {
-          createArrayWithNumbers(categorySize).map(index => {
+          createArrayWithNumbers(categorySize).map((index, i) => {
             return (
-              <div className='field'>
+              <div key={i} className='field'>
                 <div className='control'>
                   <label htmlFor=''>
-                    Add a category (e.g 'Vegetarian', 'Comfort-food')
+                    Add a category (e.g &lsquo;Vegetarian&rsquo;, &lsquo;Comfort-food&rsquo;)
                     <input onChange={handleChange} className='input is-info' type='text' name={`category[${index}]`} />
                   </label>
                 </div>

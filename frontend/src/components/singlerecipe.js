@@ -5,6 +5,12 @@ import { UserContext } from './UserContext'
 import CommentCard from './CommentCard'
 import Auth from '../lib/auth'
 import Bounce from 'react-reveal/Bounce'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+toast.configure({
+  autoClose: false
+})
 
 const SingleRecipe = (props) => {
   const [data, setData] = useState({ ingredients: [], method: [], comments: [] })
@@ -34,6 +40,8 @@ const SingleRecipe = (props) => {
   }, [userInfo])
 
 
+  const notify = () => toast(`Your shopping list has been sent to ${userInfo.email}!`)
+
 
 
   const shoppingList = data.ingredients.map(function (ingredient) {
@@ -54,7 +62,9 @@ const SingleRecipe = (props) => {
       emailjs.send('gmail', 'template_WaFbUNl4', templateParams, 'user_phelnwXOqjMmZRbyROmsu')
         .then(function (response) {
           console.log('SUCCESS!', response.status, response.text)
-        }, function (error) {
+        },
+        notify(),
+        function (error) {
           console.log('FAILED...', error)
         })
     }
@@ -93,7 +103,7 @@ const SingleRecipe = (props) => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    console.log(data)
+    console.log(data.comments)
     setErrors({})
   }
 
@@ -102,9 +112,9 @@ const SingleRecipe = (props) => {
     postIt()
   }
 
-  const isOwner = function() {
+  const isOwner = function () {
     return Auth.getUserId() === userInfo._id
-    
+
   }
 
   const userProfilePic = userInfo ? userInfo.image : 'https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png'
@@ -138,9 +148,15 @@ const SingleRecipe = (props) => {
                   )}
                 </ol>
                 <br />
-                <button className="button is-black" style={{ border: '1px solid white' }} onClick={(e) => handleSubmit(e)}>
-              Email me this Recipe!
-                </button>
+                <button className="button is-success" onClick={(e) => handleSubmit(e)}>
+                Email me this Recipe!
+              </button>
+              :
+              <button className="button is-success">
+               Sign in to email yourself these ingredients
+              </button>
+            }
+            <br />
               </div>
             </div>
           </div>
@@ -172,10 +188,22 @@ const SingleRecipe = (props) => {
                       <p className="control">
                         <button className="button">Post comment</button>
                       </p>
+											</div>
+											</div>
+                    <div className="media-content">
+                      <div className="field">
+                        <p className="control">
+                          <textarea onChange={handleChange} name="text" className="textarea" placeholder="Add a comment..."></textarea>
+                        </p>
+                      </div>
+                      <div className="field">
+                        <p className="control">
+                          <button className="button">Post comment</button>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </article>
-              </form>
+                  </article>
+                </form>
               </>
           : <>
                 <br />
@@ -183,7 +211,7 @@ const SingleRecipe = (props) => {
                 <h1>You must be signed in to post a comment!</h1>
               </>}
       </div>
-    </div>
+			</div>
   )
 }
 
