@@ -19,7 +19,6 @@ const Register = (props) => {
   const onSubmit = data => console.log(data)
 
 
-
   const postIt = () => {
     axios.post('/api/recipes', data,
       {

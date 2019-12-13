@@ -57,7 +57,7 @@ class LandingPage extends React.Component {
       <div style={{ height: 300 }} className="below-hero">
         <div className="section">
           <Fade right>
-            <h2>Providing food for those who love too cook...</h2>
+            <h2>Providing food for those who love to cook...</h2>
           </Fade>
           <Fade left>
             <h2>...and those who prefer to be cooked for</h2>

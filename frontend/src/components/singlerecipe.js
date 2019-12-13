@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import emailjs from 'emailjs-com'
-import { UserContext } from './UserContext'
+import { UserContext, ReciContext } from './UserContext'
 import CommentCard from './CommentCard'
 import Auth from '../lib/auth'
 import Fade from 'react-reveal/Bounce'
@@ -18,6 +18,7 @@ const SingleRecipe = (props) => {
   const [added, setAdded] = useState(false)
 
   const { userInfo, setUserInfo } = useContext(UserContext)
+  const { reci, setReci } = useContext(ReciContext)
   const [formData, setFormData] = useState({})
   const [errors, setErrors] = useState({})
 
@@ -27,7 +28,7 @@ const SingleRecipe = (props) => {
       .then(res => {
         const newData = res.data
         setData(newData)
-        setData(res.data)
+        setReci(newData)
         if (userInfo) {
           setInfo(userInfo)
           const alreadyAdded = userInfo.favouriteRecipes.some((recipe) => {
@@ -86,12 +87,16 @@ const SingleRecipe = (props) => {
 
   const postIt = () => {
 
-    console.log(data._id)
+    // console.log(data._id)
     axios.post(`/api/recipes/${data._id}`, formData,
       {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      .then(() => props.history.push(`/recipes/${data._id}`))
+      .then(res => {
+        setReci(res.data)
+        setFormData({ ...formData, text: '' })
+        // props.history.push(`/recipes/${data._id}`)
+      })
       .catch(err => {
         setErrors(err.response.data.errors)
         console.log(err.response.data.errors)
@@ -103,13 +108,14 @@ const SingleRecipe = (props) => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    console.log(data.comments)
+    console.log(formData.text)
     setErrors({})
   }
 
   const postComment = (e) => {
     e.preventDefault()
     postIt()
+    // ReactDOM.findDOMNode()
   }
 
   const isOwner = function () {
@@ -145,13 +151,14 @@ const SingleRecipe = (props) => {
                   )}
                 </ol>
                 <br />
-                <button className="button is-black" onClick={(e) => handleSubmit(e)}>
+                {userInfo ? <button className="button is-black" onClick={(e) => handleSubmit(e)}>
                 Email me this Recipe!
                 </button>
-						:
-                <button className="button is-black">
+                  :
+                  <button className="button is-black">
                Sign in to email yourself these ingredients
-                </button>
+                  </button>
+                }
               </div>
               <div className="column is-half is-size-7-mobile">
                 <img src={data.image} style={{ width: 800, height: 500 }} />
@@ -164,49 +171,39 @@ const SingleRecipe = (props) => {
       <br />
       {added ? <button className="button is-success" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite}>Save to Profile</button>} 
       <br />
-      {data.comments.map((comments, i) => {
-        return <CommentCard key={i} comments={comments} userInfo={userInfo} isOwner={isOwner} props={props} />
+      {reci && reci.comments.map((comments, i) => {
+        return <CommentCard key={i} comments={comments} recipeInfo={data} setRecipeInfo={setData} isOwner={isOwner} props={props} />
       })}
       {userInfo ?
             <>
             <br />
-              <form className="form" onSubmit={postComment}>
-                <article className="media">
-                  <figure className="media-left">
-                    <p className="image is-64x64">
-                      <img src={userProfilePic ? userProfilePic : 'https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png'} />
+            <form className="form" onSubmit={postComment}>
+              <article className="media">
+                <figure className="media-left">
+                  <p className="image is-64x64">
+                    <img src={userProfilePic ? userProfilePic : 'https://www.pngfind.com/pngs/m/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png'} />
+                  </p>
+                </figure>
+                <div className="media-content">
+                  <div className="field">
+                    <p className="control">
+                      <textarea onChange={handleChange} name="text" className="textarea" placeholder="Add a comment..."></textarea>
                     </p>
-                  </figure>
-                  <div className="media-content">
-                    <div className="field">
-                      <p className="control">
-                        <textarea onChange={handleChange} name="text" className="textarea" placeholder="Add a comment..."></textarea>
-                      </p>
-                    </div>
-                    <div className="field">
-                      <p className="control">
-                        <button className="button">Post comment</button>
-                      </p>
-                    </div>
                   </div>
-                  <div className="media-content">
-                    <div className="field">
-                      <p className="control">
-                        <textarea onChange={handleChange} name="text" className="textarea" placeholder="Add a comment..."></textarea>
-                      </p>
-                    </div>
-                    <div className="field">
-                      <p className="control">
-                        <button className="button">Post comment</button>
-                      </p>
-                    </div>
+                  <div className="field">
+                    <p className="control">
+                      <button className="button">Post comment</button>
+                    </p>
                   </div>
-                </article>
-              </form>
-              </>
+                </div>
+              </article>
+            </form>
+          </>
         : <>
-                <h1>You must be signed in to post a comment!</h1>
-              </>}
+            <br />
+            <br />
+            <h1>You must be signed in to post a comment!</h1>
+          </>}
     </div>
   </div>
 }
