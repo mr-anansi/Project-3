@@ -43,7 +43,7 @@ const Recipes = () => {
 
   
 
-  return <div className="section">
+  return <div className="section" id="data-bg ">
     <h1>Have a look at these Recipes...</h1>
     <br />
     <h2>Or sign up to add your own</h2>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import useForm from "react-hook-form"
+import useForm from 'react-hook-form'
 import Auth from '../lib/auth'
 
 
@@ -18,9 +18,6 @@ const Register = (props) => {
   const [categorySize, setCategorySize] = useState(1)
   const onSubmit = data => console.log(data)
 
-
-
- 
 
 
   const postIt = () => {
@@ -48,13 +45,13 @@ const Register = (props) => {
     postIt()
   }
 
-  return (
-    <section className='section'>
-      <div className="title">Add a new Recipe</div>
-      <form className="form" onSubmit={handleSubmit}>
+  return <div className="section has-text-centered is-full-height" id="newRecipe">
+    <div className="container has-text-centered" id="newform">
+      <div className="title is-size-1 title has-text-white">Add a new Recipe</div>
+      <form className="form has-text-centered" onSubmit={handleSubmit}>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               What&apos;s it called?
               <input onChange={handleChange} className='input is-info' type='text' name='name' />
             </label>
@@ -65,7 +62,7 @@ const Register = (props) => {
         </div>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               Who created it?
               <input onChange={handleChange} className='input is-info' type='text' name='author' />
             </label>
@@ -76,7 +73,7 @@ const Register = (props) => {
         </div>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               What&apos;s the story behind this dish?
               <input onChange={handleChange} className='input is-info' type='text' name='method' />
             </label>
@@ -90,8 +87,8 @@ const Register = (props) => {
           return (
             <div key={i} className='field'>
               <div className='control'>
-                <label htmlFor=''>
-                  Add ingredient {index + 1}
+                <label htmlFor='' className="label has-text-white">
+                  Add ingredient {index}
                   <input onChange={handleChange} className='input is-info' type='text' name={`ingredients[${index}]`} />
                 </label>
               </div>
@@ -109,8 +106,8 @@ const Register = (props) => {
             return (
               <div key={i} className='field'>
                 <div className='control'>
-                  <label htmlFor=''>
-                    Add step {index + 1}
+                  <label htmlFor='' className="label has-text-white">
+                    Add step {index}
                     <input onChange={handleChange} className='input is-info' type='text' name={`method[${index}]`} />
                   </label>
                 </div>
@@ -145,7 +142,7 @@ const Register = (props) => {
         </button>
         <div className='field'>
           <div className='control'>
-            <label htmlFor=''>
+            <label htmlFor='' className="label has-text-white">
               Add a link to a picture of it
               <input onChange={handleChange} className='input is-info' type='text' name='image' value={data.image ? data.image : ''} />
             </label>
@@ -154,12 +151,12 @@ const Register = (props) => {
             {errors.image}
           </small>}
         </div>
-        <button className="button is-info">
+        <button className="button is-black" style={{ border: '1px solid white' }}>
           Submit Recipe!
         </button>
       </form>
-    </section >
-  )
+    </div>
+  </div >
 }
 
 export default Register
