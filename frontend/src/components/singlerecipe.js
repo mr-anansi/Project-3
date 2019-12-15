@@ -164,7 +164,7 @@ const SingleRecipe = (props) => {
                 </ol>
                 <br />
                 {userInfo ? <button className="button is-black" onClick={(e) => handleSubmit(e)}>
-                Email me this Recipe!
+                Email me the Shopping List!
                 </button>
                   :
                   <button className="button is-black">
