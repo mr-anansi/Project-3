@@ -151,7 +151,7 @@ const SingleRecipe = (props) => {
         <div className="section" style={{ width: 1000 }}>
           <div className="container is-size-6">
             <div className="columns">
-              <div className="column is-three-quarters is-size-7-mobile">
+              <div className="column is-half is-size-7-mobile">
                 <ul>
                   {data.ingredients.map((ingredient, id) =>
                     <li key={id} style={{ fontWeight: 700 }}>{ingredient}</li>
@@ -173,7 +173,7 @@ const SingleRecipe = (props) => {
                 }
               </div>
               <div className="column is-half is-size-7-mobile">
-                <img src={data.image} style={{ width: 800, height: 420 }} />
+                <img id="single" className="image is-5by4" src={data.image} />
                 <br />
                 {isOwner() &&
                   <>
