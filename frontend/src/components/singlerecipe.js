@@ -172,7 +172,7 @@ const SingleRecipe = (props) => {
                   </button>
                 }
               </div>
-              <div className="column is-half is-size-7-mobile">
+              <div className="column is-half is-half-mobile">
                 <img src={data.image} style={{ width: 800, height: 420 }} />
                 <br />
                 {isOwner() &&

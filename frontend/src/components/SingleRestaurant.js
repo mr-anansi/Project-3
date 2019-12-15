@@ -44,7 +44,7 @@ const SingleRestaurant = (props) => {
 	
   return <div className="section">
     <div className="container">
-      <div className="single-parallax">
+      <div className="single-parallax is-hidden-mobile">
         <div className="mask">
           <div className="headline">{data.name}</div>
         </div>
@@ -55,7 +55,7 @@ const SingleRestaurant = (props) => {
           <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet" id="location">{data.location}</h1>
           <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.postcode}</h1>
           <h1 className="subtitle is-size-3-desktop is-size-3-mobile is-size-3-tablet">{data.priceRange}</h1>
-          <h2><a href={data.link}>{data.link}</a></h2>
+          <h2 className="is-size-7-mobile"><a href={data.link}>{data.link}</a></h2>
           <div>
             <br />
             {added ? <button className="button is-white" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-white" onClick={favourite}>Save to Profile</button>}
