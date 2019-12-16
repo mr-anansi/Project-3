@@ -41,7 +41,7 @@ const Register = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     postIt()
-	}
+  }
 	
 
   return <div className="section has-text-centered is-full-height" id="newRecipe">
@@ -107,7 +107,7 @@ const Register = (props) => {
                 <div className='control'>
                   <label htmlFor='' className="label has-text-white">
                     Add step {index + 1}
-                    <input onChange={handleChange} className='input is-info' type='text' name={`method[${index}]`} />
+                    <input onChange={handleChange} className='input is-info' type='text' name='method' />
                   </label>
                 </div>
                 {errors.method && <small className="help is-danger">
