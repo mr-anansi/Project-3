@@ -21,7 +21,7 @@ function login(req, res) {
       if (!user || !user.validatePassword(req.body.password)) {
         return res.status(401).json({ message: 'Unauthorized' }) // send a response of unauthorized and end the process here
       }
-      const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '6h' }) // if all good, create a JSON web token (jwt), which includes the user id, a secret to encode/decode and an expiry time for the token
+      const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '2h' }) // if all good, create a JSON web token (jwt), which includes the user id, a secret to encode/decode and an expiry time for the token
       // Reggie: I've included the user in the response object. This is crucial for further info use across the app (I may change profile logic because of this.)
       res.status(202).json({ message: `Welcome Back ${user.username}`, user, token })
     }) //finally send back a message with that created token
@@ -42,18 +42,6 @@ function show(req, res) {
       res.status(401).json({ message: 'Profile Not Found' })
     })
 }
-
-// function update(req, res) {
-//   Animal
-//     .findById(req.params.id)
-//     .then(animal => {
-//       if (!animal) return res.status(404).json({ message: '404 Not found' })
-//       if (!req.currentUser._id.equals(animal.user)) return res.status(401).json({ message: 'Unauthorized' })
-//       return animal.set(req.body)
-//     })
-//     .then(animal => animal.save())
-//     .then(animal => res.status(202).json(animal))
-// }
 
 
 function edit(req, res) {
