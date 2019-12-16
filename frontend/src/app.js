@@ -16,7 +16,7 @@ import Recipes from './components/recipes'
 import SingleRecipe from './components/singlerecipe'
 import LandingPage from './components/LandingPage'
 import NewRecipe from './components/NewRecipe'
-
+import ScrollToTop from './components/ScrollToTop'
 
 import Register from './components/Register'
 import Profile from './components/Profile'
@@ -24,7 +24,7 @@ import EditProfile from './components/EditProfile'
 import Logout from './components/Logout'
 import { UserContext, ReciContext } from './components/UserContext'
 
-const App = () => {
+const App = (props) => {
   /* Reggie: (First methods) The issue of authentication for user specific features has come up and so i'm experimenting with setting state at an app level and passing down
   the information that's required at a single point. I've also included a logout component and route*/
 
@@ -52,6 +52,8 @@ const App = () => {
         .catch(error => {
           console.log(error)
           setUserInfo(null)
+          Auth.logout()
+          props.history.push('/login')
         })
     } else return
     // .then(console.log(data))
@@ -68,18 +70,19 @@ const App = () => {
         value={reciPage}>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={LandingPage} />
-          {/* <Route exact path="/home" component={Home} /> */}
-          <Route exact path="/recipes" component={Recipes} />
-          <Route exact path="/recipes/:id" component={SingleRecipe} />
-          <Route exact path="/restaurants" component={Restaurants} />
-          <Route exact path="/restaurants/:id" component={SingleRestaurant} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-          <Route path="/logout" component={Logout} />
-          <Route path="/recipe/new" component={NewRecipe} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/profile/edit" component={EditProfile} />
+          <ScrollToTop >
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/recipes" component={Recipes} />
+            <Route exact path="/recipes/:id" component={SingleRecipe} />
+            <Route exact path="/restaurants" component={Restaurants} />
+            <Route exact path="/restaurants/:id" component={SingleRestaurant} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
+            <Route path="/logout" component={Logout} />
+            <Route path="/recipe/new" component={NewRecipe} />
+            <Route exact path="/profile/edit" component={EditProfile} />
+          </ScrollToTop >
         </Switch>
       </ReciContext.Provider>
     </UserContext.Provider>

@@ -6,15 +6,15 @@ const FilteredForm = ({ Restaurants, updateRestaurants }) => {
   const filterOptions = Restaurants.map((restaurant) => {
     return restaurant.category
   })
-  console.log(filterOptions)
+  // console.log(filterOptions)
   // this is an array of arrays of the restaurants categories 
 	
   const tagsArray = filterOptions.flat()
-  console.log(filterOptions.flat())
+  // console.log(filterOptions.flat())
   // creates an array of all tags/categories as strings
 
   const allTags = [...new Set(tagsArray)]
-  console.log(allTags)
+  // console.log(allTags)
   // creates an array of tags with no repetition
 	
   const allTagsLabeled = allTags.map((tag) => {

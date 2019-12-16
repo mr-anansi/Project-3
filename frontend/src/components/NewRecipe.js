@@ -1,21 +1,25 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import useForm from 'react-hook-form'
+// import useForm from 'react-hook-form'
 import Auth from '../lib/auth'
 
 
-function createArrayWithNumbers(length) {
-  return Array.from({ length }, (_, k) => k)
-}
+// function createArrayWithNumbers(length) {
+//   return Array.from({ length }, (_, k) => k + 1)
+// }
 
 
 const Register = (props) => {
-  const [data, setData] = useState({})
+  const [data, setData] = useState({
+    ingredients: [''],
+    method: [''],
+    category: ['']
+  })
   const [errors, setErrors] = useState({})
-  const { register } = useForm()
-  const [ingredientSize, setIngredientSize] = useState(1)
-  const [methodSize, setMethodSize] = useState(1)
-  const [categorySize, setCategorySize] = useState(1)
+  // const { register } = useForm()
+  // const [ingredientSize, setIngredientSize] = useState(1)
+  // const [methodSize, setMethodSize] = useState(1)
+  // const [categorySize, setCategorySize] = useState(1)
 
 
   const postIt = () => {
@@ -23,7 +27,10 @@ const Register = (props) => {
       {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      .then(() => props.history.push('/login'))
+      .then(res => {
+        props.history.push(`/recipes/${res.data._id}`)
+        // console.log(res)
+      })
       .catch(err => {
         setErrors(err.response.data.errors)
         console.log(err.response.data.errors)
@@ -33,16 +40,34 @@ const Register = (props) => {
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })
-    console.log([e.target.name])
+    console.log(data)
+    // console.log(createArrayWithNumbers(ingredientSize))
     setErrors({})
   }
-
+  
+  const handleMultiChange = (e, i) => {
+    data[e.target.name][i] = e.target.value
+    setData({ ...data, [e.target.name]: data[e.target.name] }) 
+    console.log(data)
+    setErrors({})
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     postIt()
-	}
+  }
+  
+  const addItem = () => {
+    setData({ ...data, ingredients: [...data.ingredients, '' ] })
+  }
 	
+  const addStep = () => {
+    setData({ ...data, method: [...data.method, '' ] })
+  }
+  
+  const addCat = () => {
+    setData({ ...data, category: [...data.category, '' ] })
+  }
 
   return <div className="section has-text-centered is-full-height" id="newRecipe">
     <div className="container has-text-centered" id="newform">
@@ -82,13 +107,13 @@ const Register = (props) => {
           </small>}
         </div>
 
-        {createArrayWithNumbers(ingredientSize).map((index, i) => {
+        {data.ingredients.map((ingredient, i) => {
           return (
             <div key={i} className='field'>
               <div className='control'>
                 <label htmlFor='' className="label has-text-white">
-                  Add ingredient {index + 1}
-                  <input onChange={handleChange} className='input is-info' type='text' name={`ingredients[${index}]`} />
+                  Add ingredient {i + 1}
+                  <input onChange={(e) => handleMultiChange(e,i)} className='input is-info' type='text' name={'ingredients'} />
                 </label>
               </div>
               {errors.ingredients && <small className="help is-danger">
@@ -97,17 +122,17 @@ const Register = (props) => {
             </div>
           )
         })}
-        <button type="button" onClick={() => setIngredientSize(ingredientSize + 1)} >
+        <button type="button" onClick={() => addItem()} >
           Add another ingredient
         </button>
-        {
-          createArrayWithNumbers(methodSize).map((index, i) => {
+        {data &&
+          data.method.map((step, i) => {
             return (
               <div key={i} className='field'>
                 <div className='control'>
                   <label htmlFor='' className="label has-text-white">
-                    Add step {index + 1}
-                    <input onChange={handleChange} className='input is-info' type='text' name={`method[${index}]`} />
+                    Add step {i + 1}
+                    <input onChange={(e) => handleMultiChange(e,i)} className='input is-info' type='text' name={'method'} />
                   </label>
                 </div>
                 {errors.method && <small className="help is-danger">
@@ -116,18 +141,18 @@ const Register = (props) => {
               </div>
             )
           })}
-        <button type="button" onClick={() => setMethodSize(methodSize + 1)} >
+        <button type="button" onClick={() => addStep()} >
           Add another step
         </button>
 
-        {
-          createArrayWithNumbers(categorySize).map((index, i) => {
+        {data &&
+          data.category.map((cat, i) => {
             return (
               <div key={i} className='field'>
                 <div className='control'>
                   <label htmlFor=''>
                     Add a category (e.g &lsquo;Vegetarian&rsquo;, &lsquo;Comfort-food&rsquo;)
-                    <input onChange={handleChange} className='input is-info' type='text' name={`category[${index}]`} />
+                    <input onChange={(e) => handleMultiChange(e,i)} className='input is-info' type='text' name={'category'} />
                   </label>
                 </div>
                 {errors.category && <small className="help is-danger">
@@ -136,7 +161,7 @@ const Register = (props) => {
               </div>
             )
           })}
-        <button type="button" onClick={() => setCategorySize(categorySize + 1)} >
+        <button type="button" onClick={() => addCat()} >
           Add another category
         </button>
         <div className='field'>

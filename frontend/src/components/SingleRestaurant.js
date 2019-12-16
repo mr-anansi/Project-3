@@ -39,7 +39,10 @@ const SingleRestaurant = (props) => {
       .then(res => {
         setUserInfo(res.data.user)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        props.history.push('/login')
+        console.log(err)
+      })
   }
 	
   return <div className="section">
