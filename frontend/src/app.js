@@ -69,20 +69,20 @@ const App = (props) => {
       <ReciContext.Provider
         value={reciPage}>
         <Navbar />
-        <ScrollToTop />
         <Switch>
-          <Route exact path="/" component={LandingPage} />
-          {/* <Route exact path="/home" component={Home} /> */}
-          <Route exact path="/recipes" component={Recipes} />
-          <Route exact path="/recipes/:id" component={SingleRecipe} />
-          <Route exact path="/restaurants" component={Restaurants} />
-          <Route exact path="/restaurants/:id" component={SingleRestaurant} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-          <Route path="/logout" component={Logout} />
-          <Route path="/recipe/new" component={NewRecipe} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/profile/edit" component={EditProfile} />
+          <ScrollToTop >
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/recipes" component={Recipes} />
+            <Route exact path="/recipes/:id" component={SingleRecipe} />
+            <Route exact path="/restaurants" component={Restaurants} />
+            <Route exact path="/restaurants/:id" component={SingleRestaurant} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
+            <Route path="/logout" component={Logout} />
+            <Route path="/recipe/new" component={NewRecipe} />
+            <Route exact path="/profile/edit" component={EditProfile} />
+          </ScrollToTop >
         </Switch>
       </ReciContext.Provider>
     </UserContext.Provider>
