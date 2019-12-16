@@ -127,7 +127,7 @@ const SingleRecipe = (props) => {
     axios.delete(`/api/recipes/${id}`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      // .then(() => props.history.push('/recipes'))
+      .then(() => props.history.push('/recipes'))
       .catch(err => console.log(err))
   }
 
