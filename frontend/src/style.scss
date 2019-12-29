@@ -344,6 +344,14 @@ input {
 	padding: 20px; 
 }
 
+#editpro {
+	background-color: black; 
+	color: white;
+	width: 500px;
+	margin-top: 80px;
+	padding: 20px; 
+}
+
 #loginPage {
 	background-image: url('../src/images/champagne.png');
 	background-size: cover;
@@ -393,6 +401,12 @@ input {
 a {
 	text-decoration: none; 
 	color: black
+}
+
+.comment-dir {
+  text-align: center;
+  padding: 1rem;
+  font-size: 26px;
 }
 
 

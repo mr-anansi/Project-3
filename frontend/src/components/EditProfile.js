@@ -45,91 +45,93 @@ const EditProfile = (props) => {
   }
 
   return (
-    <section className='section'>
-      <div className="title">Edit Profile</div>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              Full Name
+    <section className='section has-text-centered is-full-height'>
+      <div className="container has-text-centered" id="editpro">
+        <div className="title is-size-1 title has-text-white">Edit Profile</div>
+        <form className="form has-text-centered" onSubmit={handleSubmit}>
+          <div className='field'>
+            <div className='control'>
+              <label htmlFor='' className="label has-text-white">
+                Full Name
               <input onChange={handleChange} className='input is-info' type='text' name='username' value={data.username ? data.username : ''} />
-            </label>
+              </label>
+            </div>
+            {errors.username && <small className="help is-danger">
+              {errors.username}
+            </small>}
           </div>
-          {errors.username && <small className="help is-danger">
-            {errors.username}
-          </small>}
-        </div>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              E-mail
+          <div className='field'>
+            <div className='control'>
+              <label htmlFor='' className="label has-text-white">
+                E-mail
               <input onChange={handleChange} className='input is-info' type='text' name='email' value={data.email ? data.email : ''} />
-            </label>
+              </label>
+            </div>
+            {errors.email && <small className="help is-danger">
+              {errors.email}
+            </small>}
           </div>
-          {errors.email && <small className="help is-danger">
-            {errors.email}
-          </small>}
-        </div>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              Age
+          <div className='field'>
+            <div className='control'>
+              <label htmlFor='' className="label has-text-white">
+                Age
               <input onChange={handleChange} className='input is-info' type='text' name='age' value={data.age ? data.age : ''} />
-            </label>
+              </label>
+            </div>
+            {errors.age && <small className="help is-danger">
+              {errors.age}
+            </small>}
           </div>
-          {errors.age && <small className="help is-danger">
-            {errors.age}
-          </small>}
-        </div>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              Link to Profile Picture
+          <div className='field'>
+            <div className='control'>
+              <label htmlFor='' className="label has-text-white">
+                Link to Profile Picture
               <input onChange={handleChange} className='input is-info' type='text' name='image' value={data.image ? data.image : ''} />
-            </label>
+              </label>
+            </div>
+            {errors.image && <small className="help is-danger">
+              {errors.image}
+            </small>}
           </div>
-          {errors.image && <small className="help is-danger">
-            {errors.image}
-          </small>}
-        </div>
-        {/* I might need some Marissa tag magic on this field for array entry */}
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              Dietary
+          {/* I might need some Marissa tag magic on this field for array entry */}
+          <div className='field'>
+            <div className='control'>
+              <label htmlFor='' className="label has-text-white">
+                Dietary
               <input onChange={handleChange} className='input is-info' type='text' name='dietary' value={data.dietary ? data.dietary : ''} />
-            </label>
+              </label>
+            </div>
+            {errors.dietary && <small className="help is-danger">
+              {errors.dietary}
+            </small>}
           </div>
-          {errors.dietary && <small className="help is-danger">
-            {errors.dietary}
-          </small>}
-        </div>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              Password
+          <div className='field'>
+            <div className='control'>
+              <label htmlFor='' className="label has-text-white">
+                Password
               <input onChange={handleChange} className='input is-info' type='password' name='password' />
-            </label>
+              </label>
+            </div>
+            {errors.password && <small className="help is-danger">
+              {errors.password}
+            </small>}
           </div>
-          {errors.password && <small className="help is-danger">
-            {errors.password}
-          </small>}
-        </div>
-        <div className='field'>
-          <div className='control'>
-            <label htmlFor=''>
-              Confirm Password
+          <div className='field'>
+            <div className='control'>
+              <label htmlFor='' className="label has-text-white">
+                Confirm Password
               <input onChange={handleChange} className='input is-info' type='password' name='passwordConfirmation' />
-            </label>
+              </label>
+            </div>
+            {errors.passwordConfirmation && <small className="help is-danger">
+              {errors.passwordConfirmation}
+            </small>}
           </div>
-          {errors.passwordConfirmation && <small className="help is-danger">
-            {errors.passwordConfirmation}
-          </small>}
-        </div>
-        <button className="button is-info">
-          Change Info
+          <button className="button is-info">
+            Change Info
         </button>
-      </form>
+        </form>
+      </div>
     </section>
   )
 }

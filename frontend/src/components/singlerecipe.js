@@ -225,7 +225,7 @@ const SingleRecipe = (props) => {
         : <>
             <br />
             <br />
-            <h1>You must be signed in to post a comment!</h1>
+            <h2 className='comment-dir'>You must be signed in to post a comment!</h2>
           </>}
     </div>
   </div>
