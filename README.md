@@ -37,9 +37,11 @@ When running this project in a local environment, run `npm install` in the CLI t
 
 * Bulma
 * React Hooks, Animations
-* Email*
+* Emailjs
 * Toastify
-* Bundler
+
+#### Bundler
+
 * Webpack
 
 ## Approach
@@ -50,7 +52,7 @@ We had largely been taught React in the form of class and simple components up u
 
 We took the opportunity to display our progress with the new format of code construction and built the majority of our components in the new format. 
 
-Previous class component snippet (from another project 2):
+Previous class component snippet (from project 2):
 
 ```
 
@@ -114,18 +116,18 @@ const EditProfile = (props) => {
 
 We began this project with a brainstorming document that took into account the areas we were interested in and the ideas we were interested in fleshing out. 
 
-Our ideas ranged around the arts and we eventually settled on a food-focussed app with team-members @michael and @marissa particularly passionate about any research involved! 
+Our ideas ranged around the arts and we eventually settled on a food-focussed app with team-members [Michael](https://github.com/mjadair) and [Marissa](https://github.com/marepstein) particularly passionate about any research involved! 
 
 Our goal was to create something that would address one’s food needs, whether in a foodie state of mind or otherwise. Our stretch goal was to have a user funnel that was guided by matching the users personalisations to our data.
 
 We investigated some external APIs in order to provide the information that was required for the app. We ultimately decided, however to create our own information so that we can have full flexibility with the endpoints and the data serving.
 
-@michael and @marissa offered to create the initial seed data, while I got to work forming the back-end logic.
+Team mates [Michael](https://github.com/mjadair) and [Marissa](https://github.com/marepstein) offered to create the initial seed data, while I got to work forming the back-end logic.
 
 We began by focussing on a single area of the app, mapping out what routes would be required. We then progressed to split the work up into 3 broad areas:
 
-* Michael looked at how best to sort and incorporate the recipe information on the front-end.
-* Marissa looked at a similar application with regards to the restaurants on the front end.
+* [Michael](https://github.com/mjadair) looked at how best to sort and incorporate the recipe information on the front-end.
+* [Marissa](https://github.com/marepstein) looked at a similar application with regards to the restaurants on the front end.
 * I looked at integrating backend routes and rendering elements based on authentication and other conditionals on the front-end.
 
 ## Wireframes
