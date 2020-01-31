@@ -10,6 +10,8 @@ We were required to:
 * Build a full-stack application by making your own backend and your own front-end
 * Use an Express API to serve our data from a Mongo database
 * Handle API requests with a separate front-end built with React
+
+The resulting application titled 'the-kitchen' was constructed with team members [Michael](https://github.com/mjadair) & [Marissa](https://github.com/marepstein).
 ​
 ## Installation
 
