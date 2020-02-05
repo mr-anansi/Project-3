@@ -82,7 +82,7 @@ class Input extends React.Component {
 
 ```
 
-Example of the different format our components took with hooks (cuurent project):
+Example of the different format our components took with hooks (curent project):
 
 
 ```
@@ -136,19 +136,94 @@ Once this was done we concentrated on getting our backend routes and data delive
 
 Since we were relying on no external data sources, we had a task on our hands to create the data that users would be able to cycle through. As this was a curation app, we wanted to be able to provide specific results, yet have enough options for the user to experience a large enough degree of choice.
 
-The seeding data was separated into two categories and the data in JSON format was built out. 
+The seeding data was separated into two categories and then constructed in JSON format. 
 
-In order to create the user-data relationship, an allocation for the user in the restaurant and recipe data was created. 
+In order to create the user-data relationship, an allocation for the user in the restaurant and recipe model was created. 
 
-In an attempt to categorize and edit the data faster, the seeding file was customised, allowing a single user to be created and attached to the first type of data, before using the same user to create the second file.
+In an attempt to categorize and edit the data faster, the seeding file was customised, allowing a single user to be created and attached to the first type of data objects, before using the same user to create the second set.
 
-Seed file snippet:
+Each file was created in the following format:
+
+```
+const recipeSeed = (user) => {
+  return [{
+    name: 'Pappardelle with nduja, mascarpone and lemon',
+    author: 'Michael',
+    about: '',
+    ingredients: ['Tagliatelle', 'Nduja', 'Mascarpone', 'Lemons (zest and juice)', 'Parsley', 'Parmesan', 'Olive oil'],
+    method: ['Fry the nduja in the olive oil.', 'When the nduja has melted, add the lemon zest and juice, allow to infuse for a couple of minutes.', 'Add the mascarpone, reduce heat and stir', 'Once the sauce has thickened, add the cooked pasta and a tablespoon of its cooking water.', 'Serve topped with chopped parsley and parmesan'],
+    image: 'https://i.imgur.com/rEM6L2U.jpg SameSite=None Secure',
+    category: ['Pasta', 'Spicy', 'Dinner', 'Easy'],
+    type: ['Dinner'],
+    dietary: ['Spicy'],
+    serves: '',
+    complexity: 'Easy',
+    time: '30mins or less!',
+    user: user
+  },
+  {
+    name: 'Sourdough Bread',
+    author: 'Michael',
+    about: '',
+    ingredients: ['400g Strong White Bread Flour', '145g Rye Starter', '50g Rye Flour', '50g Wholemeal Flour', '12g Sea Salt', 'Olive Oil', 'Semolina (for dusting)'],
+    method: ['Mix the flours and the starter.', 'Knead until the gluten develops.', 'Fold, then rest for 12 hours. Bake.'],
+    image: 'https://imgur.com/PQaorBZ.jpg SameSite=None Secure',
+    category: ['Baking'],
+    type: ['Breakfast', 'Lunch', 'Dinner', 'Side', 'Bit more effort'],
+    dietary: [''],
+    complexity: 'Bit more effort',
+    serves: '',
+    time: '3 days',
+    user: user
+  },...
+  
 
 ```
 
+This enabled two large files to be created separately as well as a shorter seed script file. The data created as follows:
+
+```
+mongoose.connect(
+  dbURI,
+  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
+  (err, db) => {
+    if (err) return console.log(err)
+    db.dropDatabase()
+      .then(() => {
+        return User.create([{
+          username: 'Admin',
+          email: 'admin@email',
+          password: 'admin',
+          passwordConfirmation: 'admin'
+        }])
+      })
+      .then(users => {
+        console.log(`${'👨‍💻'.repeat(users.length)} users created`)
+        //this is passing in a function defined in your external file
+        return Recipe.create(recipeSeed(users[0]))
+      })
+      .then(recipes => console.log(`${recipes.length} recipes created`))
+      .catch(err => console.log(err))
+      //complete it with one and then find the user again
+      .then(() => {
+        return User.find({
+          username: 'Admin'
+        })
+      })
+      //then pass in another seed creation file/function
+      .then(user => {
+        console.log(`${user[0].username} found`)
+        return Restaurant.create(restaurantSeed(user[0]))
+      })
+      .then(restaurant => {
+        console.log(`${restaurant.length} restaurants created`)
+      })
+      .finally(() => mongoose.connection.close())
+  }
+)
+
 ```
 
-This enabled two large files to be created separately.
 
 ## Features
 
@@ -156,18 +231,35 @@ It was important to keep the user experience seamless. We had previously used se
 
 In order to work towards personalisation, methods of user information sharing were looked into.
 
-there was an investigation into some of the newer hook features of React with security of the user information a prime concern. We wanted to reduce the calls to the backend while defining the user information deeper in the component tree (login as opposed to on the first visit). 
+There was an investigation into some of the newer hook features of React with the security of the user information a prime concern. We wanted to reduce the calls to the backend while defining the user information deeper in the component tree (Pass the information around once the user logs in as opposed to the first page on visit). 
 
-Ultimately we used the useContext hook to enable the user data to be stored and distributed at app level on a single login event. This enabled the users’ information to be referenced on any page, allowing for features like one click email and updated user personalisations on our information pages with a single user information call to the backend. To tackle the problem of a loss of state on refresh, a conditional call (based on the availability of the jwt token) was built in at app level. This ensured that the call only ran when a user had logged in and refreshed the page.
+Ultimately we used the useContext hook to enable the user data to be stored and distributed at app level on this single login event. This enabled the users’ information to be referenced on any page, allowing for features like one click email and updated user personalisations on our information pages with a single user information call to the backend. 
 
-Example code:
+To tackle the refresh issue with regards to state, a conditional call (based on the availability of the jwt token) was built in at app level. This ensured that the call only ran when a user had logged in and refreshed the page.
+
+When the app is refreshed this code allows a log in check to take place:
+
+```
+useEffect(() => {
+    if (Auth.isAuthorized()) {
+      axios.get('/api/profile', {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      })
+        .then(response => {
+          setUserInfo(response.data.user)
+        })
+        .catch(error => {
+          console.log(error)
+          setUserInfo(null)
+          Auth.logout()
+          props.history.push('/login')
+        })
+    }
+  }, [])
 
 ```
 
-
-```
-
-We used the hook for features such as the add to profile favourites (with the ability for the add button to disabled once added to profile), the profile layout and links and the ability to make alterations to a user’s profile information.
+We used the hook for features such as the add to profile favourites (with the ability for the add button to disabled once added to profile), the profile layout, links and the ability to make alterations to a user’s profile information.
 
 ```
 const favourite = (props) => {
@@ -187,13 +279,6 @@ const favourite = (props) => {
 
 ```
 
-Conditional buttons based on the user's useContext hook information:
-
-```
-      {added ? <button className="button is-light" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite} style={{ marginBottom: 20 }}>Save to Profile</button>} 
-      
-
-```
 
 The editing of comments was resolved by using useContext as well. Essentially, as the comments section was rendered by the recipe page but existed as a separate form, this data needed to be updated by a state that was available to both components. Once the comments were edited or deleted, the useContext recipe info was updated with the response and then the page was re-rendered in the higher level component providing a real-time change on the page.
 
@@ -205,17 +290,16 @@ The editing of comments was resolved by using useContext as well. Essentially, a
 
 ```
 
+Here the page information is updated within a deeper component (a form):
 
-Here the page information is updated within a deeper component (form):
-
-Globally set:
+The useContext hook is first declared and set at page level:
 
 ```
   const { reci, setReci } = useContext(ReciContext)
 
 ```
 
-Updated in form:
+Since the comments affect the data on the page, once the data is submitted the form updates the global variable for an immediate page update:
 
 ```
   const handleDelete = () => {
@@ -272,15 +356,128 @@ const addItem = () => {
 
 ## Styling
 
-(Coming soon)
+While the objective was to create a custom user path as a stretch goal, provision was made for the other paths that the user might decide to take to get to the core data in other ways. 
+
+Because of this, we created the classic home page, recipe, restaurant and profile pages. The home page highlighted the two main paths: eat in or eat out.
+
+The home page:
+
+![](readme-images/P3 homepage.png)
+
+
+We also made use of additional React Library features such as the parallax effect from React parallax to add some animations to the experience:
+
+```
+
+class LandingPage extends React.Component {
+  state = { hovering: false }
+	
+  render() {
+    return <div style={styles}>
+      <Parallax
+        bgImage={image4}
+        strength={300}
+        renderLayer={percentage => (
+          <div>
+            <div
+              style={{
+                position: 'absolute',
+                background: `rgba(255, 125, 0, ${percentage * 1})`,
+                left: '50%',
+                top: '50%',
+                borderRadius: '50%',
+                transform: 'translate(-50%,-50%)',
+                width: percentage * 700,
+                height: percentage * 700
+              }}
+            />
+          </div>
+        )}>
+        <div style={{ height: 900 }}>
+          <div style={insideStyles}>The Kitchen</div>
+        </div>
+      </Parallax>
+
+
+```
 
 ## Categorization
 
-(Coming soon)
+Recipes and Restaurants worked on similar categorization principles. Each top level page for recipes and restaurants were constructed in two sections. The first consisted of the filter action and the second was the result of the filtered process.
+
+```
+return <div className="recipes">
+    <div className="section">
+      <h1 className="is-size-1 is-black has-text-centered">Have a look at these Recipes...</h1>
+      <h2 className="is-black has-text-centered" style={{ margin: '20px 0 20px 0' }}>Or sign up to add your own</h2>
+      <div className="container">
+        <div>
+          <FilteredRecipeForm
+            Recipes={filteredData}
+            updateRecipes={filterRecipes}
+          />
+        </div>
+        <div className="columns is-multiline">
+          {filteredData.map((results, i) => {
+            return <RecipeCard key={i} results={results} />
+          })}
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+```
+
+A call at the top level to all of the data happened on visit of the page and then the filtering would take place (in this specific example) at the 'FilteredRecipeForm' level by passing down the required functions through props.
+
+```
+function filterRecipes(tags) {
+    if (tags.length === 0) {
+      return setFilteredData([...initialData])
+    }
+    const types = tags.map(item => item.value)
+    const recipes = initialData.filter((recipe) => {
+      return types.every(element => recipe.category.includes(element))
+    })
+    console.log(recipes)
+    setFilteredData(recipes)
+  }
+
+```
+
+Through the use of React select, inputted information can query the recipe/restaurant information by way of the categories assigned to our app data on creation.
+
+```
+function handleSelect(selectedItems) {
+    if (selectedItems === null) return updateRecipes([])
+    updateRecipes([...selectedItems])
+    console.log(...selectedItems)
+  }
+
+
+  return <Select
+    isMulti
+    name="tags"
+    options={allTagsLabeled}
+    onChange={handleSelect}
+    className="basic-multi-select"
+    classNamePrefix="select"
+    placeholder="Choose by category here..."
+
+  />
+
+``` 
 
 ## Bugs & Challenges
 
-(Coming soon)
+We initially had some issues with the creation of new recipes for new users. This was to do with the data was stored in the multi select fields. In the method section, once multiple fields were added, the data would not recognise the entries in an array format and simply send unrecognisable data to the database which would then discard it. Through a review we managed to keep the data in array format and solve the issue.
+
+We found that navigation through the app after scrolling down a page would keep the window height at the same mid or low level if a page was changed. This caused some visual issues specifically for our restaurant pages that required the user to start at the top and scroll down for the best effect.
+
+This was tackled by adding a listener function that returned the scroll position to the top and wrapping the required components with this 'ScrollToTop' component.
+
+As a result of time constraints, the mobile experience has not been optimised and so some inconsistencies are present on smaller screens.
 
 ## Future Features
 
@@ -288,4 +485,4 @@ We would of liked to provide the guided path we had in mind at the initial stage
 
 In our plans, the user could get more of the experience through progressing through the funnel. This way they would be guided to the best and fastest output relative to their saved preferences. 
 
-In order to achieve the user path, we will need more work on the filter and UX aspects of the app. This may come in future iterations of the project.
+In order to achieve the user path, more work on the filter and UX aspects of the app is needed. In addition, mobile optimisation is required. These elements may come in future iterations of the project.

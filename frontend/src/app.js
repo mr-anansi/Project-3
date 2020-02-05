@@ -38,16 +38,12 @@ const App = (props) => {
   const reciPage = useMemo(() => ({ reci, setReci }), [reci, setReci])
 
   useEffect(() => {
-    console.log('running')
-    // console.log(Auth.getToken())
     if (Auth.isAuthorized()) {
-      console.log('setting user')
       axios.get('/api/profile', {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
         .then(response => {
           setUserInfo(response.data.user)
-          // console.log(response.data)
         })
         .catch(error => {
           console.log(error)
@@ -55,8 +51,7 @@ const App = (props) => {
           Auth.logout()
           props.history.push('/login')
         })
-    } else return
-    // .then(console.log(data))
+    }
   }, [])
 
   //Reggie: Logout and Profile paths were created over the weekend
