@@ -5,7 +5,7 @@
 This project made up the third project of General Assembly's Software Engineering Immersive program. We were sorted into predefined teams and were instructed to build a full stack browser application.
 
 We were required to:
-​
+
 * Work in a team, using git to code collaboratively
 * Build a full-stack application by making your own backend and your own front-end
 * Use an Express API to serve our data from a Mongo database
@@ -122,15 +122,11 @@ Our ideas ranged around the arts and we eventually settled on a food-focussed ap
 
 Our goal was to create something that would address one’s food needs, whether in a foodie state of mind or otherwise. Our stretch goal was to have a user funnel that was guided by matching the users personalisations to our data.
 
-We investigated some external APIs in order to provide the information that was required for the app. We ultimately decided, however to create our own information so that we can have full flexibility with the endpoints and the data serving.
+We investigated some external APIs in order to provide the information that was required for the app. We ultimately decided, however to create our own information so that full flexibility could be established with our endpoints.
 
-Team mates [Michael](https://github.com/mjadair) and [Marissa](https://github.com/marepstein) offered to create the initial seed data, while I got to work forming the back-end logic.
+In order to ensure we had enough data for the user to be able to sort through, we decided to get to work on seeding the data first. 
 
-We began by focussing on a single area of the app, mapping out what routes would be required. We then progressed to split the work up into 3 broad areas:
-
-* [Michael](https://github.com/mjadair) looked at how best to sort and incorporate the recipe information on the front-end.
-* [Marissa](https://github.com/marepstein) looked at a similar application with regards to the restaurants on the front end.
-* I looked at integrating backend routes and rendering elements based on authentication and other conditionals on the front-end.
+Once this was done we concentrated on getting our backend routes and data delivery done first, before moving on to the front end.
 
 ## Wireframes
 
@@ -138,19 +134,40 @@ We began by focussing on a single area of the app, mapping out what routes would
 
 ## Seeding
 
-(coming soon)
+Since we were relying on no external data sources, we had a task on our hands to create the data that users would be able to cycle through. As this was a curation app, we wanted to be able to provide specific results, yet have enough options for the user to experience a large enough degree of choice.
+
+The seeding data was separated into two categories and the data in JSON format was built out. 
+
+In order to create the user-data relationship, an allocation for the user in the restaurant and recipe data was created. 
+
+In an attempt to categorize and edit the data faster, the seeding file was customised, allowing a single user to be created and attached to the first type of data, before using the same user to create the second file.
+
+Seed file snippet:
+
+```
+
+```
+
+This enabled two large files to be created separately.
 
 ## Features
 
-It was important to keep the user experience seamless. We had previously used simple authenticated routes to display user specific information. We needed to expand on that creating paths for logged out users and authenticated users.
+It was important to keep the user experience seamless. We had previously used secure routes to deliver user simple information to the specific user who created it.  This was expanded on by creating paths for both logged out users and authenticated users.
 
-As I worked on the profile and log in routes, I realised that carrying user information across components could greatly assist with the personalisation features we had in mind. 
+In order to work towards personalisation, methods of user information sharing were looked into.
 
-In order to achieve this securely, I investigated some of the newer hook features of React. I did not want to have to make a call to the backend on each page and I wanted the user information to be defined deeper in the component tree (login as opposed to on first visit). 
+there was an investigation into some of the newer hook features of React with security of the user information a prime concern. We wanted to reduce the calls to the backend while defining the user information deeper in the component tree (login as opposed to on the first visit). 
 
-I decided to use the useContext hook to enable the user data to be stored and distributed at app level on the single login event. This enabled the users’ information to be referenced on any page, allowing for features like one click email and updated user personalisations on our information pages.
+Ultimately we used the useContext hook to enable the user data to be stored and distributed at app level on a single login event. This enabled the users’ information to be referenced on any page, allowing for features like one click email and updated user personalisations on our information pages with a single user information call to the backend. To tackle the problem of a loss of state on refresh, a conditional call (based on the availability of the jwt token) was built in at app level. This ensured that the call only ran when a user had logged in and refreshed the page.
 
-I then worked on features such as the add to profile favourites (with the ability for the add button to disabled once added to profile), the profile layout and links and the ability to make alterations to a user’s profile information.
+Example code:
+
+```
+
+
+```
+
+We used the hook for features such as the add to profile favourites (with the ability for the add button to disabled once added to profile), the profile layout and links and the ability to make alterations to a user’s profile information.
 
 ```
 const favourite = (props) => {
@@ -170,7 +187,7 @@ const favourite = (props) => {
 
 ```
 
-Conditional buttons based on stored user information:
+Conditional buttons based on the user's useContext hook information:
 
 ```
       {added ? <button className="button is-light" title="Disabled button" disabled>Added</button> : userInfo && info.username && <button className="button is-black" onClick={favourite} style={{ marginBottom: 20 }}>Save to Profile</button>} 
@@ -178,9 +195,7 @@ Conditional buttons based on stored user information:
 
 ```
 
-At this stage regular communication was conducted with the team member who was primarily working on the area of the app (recipe or restaurant) and any conflicts were resolved together.
-
-The editing of comments was resolved by using useContext as well. Essentially, as the comments section was rendered by the recipe data but existed as a separate form, this data needed to be updated by a state that was available to multiple components. Once the comments were edited or deleted, the useContext info was updated with the response and then re-rendered in the higher level component providing a real-time change on the page.
+The editing of comments was resolved by using useContext as well. Essentially, as the comments section was rendered by the recipe page but existed as a separate form, this data needed to be updated by a state that was available to both components. Once the comments were edited or deleted, the useContext recipe info was updated with the response and then the page was re-rendered in the higher level component providing a real-time change on the page.
 
 ```
       {reci && reci.comments.map((comments, i) => {
@@ -190,7 +205,6 @@ The editing of comments was resolved by using useContext as well. Essentially, a
 
 ```
 
-Recipe information was set at a global level so that once altered in the form, the page would update immediately.
 
 Here the page information is updated within a deeper component (form):
 
@@ -275,9 +289,3 @@ We would of liked to provide the guided path we had in mind at the initial stage
 In our plans, the user could get more of the experience through progressing through the funnel. This way they would be guided to the best and fastest output relative to their saved preferences. 
 
 In order to achieve the user path, we will need more work on the filter and UX aspects of the app. This may come in future iterations of the project.
-
-
-
-
-
-
