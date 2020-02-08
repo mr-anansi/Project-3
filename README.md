@@ -315,7 +315,7 @@ Since the comments affect the data on the page, once the data is submitted the f
 ```
 
 
-In other areas of the app, the new recipe form provided the challenge of adding multiple inputs into an array for a single field. This was achieved through coercing the changing form information into an array using the input index. Take a look at the example:
+In other areas of the app, the 'new recipe' form provided the challenge of adding multiple inputs into an array for a single field. This was achieved through coercing the changing form information into an array using the input index. Take a look at the example:
 
 The change handler would create and maintain the data in array format:
 
@@ -356,9 +356,9 @@ const addItem = () => {
 
 ## Styling
 
-While the objective was to create a custom user path as a stretch goal, provision was made for the other paths that the user might decide to take to get to the core data in other ways. 
+While the objective was to create a custom user path as a stretch goal, provision was made for the other paths that the user might decide to take to get to the core data. 
 
-Because of this, we created the classic home page, recipe, restaurant and profile pages. The home page highlighted the two main paths: eat in or eat out.
+Because of this, we created the classic home page, recipe, restaurant and profile pages. The home page highlighted the two fundamental user decision: eat in or eat out.
 
 The home page:
 
@@ -440,13 +440,12 @@ function filterRecipes(tags) {
     const recipes = initialData.filter((recipe) => {
       return types.every(element => recipe.category.includes(element))
     })
-    console.log(recipes)
     setFilteredData(recipes)
   }
 
 ```
 
-Through the use of React select, inputted information can query the recipe/restaurant information by way of the categories assigned to our app data on creation.
+User-inputted information can query the recipe/restaurant information by way of the categories assigned to our app data on creation. Through the use of React select, multiple queries in the form of tags could be generated.
 
 ```
 function handleSelect(selectedItems) {
@@ -471,7 +470,7 @@ function handleSelect(selectedItems) {
 
 ## Bugs & Challenges
 
-We initially had some issues with the creation of new recipes for new users. This was to do with the data was stored in the multi select fields. In the method section, once multiple fields were added, the data would not recognise the entries in an array format and simply send unrecognisable data to the database which would then discard it. Through a review we managed to keep the data in array format and solve the issue.
+We initially had some issues with the creation of new recipes for new users. This was to do with the data that was stored in the multi select fields. In the method section, once multiple fields were added, the data would not recognise the entries in an array format and simply send unrecognisable data to the database which would then discard it. Through a review we managed to keep the data in array format and solve the issue.
 
 We found that navigation through the app after scrolling down a page would keep the window height at the same mid or low level if a page was changed. This caused some visual issues specifically for our restaurant pages that required the user to start at the top and scroll down for the best effect.
 
@@ -483,6 +482,6 @@ As a result of time constraints, the mobile experience has not been optimised an
 
 We would of liked to provide the guided path we had in mind at the initial stage, however time restricted us to the core library aspect as a deliverable. 
 
-In our plans, the user could get more of the experience through progressing through the funnel. This way they would be guided to the best and fastest output relative to their saved preferences. 
+In our plans, the user could get more of the tailored experience through progressing through the funnel. This way they would be guided to the best and fastest output relative to their saved preferences. 
 
 In order to achieve the user path, more work on the filter and UX aspects of the app is needed. In addition, mobile optimisation is required. These elements may come in future iterations of the project.
