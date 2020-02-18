@@ -12,14 +12,15 @@ We were required to:
 * Handle API requests with a separate front-end built with React
 
 The resulting application titled 'the-kitchen' was constructed with team members [Michael](https://github.com/mjadair) & [Marissa](https://github.com/marepstein).
-​
+
+Check out our site [here](https://the-kitchen-p3.herokuapp.com/)
+
 ## Installation
 
 We used Node Package Manager to install all of our dependencies.
 
 When running this project in a local environment, run `npm install` in the CLI to ensure all dependencies are present before launch.
 
-​
 ## Technologies used
 
 #### Front-end
@@ -82,7 +83,7 @@ class Input extends React.Component {
 
 ```
 
-Example of the different format our components took with hooks (curent project):
+Example of the different format our components took with hooks (current project):
 
 
 ```
@@ -120,7 +121,7 @@ We began this project with a brainstorming document that took into account the a
 
 Our ideas ranged around the arts and we eventually settled on a food-focussed app with team-members [Michael](https://github.com/mjadair) and [Marissa](https://github.com/marepstein) particularly passionate about any research involved! 
 
-Our goal was to create something that would address one’s food needs, whether in a foodie state of mind or otherwise. Our stretch goal was to have a user funnel that was guided by matching the users personalisations to our data.
+Our goal was to create something that would address one’s food needs, whether in a foodie state of mind or otherwise. Our stretch goal was to have a user funnel that was guided by matching the user’s personalisations to our data.
 
 We investigated some external APIs in order to provide the information that was required for the app. We ultimately decided, however to create our own information so that full flexibility could be established with our endpoints.
 
@@ -233,7 +234,7 @@ In order to work towards personalisation, methods of user information sharing we
 
 There was an investigation into some of the newer hook features of React with the security of the user information a prime concern. We wanted to reduce the calls to the backend while defining the user information deeper in the component tree (Pass the information around once the user logs in as opposed to the first page on visit). 
 
-Ultimately we used the useContext hook to enable the user data to be stored and distributed at app level on this single login event. This enabled the users’ information to be referenced on any page, allowing for features like one click email and updated user personalisations on our information pages with a single user information call to the backend. 
+Ultimately, we used the useContext hook to enable the user data to be stored and distributed at app level on this single login event. This enabled the users’ information to be referenced on any page, allowing for features like one click email and updated user personalisations on our information pages with a single user information call to the backend. 
 
 To tackle the refresh issue with regards to state, a conditional call (based on the availability of the jwt token) was built in at app level. This ensured that the call only ran when a user had logged in and refreshed the page.
 
@@ -403,7 +404,7 @@ class LandingPage extends React.Component {
 
 ## Categorization
 
-Recipes and Restaurants worked on similar categorization principles. Each top level page for recipes and restaurants were constructed in two sections. The first consisted of the filter action and the second was the result of the filtered process.
+Recipes and Restaurants worked on similar categorization principles. Each top-level page for recipes and restaurants were constructed in two sections. The first consisted of the filter action and the second was the result of the filtered process.
 
 ```
 return <div className="recipes">
@@ -480,7 +481,7 @@ As a result of time constraints, the mobile experience has not been optimised an
 
 ## Future Features
 
-We would of liked to provide the guided path we had in mind at the initial stage, however time restricted us to the core library aspect as a deliverable. 
+We would have liked to provide the guided path we had in mind at the initial stage, however time restricted us to the core library aspect as a deliverable. 
 
 In our plans, the user could get more of the tailored experience through progressing through the funnel. This way they would be guided to the best and fastest output relative to their saved preferences. 
 
