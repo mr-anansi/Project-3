@@ -13,7 +13,22 @@ We were required to:
 
 The resulting application titled 'the-kitchen' was constructed with team members [Michael](https://github.com/mjadair) & [Marissa](https://github.com/marepstein).
 
-Check out our site [here](https://the-kitchen-p3.herokuapp.com/)
+Check out our site here: [the-kitchen](https://the-kitchen-p3.herokuapp.com/)
+
+## Table of contents
+1. [Installation](#Installation)
+2. [Technologies used](#Technologies-used)
+3. [Approach](#Approach)
+	- [Technical Change](#Technical-Change)
+	- [Methodology](#Methodology)
+4. [Wireframes](#Wireframes)
+5. [Seeding](#Seeding)
+6. [Features](#Features)
+7. [Styling](#Wireframes)
+8. [Categorization](#Categorization)
+9. [Bugs & Challenges](#Bugs-&-Challenges)
+10. [Lessons Learned](#Lessons-Learned)
+11. [Future Features](#Future-Features)
 
 ## Installation
 
@@ -121,7 +136,7 @@ We began this project with a brainstorming document that took into account the a
 
 Our ideas ranged around the arts and we eventually settled on a food-focussed app with team-members [Michael](https://github.com/mjadair) and [Marissa](https://github.com/marepstein) particularly passionate about any research involved! 
 
-Our goal was to create something that would address one’s food needs, whether in a foodie state of mind or otherwise. Our stretch goal was to have a user funnel that was guided by matching the user’s personalisations to our data.
+Our goal was to create something that would address one’s food needs, whether in a foodie state of mind or otherwise. Our stretch goal was to have a user funnel that was guided by matching the users’ personalisation to our data.
 
 We investigated some external APIs in order to provide the information that was required for the app. We ultimately decided, however to create our own information so that full flexibility could be established with our endpoints.
 
@@ -234,9 +249,9 @@ In order to work towards personalisation, methods of user information sharing we
 
 There was an investigation into some of the newer hook features of React with the security of the user information a prime concern. We wanted to reduce the calls to the backend while defining the user information deeper in the component tree (Pass the information around once the user logs in as opposed to the first page on visit). 
 
-Ultimately, we used the useContext hook to enable the user data to be stored and distributed at app level on this single login event. This enabled the users’ information to be referenced on any page, allowing for features like one click email and updated user personalisations on our information pages with a single user information call to the backend. 
+Ultimately, we used the useContext hook to enable the user data to be stored and distributed at app level on this single login event. This enabled the users’ information to be referenced on any page, allowing for features like one click email and updated user personalisation on our information pages with a single user information call to the backend. 
 
-To tackle the refresh issue with regards to state, a conditional call (based on the availability of the jwt token) was built in at app level. This ensured that the call only ran when a user had logged in and refreshed the page.
+To tackle the refresh issue with regards to state, a conditional call (based on the availability of the JWT token) was built in at app level. This ensured that the call only ran when a user had logged in and refreshed the page.
 
 When the app is refreshed this code allows a log in check to take place:
 
@@ -281,7 +296,7 @@ const favourite = (props) => {
 ```
 
 
-The editing of comments was resolved by using useContext as well. Essentially, as the comments section was rendered by the recipe page but existed as a separate form, this data needed to be updated by a state that was available to both components. Once the comments were edited or deleted, the useContext recipe info was updated with the response and then the page was re-rendered in the higher level component providing a real-time change on the page.
+The editing of comments was resolved by using useContext as well. Essentially, as the comments section was rendered by the recipe page but existed as a separate form, this data needed to be updated by a state that was available to both components. Once the comments were edited or deleted, the useContext recipe info was updated with the response and then the page was re-rendered in the higher-level component providing a real-time change on the page.
 
 ```
       {reci && reci.comments.map((comments, i) => {
@@ -478,6 +493,13 @@ We found that navigation through the app after scrolling down a page would keep 
 This was tackled by adding a listener function that returned the scroll position to the top and wrapping the required components with this 'ScrollToTop' component.
 
 As a result of time constraints, the mobile experience has not been optimised and so some inconsistencies are present on smaller screens.
+
+## Lessons Learned
+
+* As this was our first full stack app, we learned the importance of planning thoroughly from the start. We got the idea of our stretch goals from the onset and were able to to get a sense of our MVP and the add-ons we could reach for.
+
+* We took a linear approach to the apps construction and in retrospect, if we divided up tasks across the front and backend more could have been achieved.
+
 
 ## Future Features
 
