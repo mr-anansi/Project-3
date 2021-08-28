@@ -4,8 +4,6 @@ import Auth from '../lib/auth'
 
 import { UserContext } from './UserContext'
 
-//Some bugs exist. Too many changes across the form. Needs some updates
-
 const EditProfile = (props) => {
   const [data, setData] = useState({})
   const [errors, setErrors] = useState({})
@@ -13,7 +11,6 @@ const EditProfile = (props) => {
   const { userInfo, setUserInfo } = useContext(UserContext)
 
   useEffect(() => {
-    console.log('running form')
     if (userInfo) {
       setData(userInfo)
     } return
@@ -34,7 +31,6 @@ const EditProfile = (props) => {
   }
 
   const handleChange = (e) => {
-    // e.value = e.target.value
     setData({ ...data, [e.target.name]: e.target.value })
     setErrors({})
   }
@@ -93,7 +89,6 @@ const EditProfile = (props) => {
               {errors.image}
             </small>}
           </div>
-          {/* I might need some Marissa tag magic on this field for array entry */}
           <div className='field'>
             <div className='control'>
               <label htmlFor='' className="label has-text-white">

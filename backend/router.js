@@ -4,7 +4,6 @@ const restaurants = require('./controllers/restaurants')
 const users = require('./controllers/users')
 const secureRoute = require('./lib/secureRoute')
 
-// Reggie: Weekend Work
 
 router.route('/recipes')
   .get(recipes.index)
@@ -27,9 +26,6 @@ router.route('/restaurants')
 
 router.route('/restaurants/:id')
   .get(restaurants.show)
-
-// Reggie: I've put a secure route on the profile to enable it to verify, pull data and then show. It does this through following the secure
-//process, extracting the id and then following the controller logic.
 
 router.route('/profile')
   .get(secureRoute, users.show)

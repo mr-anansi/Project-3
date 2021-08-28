@@ -17,8 +17,6 @@ const CommentCard = ({ comments, recipeInfo, props }) => {
     })
       .then(res => {
         setReci(res.data)
-        // setClick(!click)
-        console.log(res.data)
       })
       .catch(err => console.log(err))
   }

@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-// import useForm from 'react-hook-form'
 import Auth from '../lib/auth'
-
-
-// function createArrayWithNumbers(length) {
-//   return Array.from({ length }, (_, k) => k + 1)
-// }
 
 
 const Register = (props) => {
@@ -16,11 +10,6 @@ const Register = (props) => {
     category: ['']
   })
   const [errors, setErrors] = useState({})
-  // const { register } = useForm()
-  // const [ingredientSize, setIngredientSize] = useState(1)
-  // const [methodSize, setMethodSize] = useState(1)
-  // const [categorySize, setCategorySize] = useState(1)
-
 
   const postIt = () => {
     axios.post('/api/recipes', data,
@@ -29,7 +18,6 @@ const Register = (props) => {
       })
       .then(res => {
         props.history.push(`/recipes/${res.data._id}`)
-        // console.log(res)
       })
       .catch(err => {
         setErrors(err.response.data.errors)
@@ -40,15 +28,12 @@ const Register = (props) => {
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })
-    console.log(data)
-    // console.log(createArrayWithNumbers(ingredientSize))
     setErrors({})
   }
   
   const handleMultiChange = (e, i) => {
     data[e.target.name][i] = e.target.value
     setData({ ...data, [e.target.name]: data[e.target.name] }) 
-    console.log(data)
     setErrors({})
   }
 

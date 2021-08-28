@@ -1,5 +1,4 @@
 import React from 'react'
-// import ReactDOM from 'react-dom'
 
 class InputTag extends React.Component {
   constructor() {
@@ -39,7 +38,6 @@ class InputTag extends React.Component {
         <ul className='input-tag__tags'>
           { tags.map((tag, i) => (
             <li key={tag}>
-              {/* {tag} */}
               <button type='button' onClick={() => {
                 this.removeTag(i)
               }}> - </button>

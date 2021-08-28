@@ -21,7 +21,6 @@ const FilteredRecipeForm = ({ Recipes, updateRecipes }) => {
   function handleSelect(selectedItems) {
     if (selectedItems === null) return updateRecipes([])
     updateRecipes([...selectedItems])
-    console.log(...selectedItems)
   }
 
 
